@@ -1,0 +1,25 @@
+<div class="container-fluid img-33">
+  <div class="container2">
+    <h2>Upcoming Events &nbsp; &#62;</h2>
+    <owl-carousel-o [options]="customOptions">
+      <ng-template carouselSlide *ngFor="let i of classList">
+        <div
+          class="carousel-cell bindu-img1"
+          [style]="'background:url(' + i.bgImg + '); cursor: pointer'"
+          (click)="handleShowDetails(i.id)"
+        >
+          <div class="content-svg-text">
+            <div>
+              <div class="n-event">New Event</div>
+              <div class="featureTxt1">{{ i.classname }}</div>
+              <div class="featureMid">
+                {{ i.day }}
+              </div>
+              <div class="featureTxt">{{ i.featureTxt }}</div>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </owl-carousel-o>
+  </div>
+</div>

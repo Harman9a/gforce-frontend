@@ -1,0 +1,57 @@
+<div class="container">
+  <div class="text-img">
+    <div class="formsign-text">
+      <!-- <form action="#"> -->
+      <div class="sign-in-twoimg">
+        <img src="./assets/image/g-force-logo 2.png " alt="" /><img
+          src="./assets/image/gforce_emblem 1.png"
+          alt=""
+        />
+      </div>
+      <h2>Welcome back</h2>
+      <p>Welcome back!Please Enter Your Details</p>
+
+      <div class="div-andar-icon">
+        <img src="./assets/image/googel.png" alt="" />
+        <input class="loginIpt" type="text" placeholder="Login With google" />
+      </div>
+      <p>or</p>
+      <div *ngIf="invalidUser" style="text-align: center; color: red">
+        Invalid Email or Password
+      </div>
+      <input
+        type="text"
+        class="loginIpt"
+        placeholder="Email"
+        [(ngModel)]="email"
+      />
+      <input
+        class="loginIpt"
+        type="password"
+        placeholder="Password"
+        [(ngModel)]="password"
+      />
+      <div class="check-forget">
+        <input type="checkbox" />
+        <p>Remember for 30 days</p>
+        <a routerLink="/signup">Forget password</a>
+      </div>
+      <a><button (click)="handleSubmit()">Log in &nbsp;&rarr;</button></a>
+      <a routerLink="/signup">Don't have an account? sing up for</a>
+      <!-- </form> -->
+    </div>
+
+    <div class="formsign-img">
+      <img src="./assets/image/Rectangle 43.png" alt="" />
+      <div class="formsign-content">
+        <h2>Lorem Ipsum is simply dummy text of the printing</h2>
+        <p>
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry's standard dummy text ever
+          since the 1500s, when an unknown printer took a galley of type and
+          scrambled it to make a type specimen book.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,278 @@
+<header>
+  <div w3-include-html="header.html"></div>
+</header>
+<div class="container blog-heading-page">
+  <h2 class="b-head">OUR BLOGS</h2>
+  <p>
+    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+    Lorem Ipsum has been the industry's standard dummy text ever since the
+    1500s, when an unknown printer took a galley of type and scrambled it to
+    make a type specimen book.
+  </p>
+
+  <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+    <li class="nav-item me-4" role="presentation">
+      <button
+        class="nav-link blog-tabs-button-no"
+        id="pills-all-tab"
+        data-bs-toggle="pill"
+        data-bs-target="#pills-all"
+        type="button"
+        role="tab"
+        aria-controls="pills-home"
+        aria-selected="true"
+        active="tab.active"
+        (click)="allCat()"
+      >
+        All
+      </button>
+    </li>
+    <li class="nav-item me-4" role="presentation" *ngFor="let a of blogTabs">
+      <button
+        class="nav-link blog-tabs-button-no"
+        id="pills-all-tab"
+        data-bs-toggle="pill"
+        data-bs-target="#pills-all"
+        type="button"
+        role="tab"
+        aria-controls="pills-home"
+        aria-selected="true"
+        active="tab.active"
+        (click)="onDelete(a.id)"
+      >
+        {{ a.name }}
+      </button>
+    </li>
+    <!--<li class="nav-item" role="presentation">
+            <button class="nav-link  blog-tabs-button" id="pills-categories1-tab" data-bs-toggle="pill"
+                data-bs-target="#pills-categories1" type="button" role="tab" aria-controls="pills-profile"
+                aria-selected="false">Categories1</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link  blog-tabs-button" id="pills-categories2-tab" data-bs-toggle="pill"
+                data-bs-target="#pills-categories2" type="button" role="tab" aria-controls="pills-contact"
+                aria-selected="false">Categories2</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link  blog-tabs-button tab-center-jg" id="pills-categories3-tab" data-bs-toggle="pill"
+                data-bs-target="#pills-categories3" type="button" role="tab" aria-controls="pills-contact"
+                aria-selected="false">Categories3</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link  blog-tabs-button tab-center-jg" id="pills-newpost-tab" data-bs-toggle="pill"
+                data-bs-target="#pills-newpost" type="button" role="tab" aria-controls="pills-contact"
+                aria-selected="false">New Post</button>
+        </li> -->
+  </ul>
+
+  <div class="tab-content" id="pills-tabContent">
+    <div
+      class="tab-pane fade show active"
+      id="pills-all"
+      role="tabpanel"
+      aria-labelledby="pills-all-tab"
+    >
+      <div class="blog-card-data">
+        <div class="blog-card-content" *ngFor="let b of abc">
+          <div class="bolg-card-image">
+            <img
+              [src]="
+                'https://gforce.techiespreview.website/admin/BlogImg/' + b.image
+              "
+              alt=""
+            />
+          </div>
+          <div class="blog-card-text">
+            <h2>{{ b.title }}</h2>
+            <div class="myDiv" [innerHTML]="b.postContent"></div>
+            <a [routerLink]="'/innerBlog/' + b.id">
+              <button>Read More &rarr;</button>
+            </a>
+          </div>
+        </div>
+
+        <!-- <div class="blog-card-content">
+                    <div class="bolg-card-image">
+                        <img src="./assets/image/Rectangle 2825 (1).png" alt="">
+                    </div>
+                    <div class="blog-card-text">
+                        <h2>lorem ipsum is simply </h2>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+                            has been the industry's standard dummy text ever since the 1500s,
+                            when an unknown printer took a galley of type and scrambled it to make a type specimen
+                            book.</p>
+                        <a href="#"><button>Read More &rarr;</button></a>
+                    </div>
+                </div>
+
+
+                <div class="blog-card-content">
+                    <div class="bolg-card-image">
+                        <img src="./assets/image/Rectangle 2825 (2).png" alt="">
+                    </div>
+                    <div class="blog-card-text">
+                        <h2>lorem ipsum is simply </h2>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+                            has been the industry's standard dummy text ever since the 1500s,
+                            when an unknown printer took a galley of type and scrambled it to make a type specimen
+                            book.</p>
+                        <a href="#"><button>Read More &rarr;</button></a>
+                    </div>
+                </div>
+
+                <div class="blog-card-content">
+                    <div class="bolg-card-image">
+                        <img src="./assets/image/Rectangle 2825.png" alt="">
+                    </div>
+                    <div class="blog-card-text">
+                        <h2>lorem ipsum is simply </h2>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+                            has been the industry's standard dummy text ever since the 1500s,
+                            when an unknown printer took a galley of type and scrambled it to make a type specimen
+                            book.</p>
+                        <a href="#"><button>Read More &rarr;</button></a>
+                    </div>
+                </div>
+                <div class="blog-card-content">
+                    <div class="bolg-card-image">
+                        <img src="./assets/image/Rectangle 2825 (1).png" alt="">
+                    </div>
+                    <div class="blog-card-text">
+                        <h2>lorem ipsum is simply </h2>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+                            has been the industry's standard dummy text ever since the 1500s,
+                            when an unknown printer took a galley of type and scrambled it to make a type specimen
+                            book.</p>
+                        <a href="#"><button>Read More &rarr;</button></a>
+                    </div>
+                </div>
+                <div class="blog-card-content">
+                    <div class="bolg-card-image">
+                        <img src="./assets/image/Rectangle 2825 (2).png" alt="">
+                    </div>
+                    <div class="blog-card-text">
+                        <h2>lorem ipsum is simply </h2>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+                            has been the industry's standard dummy text ever since the 1500s,
+                            when an unknown printer took a galley of type and scrambled it to make a type specimen
+                            book.</p>
+                        <a href="#"><button>Read More &rarr;</button></a>
+                    </div>
+                </div> -->
+      </div>
+    </div>
+
+    <div
+      class="tab-pane fade"
+      id="pills-categories1"
+      role="tabpanel"
+      aria-labelledby="pills-categories1-tab"
+    >
+      <div class="blog-card-data">
+        <div class="blog-card-content">
+          <div class="bolg-card-image">
+            <img src="./assets/image/Rectangle 2825.png" alt="" />
+          </div>
+          <div class="blog-card-text">
+            <h2>lorem ipsum is simply</h2>
+            <p>
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the 1500s, when an unknown printer took a galley of
+              type and scrambled it to make a type specimen book.
+            </p>
+            <a href="#"><button>Read More &rarr;</button></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="tab-pane fade"
+      id="pills-categories2"
+      role="tabpanel"
+      aria-labelledby="pills-categories2-tab"
+    >
+      <div class="blog-card-data">
+        <div class="blog-card-content">
+          <div class="bolg-card-image">
+            <img src="./assets/image/Rectangle 2825 (1).png" alt="" />
+          </div>
+          <div class="blog-card-text">
+            <h2>lorem ipsum is simply</h2>
+            <p>
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the 1500s, when an unknown printer took a galley of
+              type and scrambled it to make a type specimen book.
+            </p>
+            <a href="#"><button>Read More &rarr;</button></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="tab-pane fade"
+      id="pills-categories3"
+      role="tabpanel"
+      aria-labelledby="pills-categories3-tab"
+    >
+      <div class="blog-card-data">
+        <div class="blog-card-content">
+          <div class="bolg-card-image">
+            <img src="./assets/image/Rectangle 2825 (2).png" alt="" />
+          </div>
+          <div class="blog-card-text">
+            <h2>lorem ipsum is simply</h2>
+            <p>
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the 1500s, when an unknown printer took a galley of
+              type and scrambled it to make a type specimen book.
+            </p>
+            <a href="#"><button>Read More &rarr;</button></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="tab-pane fade"
+      id="pills-newpost"
+      role="tabpanel"
+      aria-labelledby="pills-newpost-tab"
+    >
+      <div class="blog-card-data">
+        <div class="blog-card-content">
+          <div class="bolg-card-image">
+            <img src="./assets/image/Rectangle 2825 (2).png" alt="" />
+          </div>
+          <div class="blog-card-text">
+            <h2>lorem ipsum is simply</h2>
+            <p>
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the 1500s, when an unknown printer took a galley of
+              type and scrambled it to make a type specimen book.
+            </p>
+            <a href="#"><button>Read More &rarr;</button></a>
+          </div>
+        </div>
+
+        <div class="blog-card-content">
+          <div class="bolg-card-image">
+            <img src="./assets/image/Rectangle 2825 (1).png" alt="" />
+          </div>
+          <div class="blog-card-text">
+            <h2>lorem ipsum is simply</h2>
+            <p>
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the 1500s, when an unknown printer took a galley of
+              type and scrambled it to make a type specimen book.
+            </p>
+            <a href="#"><button>Read More &rarr;</button></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

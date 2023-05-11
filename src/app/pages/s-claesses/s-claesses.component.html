@@ -1,0 +1,103 @@
+<section class="creative-page">
+  <div class="tab-editprofile">
+    <div class="tab-editprofile-img">
+      <img src="./assets/image/g-force-logo 2.png" alt="" /><img
+        src="./assets/image/gforce_emblem 1.png"
+        alt=""
+      />
+      <i class="fa fa-bars" onclick="myFunction()" aria-hidden="true"></i>
+    </div>
+
+    <div class="button-tabs-sandwich" id="myDIV">
+      <button class="tablinks active" routerLink="/studentClasses">
+        Enrolled Classes
+      </button>
+      <button class="tablinks" routerLink="/studentWorkshop">
+        Enrolled Workshop
+      </button>
+      <button class="tablinks" routerLink="/studentPayments">
+        Transaction
+      </button>
+      <button class="tablinks" routerLink="/profile" id="defaultOpen">
+        Edit Profile
+      </button>
+      <button class="tablinks" routerLink="/attendance" id="defaultOpen">
+        Mark Attendance
+      </button>
+      <button class="tablinks" routerLink="/viewAttendance" id="defaultOpen">
+        View Attendance
+      </button>
+      <a (click)="handleLogout()"><button>Log Out &rarr;</button></a>
+    </div>
+  </div>
+
+  <div id="London" class="tabcontent enrolled-div">
+    <h2>Enrolled Classes</h2>
+    <div class="last-time">
+      <div class="one-more">
+        <div class="header_wrap">
+          <div class="num_rows">
+            <div class="form-group">
+              <!--		Show Numbers Of Rows 		-->
+              <h2>Show entries</h2>
+              <select class="form-control" name="state" id="maxRows">
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+              </select>
+              <i class="fa-solid fa-arrows-up-down"></i>
+            </div>
+          </div>
+          <div class="tb_search">
+            <input
+              type="text"
+              id="search_input_all"
+              onkeyup="FilterkeyWord_all_table()"
+              placeholder="Search.."
+              class="form-control-2"
+            />
+            <i class="fa fa-search"></i>
+          </div>
+        </div>
+
+        <table class="table table-striped table-class" id="table-id">
+          <thead>
+            <tr>
+              <th>Class Type</th>
+              <th>Branch</th>
+              <th>Date</th>
+              <th>Time</th>
+              <th>Duration</th>
+              <th>Teacher</th>
+              <th>Status</th>
+              <th>Price</th>
+              <th>QR Code/Links</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tr *ngFor="let i of allClasses">
+            <td>Regular</td>
+            <td>{{ i.branchName }}</td>
+            <td>{{ i.scheduledate }}</td>
+            <td>1-2pm</td>
+            <td>30days</td>
+            <td>Jaja</td>
+            <td>Active</td>
+            <td>$445</td>
+            <td>78456v7475bb</td>
+            <td><i class="fa fa-eye" aria-hidden="true"></i></td>
+          </tr>
+        </table>
+
+        <!--		Start Pagination -->
+        <div class="pagination-container">
+          <nav>
+            <ul class="pagination">
+              <!--	Here the JS Function Will Add the Rows -->
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

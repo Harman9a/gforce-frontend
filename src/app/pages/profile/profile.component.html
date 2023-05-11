@@ -1,0 +1,103 @@
+<section class="creative-page">
+  <div class="tab-editprofile">
+    <div class="tab-editprofile-img">
+      <img src="./assets/image/g-force-logo 2.png" alt="" /><img
+        src="./assets/image/gforce_emblem 1.png"
+        alt=""
+      />
+      <i class="fa fa-bars" onclick="myFunction()" aria-hidden="true"></i>
+    </div>
+
+    <div class="button-tabs-sandwich" id="myDIV">
+      <button class="tablinks" routerLink="/studentClasses">
+        Enrolled Classes
+      </button>
+      <button class="tablinks" routerLink="/studentWorkshop">
+        Enrolled Workshop
+      </button>
+      <button class="tablinks" routerLink="/studentPayments">
+        Transaction
+      </button>
+      <button class="tablinks active" routerLink="/profile" id="defaultOpen">
+        Edit Profile
+      </button>
+      <button class="tablinks" routerLink="/attendance" id="defaultOpen">
+        Mark Attendance
+      </button>
+      <button class="tablinks" routerLink="/viewAttendance" id="defaultOpen">
+        View Attendance
+      </button>
+      <a (click)="handleLogout()"><button>Log Out &rarr;</button></a>
+    </div>
+  </div>
+  <!-- first tab -->
+
+  <!-- second tab -->
+
+  <div id="Tokyo" class="tabcontent editprofile-div">
+    <h2>Edit Profile</h2>
+    <div class="bg-img-cut-flex">
+      <div class="editprofile-div-imf">
+        <div class="edit-profile-img-form">
+          <img src="./assets/image/Ellipse 21.png" alt="" />
+          <h3>
+            {{ activeUser.firstname }} {{ activeUser.middlename }}
+            {{ activeUser.lastname }}
+          </h3>
+          <p>{{ activeUser.type == "1" ? "Student" : "Parent" }} Profile</p>
+          <h3>Change Profile Picture</h3>
+          <input
+            type="file"
+            class="custom-file-input-edit-profile"
+            name=""
+            id=""
+          />
+        </div>
+      </div>
+      <div class="editprofile-div-imf1">
+        <form action="#">
+          <h2>Please Enter the input filed</h2>
+          <input
+            type="text"
+            placeholder="Parent's First Name"
+            [value]="activeUser.firstname"
+          />
+          <input
+            type="text"
+            placeholder="Parent's Middle Name"
+            [value]="activeUser.middlename"
+          />
+          <input
+            type="text"
+            placeholder="Parent's Last Name"
+            [value]="activeUser.lastname"
+          />
+          <input
+            type="text"
+            placeholder="Parent's  Birth Dtae"
+            [value]="activeUser.dob"
+          />
+          <input
+            type="text"
+            placeholder="Parent's Mobile Number"
+            [value]="activeUser.phone"
+          />
+          <input
+            type="text"
+            placeholder="Parent's Complete Adress"
+            [value]="activeUser.address"
+          />
+          <input
+            type="email"
+            placeholder="Student's Emaill Adress"
+            [value]="activeUser.email"
+          /><br />
+
+          <a href="#">
+            <button>Save Change &rarr;</button>
+          </a>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

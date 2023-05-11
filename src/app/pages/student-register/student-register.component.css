@@ -1,0 +1,8 @@
+.errorTxt {
+  color: red;
+  position: absolute;
+}
+
+.tab-form input[type="password"] {
+  margin-bottom: 10px !important;
+}

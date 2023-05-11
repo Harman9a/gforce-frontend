@@ -1,0 +1,183 @@
+<header>
+  <div class="container">
+    <div class="row p-212">
+      <div class="col-12">
+        <img src="./assets/image/Group 16134.png" alt="" style="width: 100%" />
+      </div>
+    </div>
+  </div>
+</header>
+
+<!--- image and content section start -->
+
+<div class="container-fluid">
+  <div class="container">
+    <div class="greybg">
+      <div class="grey-crd1">
+        <img src="./assets/image/Group 244 1.png" alt="" />
+      </div>
+      <div class="grey-crd2">
+        <h2>The School</h2>
+        <p>
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry's standard dummy text ever
+          since the 1500s, when an unknown printer took a galley of type and
+          scrambled it to make a type specimen book. It has survived not only
+          five centuries, but also the leap into electronic typesetting,
+          remaining essentially unchanged. It was popularised in the 1960s with
+          the release of Letraset sheets containing Lorem Ipsum passages, and
+          more recently with desktop publishing software like Aldus PageMaker
+          including versions of Lorem Ipsum. <br /><br />
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry's standard dummy text ever
+          since the 1500s, when an unknown printer took a galley of type and
+          scrambled it to make a type specimen book. It has survived not only
+          five centuries, but also the leap into electronic typesetting,
+          remaining essentially unchanged. It was popularised in the 1960s with
+          the release of Letraset sheets containing Lorem Ipsum passages, and
+          more recently with desktop publishing software like Aldus PageMaker
+          including versions of Lorem Ipsum.
+        </p>
+
+        <a href="#"><button>Register Now &rarr;</button></a>
+      </div>
+    </div>
+  </div>
+</div>
+<!---
+
+image and content section end
+-->
+
+<!--------------------------------- slider section  start
+-->
+<app-home-upcoming-classes></app-home-upcoming-classes>
+<!-- <div class="container-fluid color-dena"></div> -->
+
+<!--------------------------------- slider section  end--------------------------------------------->
+<!---------------------------------------------------------------three card and calender section start----------------------------------------------------------->
+
+<div class="container-fluid" style="background: #f5f5f5">
+  <div class="container inner-head-inner">
+    <h2>REGULAR OPEN CLASSES</h2>
+    <p>Every class is a diffrent dance experince</p>
+    <h3>Choose a Branch</h3>
+    <ul
+      class="nav nav-pills mb-2 justify-content-center"
+      id="pills-tab"
+      role="tablist"
+    >
+      <li
+        class="nav-item"
+        role="presentation"
+        *ngFor="let i of branchList"
+        (click)="changeBranch(i.id, i.batch)"
+      >
+        <button
+          class="nav-link active tabs-boton"
+          id="pills-batch1-tab"
+          data-bs-toggle="pill"
+          data-bs-target="#pills-batch1"
+          type="button"
+          role="tab"
+          aria-controls="pills-home"
+          aria-selected="true"
+        >
+          {{ i.textCode }}
+        </button>
+      </li>
+    </ul>
+
+    <h3>Select a Date</h3>
+    <div class="row">
+      <div class="col-12">
+        <input
+          type="date"
+          class="mydatePicker"
+          (change)="handleDateChnage()"
+          [(ngModel)]="dateIpt"
+        />
+      </div>
+    </div>
+
+    <div class="tab-content" id="pills-tabContent">
+      <div
+        class="tab-pane fade show active"
+        id="pills-batch1"
+        role="tabpanel"
+        aria-labelledby="pills-batch1-tab"
+      >
+        <div class="nab-container">
+          <div class="nab-container-card" *ngFor="let j of tabList">
+            <div class="nab-card-img">
+              <img
+                style="cursor: pointer"
+                routerLink="/workshopView"
+                [src]="j.img"
+                alt=""
+              />
+            </div>
+
+            <h2>{{ j.text1 }}</h2>
+            <p>{{ j.text2 }}</p>
+            <p>{{ j.text3 }}</p>
+            <p>{{ j.text4 }}</p>
+            <h3>{{ j.text5 }}</h3>
+            <a [routerLink]="'/book/openClass/' + j.id">
+              <button>Book Now &rarr;</button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!---------------------------------------------------------------three card and calender section end----------------------------------------------------------->
+
+<!---------------------------------------------------------------Map Section start------------------------------------------------------------------------------->
+<div class="container-fluid pop-responsive-pop">
+  <div class="responsive-map">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2822.7806761080233!2d-93.29138368446431!3d44.96844997909819!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x52b32b6ee2c87c91%3A0xc20dff2748d2bd92!2sWalker+Art+Center!5e0!3m2!1sen!2sus!4v1514524647889"
+      width="600"
+      height="450"
+      frameborder="0"
+      style="border: 0"
+      allowfullscreen
+    ></iframe>
+  </div>
+  <div class="pop-form-end-pop">
+    <h2>info</h2>
+    <h4>
+      <i class="bi bi-geo-alt"></i>&nbsp;&nbsp;G-Force Dance Center Alabang
+    </h4>
+    <p>
+      3rd Floor Festival Mall Expansion, Filinvest City, Alabang, Muntinlupa
+      City
+    </p>
+
+    <h4>
+      <i class="bi bi-geo-alt"></i>&nbsp;&nbsp;G-Force Dance Center Alabang
+    </h4>
+    <p>
+      3rd Floor Festival Mall Expansion, Filinvest City, Alabang, Muntinlupa
+      City
+    </p>
+
+    <h4>
+      <i class="bi bi-geo-alt"></i>&nbsp;&nbsp;G-Force Dance Center Alabang
+    </h4>
+    <p>
+      3rd Floor Festival Mall Expansion, Filinvest City, Alabang,Muntinlupa City
+    </p>
+
+    <h4>
+      <i class="bi bi-geo-alt"></i>&nbsp;&nbsp;G-Force Dance Center Alabang
+    </h4>
+    <p>
+      3rd Floor Festival Mall Expansion, Filinvest City, Alabang, Muntinlupa
+      City
+    </p>
+  </div>
+</div>
+<!---------------------------------------------------------------Map Section End------------------------------------------------------------------------------->

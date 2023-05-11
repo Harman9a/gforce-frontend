@@ -1,0 +1,339 @@
+<div class="container my-5">
+  <div class="row-parent-content-div">
+    <div class="parent-student">
+      <div class="parent-student-logo">
+        <img src="./assets/image/g-force-logo 2.png" alt="" />
+        <img src="./assets/image/gforce_emblem 1.png" alt="" />
+      </div>
+      <h2>Student Information</h2>
+      <p>
+        Register an account by filling up the student's information. It should
+        be the student's account.
+      </p>
+
+      <div class="ul-tabs-start">
+        <ul class="nav nav-pills" id="pills-tab" role="tablist">
+          <li class="nav-item nav-item-li" role="presentation">
+            <button
+              class="nav-link static-button-parent active"
+              id="pills-home-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#pills-home"
+              type="button"
+              role="tab"
+              aria-controls="pills-home"
+              aria-selected="true"
+              (click)="changeActive(1)"
+            >
+              Student
+            </button>
+          </li>
+          <li class="nav-item nav-item-li-li" role="presentation">
+            <button
+              class="nav-link static-button-parent"
+              id="pills-profile-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#pills-profile"
+              type="button"
+              role="tab"
+              aria-controls="pills-profile"
+              aria-selected="false"
+              (click)="changeActive(2)"
+            >
+              Parent
+            </button>
+          </li>
+        </ul>
+      </div>
+
+      <div class="tab-content" id="pills-tabContent">
+        <div
+          class="tab-pane fade show active"
+          id="pills-home"
+          role="tabpanel"
+          aria-labelledby="pills-home-tab"
+        >
+          <div class="progress-div-black">
+            <progress id="file-p1" [value]="sTabValue" max="100">32%</progress>
+          </div>
+
+          <!-- <form id="regForm-form" action="/action_page.php"> -->
+          <!-- One "tab" for each step in the form: -->
+          <div class="tab-form" *ngIf="studentTabStatus == true">
+            <input
+              type="text"
+              placeholder="Student's first name"
+              [(ngModel)]="fName"
+              required
+            />
+            <p *ngIf="fNameErr" class="errorTxt">required</p>
+            <input
+              type="text"
+              placeholder="Student's Middle Name"
+              [(ngModel)]="mName"
+              required
+            />
+            <p *ngIf="mNameErr" class="errorTxt">required</p>
+            <input
+              type="text"
+              placeholder="Student's Last Name"
+              [(ngModel)]="lName"
+              required
+            />
+            <p *ngIf="lNameErr" class="errorTxt">required</p>
+            <input
+              type="text"
+              placeholder="Student's Birth Date"
+              [(ngModel)]="dob"
+              required
+            />
+            <p *ngIf="dobErr" class="errorTxt">required</p>
+            <input
+              type="text"
+              placeholder="Student's Mobile Number"
+              [(ngModel)]="pNumber"
+              required
+            />
+            <p *ngIf="pNumberErr" class="errorTxt">required</p>
+            <input
+              type="text"
+              placeholder="Student's Complete address"
+              [(ngModel)]="address"
+              required
+            />
+            <p *ngIf="addressErr" class="errorTxt">required</p>
+          </div>
+          <div class="tab-form" *ngIf="studentTabStatus == false">
+            <input
+              type="text"
+              placeholder="Student's Email Address"
+              [(ngModel)]="email"
+              required
+            />
+            <p *ngIf="emailErr" class="errorTxt">required</p>
+            <input
+              type="password"
+              placeholder="Password"
+              [(ngModel)]="password"
+              required
+            />
+            <p *ngIf="passwordErr" class="errorTxt">required</p>
+            <input
+              type="password"
+              placeholder="confirm Password"
+              [(ngModel)]="con_password"
+              required
+            />
+            <p *ngIf="con_passwordErr" class="errorTxt">required</p>
+            <div class="width-75-form">
+              <p>Profile Pitcure (For ID purposes Only)</p>
+              <div class="choosen-div-flex">
+                <input
+                  class="custom-file-input"
+                  type="file"
+                  style="width: 100%"
+                  (change)="onChange($event)"
+                  [(ngModel)]="profile_img"
+                />
+              </div>
+              <p *ngIf="fileErr" class="errorTxt">required</p>
+            </div>
+            <div class="check-div-flex">
+              <input type="checkbox" name="checkbox-flex" />
+              <p>I agree with Privacy Policy and Waver of Liability</p>
+            </div>
+          </div>
+          <div class="b-a-p" style="overflow: auto">
+            <div class="half-width-next-flex">
+              <button
+                type="button"
+                id="prevBtn-form"
+                class="half-width-next"
+                *ngIf="studentTabStatus == false"
+                (click)="studentTab(1)"
+              >
+                &larr; Previous
+              </button>
+              <button
+                type="button"
+                id="prevBtn-form"
+                class="half-width-next"
+                *ngIf="studentTabStatus == false"
+                (click)="handleSubmit()"
+              >
+                Register &rarr;
+              </button>
+              <button
+                type="button"
+                id="nextBtn-form"
+                value="Increse"
+                class="nextBtn-form"
+                *ngIf="studentTabStatus == true"
+                (click)="studentTab(2)"
+              >
+                Next &rarr;
+              </button>
+            </div>
+            <a routerLink="/login">
+              <p>All ready have an account?</p>
+            </a>
+          </div>
+          <!-- Circles which indicates the steps of the form: -->
+          <div class="step-code-step">
+            <span class="step-form"></span>
+            <span class="step-form"></span>
+          </div>
+          <!-- </form> -->
+        </div>
+
+        <div
+          class="tab-pane fade"
+          id="pills-profile"
+          role="tabpanel"
+          aria-labelledby="pills-profile-tab"
+        >
+          <div class="progress-div-black">
+            <progress id="file-p1-p1" [value]="pTabValue" max="100">
+              32%
+            </progress>
+          </div>
+
+          <!-- <form id="regForm-reg" action="/action_page.php"> -->
+          <!-- One "tab" for each step in the form: -->
+          <div class="tab-reg" *ngIf="parentTabStatus == true">
+            <input
+              type="text"
+              placeholder="Parent's first name"
+              [(ngModel)]="fName2"
+              required
+            />
+            <p *ngIf="fName2Err" class="errorTxt">required</p>
+            <input
+              type="text"
+              placeholder="Parent's Middle Name"
+              [(ngModel)]="mName2"
+              required
+            />
+            <p *ngIf="mName2Err" class="errorTxt">required</p>
+            <input
+              type="text"
+              placeholder="Parent's Last Name"
+              [(ngModel)]="lName2"
+              required
+            />
+            <p *ngIf="lName2Err" class="errorTxt">required</p>
+            <input
+              type="text"
+              placeholder="Parent's Birth Date"
+              [(ngModel)]="dob2"
+              required
+            />
+            <p *ngIf="dob2Err" class="errorTxt">required</p>
+            <input
+              type="text"
+              placeholder="Parent's Mobile Number"
+              [(ngModel)]="pNumber2"
+              required
+            />
+            <p *ngIf="pNumber2Err" class="errorTxt">required</p>
+            <input
+              type="text"
+              placeholder="Parent's Complete address"
+              [(ngModel)]="address2"
+              required
+            />
+            <p *ngIf="address2Err" class="errorTxt">required</p>
+          </div>
+          <div class="tab-reg" *ngIf="parentTabStatus == false">
+            <input
+              type="email"
+              placeholder="Parent's Email Address"
+              [(ngModel)]="email2"
+              required
+            />
+            <p *ngIf="email2Err" class="errorTxt">required</p>
+            <input
+              type="password"
+              placeholder="Password"
+              [(ngModel)]="password2"
+              required
+            />
+            <p *ngIf="password2Err" class="errorTxt">required</p>
+            <input
+              type="password"
+              placeholder="confirm Password"
+              [(ngModel)]="con_password2"
+              required
+            />
+            <p *ngIf="con_password2Err" class="errorTxt">required</p>
+            <div class="width-75-form">
+              <p>Profile Pitcure (For ID purposes Only)</p>
+              <div class="choosen-div-flex">
+                <input
+                  class="custom-file-input"
+                  type="file"
+                  style="width: 100%"
+                  (change)="onChange2($event)"
+                  [(ngModel)]="profile_img2"
+                />
+              </div>
+              <p *ngIf="file2Err" class="errorTxt">required</p>
+            </div>
+            <div class="check-div-flex">
+              <input type="checkbox" name="checkbox-flex" />
+              <p>I agree with Privacy Policy and Waver of Liability</p>
+            </div>
+          </div>
+          <div class="b-a-p" style="overflow: auto">
+            <div class="half-width-next-flex">
+              <button
+                type="button"
+                id="prevBtn-reg"
+                class="half-width-next1"
+                *ngIf="parentTabStatus == false"
+                (click)="parentTab(1)"
+              >
+                &larr; Previous
+              </button>
+              <button
+                type="button"
+                id="prevBtn-form"
+                class="half-width-next"
+                *ngIf="parentTabStatus == false"
+                (click)="handleSubmit2()"
+              >
+                Register &rarr;
+              </button>
+              <button
+                type="button"
+                id="nextBtn-reg"
+                class="nextBtn-reg"
+                *ngIf="parentTabStatus == true"
+                (click)="parentTab(2)"
+              >
+                Next
+              </button>
+            </div>
+            <a routerLink="/login">
+              <p>All ready have an account?</p>
+            </a>
+          </div>
+          <!-- Circles which indicates the steps of the form: -->
+          <div class="step-code-step">
+            <span class="step-reg"></span>
+            <span class="step-reg"></span>
+          </div>
+          <!-- </form> -->
+        </div>
+      </div>
+    </div>
+
+    <div class="parent-img-text-content">
+      <img src="./assets/image/Rectangle 45.png" alt="" />
+      <h2>
+        Lorem Ipsum is simply dummy text of the printing and typesetting
+        industry.
+      </h2>
+    </div>
+  </div>
+</div>

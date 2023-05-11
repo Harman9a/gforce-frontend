@@ -1,0 +1,79 @@
+<section class="creative-page">
+  <div class="tab-editprofile">
+    <div class="tab-editprofile-img">
+      <img src="./assets/image/g-force-logo 2.png" alt="" /><img
+        src="./assets/image/gforce_emblem 1.png"
+        alt=""
+      />
+      <i class="fa fa-bars" onclick="myFunction()" aria-hidden="true"></i>
+    </div>
+
+    <div class="button-tabs-sandwich" id="myDIV">
+      <button class="tablinks" routerLink="/studentClasses">
+        Enrolled Classes
+      </button>
+      <button class="tablinks" routerLink="/studentWorkshop">
+        Enrolled Workshop
+      </button>
+      <button class="tablinks" routerLink="/studentPayments">
+        Transaction
+      </button>
+      <button class="tablinks" routerLink="/profile" id="defaultOpen">
+        Edit Profile
+      </button>
+      <button class="tablinks active" routerLink="/attendance" id="defaultOpen">
+        Mark Attendance
+      </button>
+      <button class="tablinks" routerLink="/viewAttendance" id="defaultOpen">
+        View Attendance
+      </button>
+      <a (click)="handleLogout()"><button>Log Out &rarr;</button></a>
+    </div>
+  </div>
+  <!-- first tab -->
+
+  <!-- second tab -->
+
+  <div id="Tokyo" class="tabcontent editprofile-div">
+    <h2>Attendance</h2>
+    <div class="bg-img-cut-flex">
+      <div class="editprofile-div-imf">
+        <div class="edit-profile-img-form qr-div">
+          <img src="./assets/image/qrcode.png" alt="" style="width: 50%" />
+        </div>
+      </div>
+      <div class="editprofile-div-imf1">
+        <div
+          style="
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 90%;
+          "
+        >
+          <div class="row">
+            <div class="coll-12 center">
+              <h2>Attendance</h2>
+            </div>
+            <div class="coll-12 center">
+              <select class="mySelectIpt" [(ngModel)]="bookingId">
+                <option value="0">Select Class</option>
+                <option *ngFor="let x of AllBookingsArr" [value]="x.booking_id">
+                  {{ x.booking_name }}
+                </option>
+              </select>
+            </div>
+            <div class="coll-12 center">
+              <!-- <input type="text" placeholder="Student ID" /> -->
+            </div>
+            <div class="coll-12 center">
+              <button class="buttonSubmit" (click)="handleAttendance()">
+                Mark Attendance
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

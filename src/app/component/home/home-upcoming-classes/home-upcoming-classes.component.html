@@ -1,0 +1,66 @@
+<div class="container-fluid color-dena">
+  <div class="container3">
+    <h2 class="at">Upcoming classes &nbsp; &#62;</h2>
+    <div class="up-come-class">
+      <owl-carousel-o [options]="customOptions">
+        <ng-template carouselSlide *ngFor="let i of classList">
+          <div (click)="handleShowDetails()" style="cursor: pointer">
+            <div class="carousel-cell1">
+              <div class="content-svg-text1">
+                <img style="width: unset !important" [src]="i.img" alt="" />
+                <div class="orange-black-text">
+                  <h2 class="head00">{{ i.txt1 }}</h2>
+                  <p>{{ i.txt2 }}</p>
+                  <p>{{ i.dateTime }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </ng-template>
+      </owl-carousel-o>
+    </div>
+    <!-- <div
+      class="carousel jhdfj"
+      data-flickity='{ "wrapAround": true ,"pageDots":false  }'
+    >
+      <div class="carousel-cell1" *ngFor="let i of classList">
+        <div class="content-svg-text1">
+          <img [src]="i.img" alt="" />
+          <div class="orange-black-text">
+            <h2>{{ i.txt1 }}</h2>
+            <p>{{ i.txt2 }}</p>
+            <p>{{ i.dateTime }}</p>
+          </div>
+        </div>
+      </div>
+    </div> -->
+    <h2 class="at" style="padding-top: 47px; padding-bottom: 17px">
+      Upcoming Workshop &nbsp; &#62;
+    </h2>
+    <!-- <div
+      class="carousel jhdfj"
+      data-flickity='{ "wrapAround": true , "pageDots":false  } '
+    >
+      <div class="carousel-cell1" *ngFor="let i of workshopList">
+        <div class="content-svg-text1">
+          <img [src]="i.img" alt="" />
+          <h4>{{ i.txt }}</h4>
+        </div>
+      </div>
+    </div> -->
+    <owl-carousel-o [options]="customOptions2">
+      <ng-template carouselSlide *ngFor="let i of workshopList">
+        <div (click)="handleShowDetails()" style="cursor: pointer">
+          <div class="carousel-cell1">
+            <div class="content-svg-text1">
+              <div class="content-svg-text1">
+                <img [src]="i.img" alt="" />
+                <h4>{{ i.txt }}</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </owl-carousel-o>
+  </div>
+</div>

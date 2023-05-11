@@ -1,0 +1,159 @@
+<section class="form-abs-rela">
+  <div class="container">
+    <div class="row justify-content-between">
+      <div class="frame-div-one">
+        <img src="./assets/image/Group 16226.png" alt="" />
+      </div>
+      <div class="frame-div-two">
+        <form action="#">
+          <h2>APPLY FOR THIS ROLE</h2>
+
+          <input
+            type="text"
+            name="yourname"
+            [(ngModel)]="name"
+            placeholder="Your name"
+          />
+          <input
+            type="text"
+            name="phoneno"
+            [(ngModel)]="phone"
+            placeholder="Phone number"
+          />
+          <input
+            type="text"
+            name="interestedin"
+            placeholder="Interested in"
+            [(ngModel)]="interestedin"
+          />
+          <input
+            type="text"
+            [(ngModel)]="email"
+            name="email"
+            placeholder="Email address"
+          />
+          <!-- <input
+            type="text"
+            name="new_file"
+            value=""
+            size="40"
+            class="file_input_replacement"
+            placeholder="Upload CV/Resume"
+          /> -->
+          <input
+            type="file"
+            name="uploaded_file"
+            class=""
+            [(ngModel)]="resume"
+            (change)="handleFileInput($event.target)"
+          />
+          <!-- <input
+            type="text"
+            name="new_file"
+            value=""
+            size="40"
+            class="file_input_replacement"
+            placeholder="Upload Cover Letter"
+          /> -->
+          <input
+            type="file"
+            name="uploaded_file"
+            [(ngModel)]="cover"
+            (change)="handleFileInputcover($event.target)"
+          />
+
+          <!-- <input type="file" name="savefile" placeholder="Uploade CV/Resume">
+                            <input type="file" name="coverletter" placeholder="Upload Cover Letter"> -->
+
+          <textarea
+            name="anyaditionalinfo"
+            placeholder="Any additional Info"
+            [(ngModel)]="message"
+          ></textarea>
+
+          <a (click)="handleSubmit()"><button>Submit &rarr;</button></a>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="open-position-sect">
+  <div class="container open-position-sect-padding-zero">
+    <h2 class="cr-open">Open Position</h2>
+
+    <ul class="nav nav-pills mb-3 muskil-class" id="pills-tab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button
+          (click)="handelJobFilter(0)"
+          class="nav-link active open-position-button-tab-duplicate"
+          id="pills-home-tab"
+          data-bs-toggle="pill"
+          data-bs-target="#pills-home"
+          type="button"
+          role="tab"
+          aria-controls="pills-home"
+          aria-selected="true"
+        >
+          ALL
+        </button>
+      </li>
+      <li class="nav-item" role="presentation" *ngFor="let i of allCategory">
+        <button
+          (click)="handelJobFilter(i.id)"
+          class="nav-link open-position-button-tab"
+          id="pills-home-tab"
+          data-bs-toggle="pill"
+          data-bs-target="#pills-home"
+          type="button"
+          role="tab"
+          aria-controls="pills-home"
+          aria-selected="false"
+        >
+          {{ i.name }}
+        </button>
+      </li>
+    </ul>
+    <div class="tab-content" id="pills-tabContent">
+      <div
+        class="tab-pane fade show active"
+        id="pills-home"
+        role="tabpanel"
+        aria-labelledby="pills-home-tab"
+      >
+        <div class="opiton-tabs-div">
+          <div *ngFor="let i of filtredJobs">
+            <div class="option-tab1">
+              <div class="option-tab-content">
+                <h2>{{ i.name }}</h2>
+                <div [innerHTML]="i.description"></div>
+              </div>
+              <div class="option-tab-but">
+                <button (click)="handleApply(i.name)">APPLY Now &rarr;</button>
+              </div>
+            </div>
+            <hr />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container-fluid">
+  <div class="row frame-div-four-img">
+    <div class="frame-div-img">
+      <img src="./assets/image/Rectangle 50.png" alt="" />
+    </div>
+    <div class="frame-div-img">
+      <img src="./assets/image/Rectangle 51.png" alt="" />
+    </div>
+
+    <div class="frame-div-img">
+      <img src="./assets/image/Rectangle 52.png" alt="" />
+    </div>
+
+    <div class="frame-div-img">
+      <img src="./assets/image/Rectangle 53.png" alt="" />
+    </div>
+  </div>
+</div>

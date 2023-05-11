@@ -1,0 +1,138 @@
+<!--- header and banner section start-->
+<header>
+  <div w3-include-html="header.html"></div>
+
+  <div class="container h2-48">
+    <h2>
+      <a href="#"> Select Any workshop &gt;</a>
+    </h2>
+    <div class="row-48">
+      <div class="width-48">
+        <img src="./assets/image/Group 16111.png" alt="" />
+
+        <a href="#"><button class="white-text">Performance 101</button> </a>
+      </div>
+      <div class="width-48">
+        <img src="./assets/image/Group 16110.png" alt="" />
+
+        <a href="#"><button class="white-text">G-Force Project</button> </a>
+      </div>
+    </div>
+  </div>
+</header>
+<!--- header and banner section start-->
+
+<!--- select any branch start -->
+
+<div class="container-fluid">
+  <div class="container select-any-branch">
+    <h2>Select Any Branch</h2>
+    <p>
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+      Lorem Ipsum has been the industry's standard dummy text ever since the
+      1500s
+    </p>
+
+    <!-- <div class="select-row">
+      <div class="select-card" *ngFor="let p of branchList">
+        <img [src]="p.img" alt="" />
+        <div
+          class="select-card-text-select"
+          (click)="changeBranch(p.id, p.batch)"
+          style="cursor: pointer"
+        >
+          <a>{{ p.textCode }}</a>
+        </div>
+      </div>
+    </div> -->
+
+    <owl-carousel-o [options]="customOptions">
+      <ng-template
+        carouselSlide
+        class="select-card"
+        *ngFor="let p of branchList"
+      >
+        <img [src]="p.img" alt="" />
+        <div
+          class="select-card-text-select"
+          (click)="changeBranch(p.id, p.batch)"
+          style="cursor: pointer"
+        >
+          <a>{{ p.textCode }}</a>
+        </div>
+      </ng-template>
+    </owl-carousel-o>
+  </div>
+</div>
+<!--- select any branch end -->
+
+<!------------------------------------------------------------------ select any batch start ------------------------------------------------------------------->
+
+<div class="container-fluid">
+  <div class="container batch-top-head-tabs">
+    <h2>Select Any Batch</h2>
+    <p>
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+      Lorem Ipsum has been the industry's standard dummy text ever since the
+      1500s
+    </p>
+
+    <ul
+      class="nav nav-pills mb-2"
+      id="pills-tab"
+      role="tablist"
+      style="display: none"
+    >
+      <li
+        class="nav-item"
+        role="presentation"
+        *ngFor="let i of tabswitch"
+        active="tab.active"
+      >
+        <button
+          class="nav-link tabs-boton-tabs"
+          id="pills-batch1-tab"
+          data-bs-toggle="pill"
+          data-bs-target="#pills-batch1"
+          type="button"
+          role="tab"
+          aria-controls="pills-home"
+          aria-selected="true"
+          (click)="getClasses()"
+        >
+          {{ i.button }}
+        </button>
+      </li>
+    </ul>
+    <div class="tab-content" id="pills-tabContent">
+      <div
+        class="tab-pane fade show active"
+        id="pills-batch1"
+        role="tabpanel"
+        aria-labelledby="pills-batch1-tab"
+      >
+        <div class="nab-container">
+          <div class="nab-container-card" *ngFor="let j of tabList">
+            <div class="nab-card-img">
+              <img
+                style="cursor: pointer"
+                routerLink="/workshopView"
+                [src]="j.img"
+                alt=""
+              />
+            </div>
+
+            <h2>{{ j.text1 }}</h2>
+            <p>{{ j.text2 }}</p>
+            <p>{{ j.text3 }}</p>
+            <p>{{ j.text4 }}</p>
+            <h3>{{ j.text5 }}</h3>
+            <a [routerLink]="'/book/workshop/' + j.id">
+              <button>Book Now &rarr;</button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

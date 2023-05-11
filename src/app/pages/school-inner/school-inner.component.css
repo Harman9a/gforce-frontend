@@ -1,0 +1,10 @@
+.mydatePicker {
+  background: #f9f9f9;
+  border: unset;
+  width: 25%;
+  color: #333333;
+  margin-top: 40px !important;
+  margin-bottom: 10px !important;
+  padding: 12px 20px;
+  margin: 0px auto;
+}

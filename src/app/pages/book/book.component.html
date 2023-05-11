@@ -1,0 +1,175 @@
+<section>
+  <div class="my-3">
+    <div class="bg">
+      <div class="row mainRow">
+        <div class="col-sm-8">
+          <div class="card card-cascade wider shadow p-3 mb-5">
+            <div class="desc">
+              <p class="heading2"><strong>Student Details</strong></p>
+
+              <div class="row subRow">
+                <div class="col">
+                  <p class="text-muted row1">Student's Name</p>
+                  <p class="row2">
+                    {{ activeUser.firstname }} {{ activeUser.middlename }}
+                    {{ activeUser.lastname }}
+                  </p>
+                </div>
+
+                <div class="col">
+                  <p class="text-muted row1">Email Address</p>
+                  <p class="row2">{{ activeUser.email }}</p>
+                </div>
+
+                <div class="col">
+                  <p class="text-muted row1">Mobile Phone</p>
+                  <p class="row2">{{ activeUser.phone }}</p>
+                </div>
+              </div>
+              <div class="payment">
+                <p class="heading2"><strong>Payment Details</strong></p>
+                <div>
+                  <div class="row" style="margin: 1rem">
+                    <div class="col-12">
+                      <select class="form-select">
+                        <option>Credit Card / Debit Card</option>
+                      </select>
+                    </div>
+                    <div class="col-6">
+                      <input
+                        type="text"
+                        class="loginIpt"
+                        [(ngModel)]="cardHolderName"
+                        placeholder="Name"
+                      />
+                    </div>
+                    <div class="col-6">
+                      <input
+                        type="text"
+                        class="loginIpt"
+                        placeholder="Card Number"
+                        [(ngModel)]="cardNo"
+                      />
+                    </div>
+                    <div class="col-3">
+                      <input
+                        type="text"
+                        class="loginIpt"
+                        [(ngModel)]="exMonth"
+                        placeholder="mm"
+                      />
+                    </div>
+                    <div class="col-3">
+                      <input
+                        type="text"
+                        [(ngModel)]="exYear"
+                        class="loginIpt"
+                        placeholder=" yyyy"
+                      />
+                    </div>
+                    <div class="col-6">
+                      <input
+                        type="text"
+                        [(ngModel)]="cvv"
+                        class="loginIpt"
+                        placeholder="CVV"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-4">
+          <div class="card card-cascade card-ecommerce wider shadow p-3 mb-5">
+            <div class="card-body card-body-cascade">
+              <div class="view view-cascade overlay text-center">
+                <img
+                  *ngIf="activeWorkshop.image"
+                  class="card-img-top"
+                  [src]="ds.baseurl + '/WorkshopImage/' + activeWorkshop.image"
+                  alt=""
+                />
+                <img
+                  *ngIf="!activeWorkshop.image"
+                  class="card-img-top"
+                  [src]="
+                    ds.baseurl +
+                    '/OpneClassImages/' +
+                    activeWorkshop.packagethumbmail
+                  "
+                  alt=""
+                />
+                <a>
+                  <div class="mask rgba-white-slight"></div>
+                </a>
+              </div>
+
+              <div class="card2decs">
+                <p class="heading1">
+                  <strong>{{ activeWorkshop.title }}</strong>
+                </p>
+                <p class="quantity">
+                  Branch
+                  <span class="float-right text1">
+                    {{ activeWorkshop.branchName }}
+                  </span>
+                </p>
+                <p class="subtotal">
+                  Type <span class="float-right text1">Face to Face</span>
+                </p>
+                <p class="promocode">
+                  Date
+                  <span
+                    class="float-right text1"
+                    *ngFor="let i of activeWorkshop.workshopdates"
+                    >{{ i }}</span
+                  >
+                </p>
+                <p class="promocode">
+                  Time
+                  <span
+                    class="float-right text1"
+                    *ngIf="activeWorkshop.starttime"
+                  >
+                    {{ activeWorkshop.starttime }} -
+                    {{ activeWorkshop.endtime }}
+                  </span>
+                  <span
+                    class="float-right text1"
+                    *ngIf="!activeWorkshop.starttime"
+                  >
+                    {{ activeWorkshop.scheduletime }}
+                  </span>
+                </p>
+                <p class="shipping">
+                  Price
+                  <span class="float-right text1" *ngIf="activeWorkshop.price">
+                    ₱{{ activeWorkshop.price }}
+                  </span>
+                  <span class="float-right text1" *ngIf="!activeWorkshop.price">
+                    ₱{{ activeWorkshop.advancepayment }}
+                  </span>
+                </p>
+              </div>
+
+              <a
+                class="purchaseLink"
+                (click)="handlePayment()"
+                style="cursor: pointer"
+              >
+                <div class="card-footer text-center">
+                  Pay ₱{{ activeWorkshop.price }} &#8594;
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<ngx-spinner type="ball-scale-multiple"></ngx-spinner>
