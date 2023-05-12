@@ -58,6 +58,7 @@ export class DataService {
   getWorkShopSingle(data: any) {
     return this.http.post(this.baseurl + 'api/getWorkShopSingle', data);
   }
+
   getBlogbyId(id: any) {
     return this.http.get(this.baseurl + 'api/getSingleBlogs/' + id);
   }

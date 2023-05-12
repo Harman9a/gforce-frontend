@@ -1,0 +1,64 @@
+.showrunnerDiv {
+  height: 305px;
+  width: 590px;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.showrunnerDivimg1 {
+  background-image: url(../../../assets/image/tg-2_3.png);
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.showrunnerDivimg2 {
+  background-image: url(../../../assets/image/Rectangle_2857.png);
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.showrunnerDivTxt {
+  color: white;
+  left: 0% !important;
+  border: 1px solid white;
+  padding: 10px 20px;
+  font-size: 25px !important;
+  text-align: center;
+}
+
+section#show-run {
+  background-color: #e6e8ec;
+}
+
+section#show-run .img7 {
+  max-width: 100%;
+  padding: 40px 0 35px;
+  display: flex;
+  justify-content: center;
+}
+
+section#show-run .img7 img {
+  width: 100%;
+}
+
+section#show-runner {
+  margin: 90px 0 0;
+}
+
+section#show-runner h2 {
+  font-size: 24px;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  line-height: 29px;
+  margin-bottom: 30px;
+}
+
+@media only screen and (max-width: 480px) and (min-width: 310px) {
+  .showrunnerDiv {
+    height: 273px;
+    margin: 0 10px;
+  }
+}

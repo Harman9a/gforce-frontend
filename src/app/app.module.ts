@@ -45,6 +45,8 @@ import { HomeDetailModelComponent } from './component/home/home-detail-model/hom
 import { MatDialogModule } from '@angular/material/dialog';
 import { OnlineSchoolComponent } from './component/home/online-school/online-school.component';
 import { TheForceComponent } from './pages/the-force/the-force.component';
+import { ShowRunnerComponent } from './pages/show-runner/show-runner.component';
+import { ShowRunnerInnerComponent } from './pages/show-runner-inner/show-runner-inner.component';
 
 @NgModule({
   declarations: [
@@ -86,6 +88,8 @@ import { TheForceComponent } from './pages/the-force/the-force.component';
     HomeDetailModelComponent,
     OnlineSchoolComponent,
     TheForceComponent,
+    ShowRunnerComponent,
+    ShowRunnerInnerComponent,
   ],
   imports: [
     BrowserModule,

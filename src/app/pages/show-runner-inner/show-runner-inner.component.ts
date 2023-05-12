@@ -1,14 +1,16 @@
 import { Component } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { DataService } from 'src/app/data.service';
+import { HomeDetailModelComponent } from '../../component/home/home-detail-model/home-detail-model.component';
 
 @Component({
-  selector: 'app-home-detail-model',
-  templateUrl: './home-detail-model.component.html',
-  styleUrls: ['./home-detail-model.component.css'],
+  selector: 'app-show-runner-inner',
+  templateUrl: './show-runner-inner.component.html',
+  styleUrls: ['./show-runner-inner.component.css'],
 })
-export class HomeDetailModelComponent {
-  constructor(private ds: DataService) {
+export class ShowRunnerInnerComponent {
+  constructor(private ds: DataService, private dialog: MatDialog) {
     this.getClasses();
   }
 
@@ -17,7 +19,7 @@ export class HomeDetailModelComponent {
     loop: true,
     dots: false,
     autoplay: true,
-    margin: 15,
+    margin: 10,
     nav: true,
     navText: [
       '<i class="fas fa-arrow-left"></i>',
@@ -31,31 +33,15 @@ export class HomeDetailModelComponent {
         items: 2,
       },
       740: {
-        items: 3,
+        items: 2,
       },
       940: {
-        items: 4,
+        items: 3,
       },
     },
   };
 
-  workshopList: any = [
-    {
-      id: 1,
-      img: './assets/image/Rectangle 55 (1).png',
-      txt: 'Workshope With B(12+)',
-    },
-    {
-      id: 2,
-      img: './assets/image/Rectangle 55 (2).png',
-      txt: 'Workshope With B(12+)',
-    },
-    {
-      id: 3,
-      img: './assets/image/Rectangle 55.png',
-      txt: 'Workshope With B(12+)',
-    },
-  ];
+  workshopList: any = [];
 
   getClasses() {
     this.ds.getClasses().subscribe((result: any) => {
@@ -65,12 +51,11 @@ export class HomeDetailModelComponent {
           img: this.ds.baseurl + 'ProjectClassImages/' + x.classimg,
           txt1: x.name,
           txt2: x.branch,
-          dateTime: x.starttime + '-' + x.endtime,
+          dateTime: x.starttime + ' to ' + x.endtime,
         });
       });
     });
     this.ds.getWorkShop().subscribe((result: any) => {
-      console.log(result);
       result.map((x: any) => {
         this.workshopList.push({
           id: x.id,
@@ -79,5 +64,15 @@ export class HomeDetailModelComponent {
         });
       });
     });
+  }
+
+  handleShowDetails() {
+    const dialogRef = this.dialog.open(HomeDetailModelComponent, {
+      data: {
+        propertyData: 'ok',
+      },
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {});
   }
 }

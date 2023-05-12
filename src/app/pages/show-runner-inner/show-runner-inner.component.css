@@ -1,0 +1,23 @@
+section#show-runin {
+  background-color: #e6e8ec;
+}
+
+section#show-runin .img6 {
+  max-width: 100%;
+  padding: 40px 0 35px;
+  display: flex;
+  justify-content: center;
+}
+
+section#show-runin .img6 img {
+  width: 100%;
+}
+
+section#all-slide1 .col-lg-12.slider-imgs {
+  margin-bottom: 0;
+  padding-left: 0;
+}
+
+section#all-slide1 {
+  margin-top: 60px;
+}

@@ -6,7 +6,190 @@
   background-color: #fff;
 }
 
-/* .owl-nav.disabled.ng-star-inserted
-{
-    position: relative !important;
-} */
+/*----####### Popup page start ######----*/
+div#popu-page-11 .founder-media22 {
+  margin: 0 0 0 11px;
+}
+
+div#popu-page-11 .founder-media22 h1 {
+  font-size: 18px !important;
+  font-family: 400 !important;
+  font-weight: "Montserrat" !important;
+  margin-left: -10px !important;
+  line-height: 21px !important;
+}
+
+div#popu-page-11 .icon-icon-1 i {
+  color: #333333;
+  display: block;
+  font-size: 15px;
+  margin: 4px 4px;
+}
+
+div#popu-page-11 .icon-icon-1 {
+  width: 28px;
+  height: 28px;
+  border: 2px solid #333333;
+  margin-right: 15px;
+}
+
+div#popu-page-11 {
+  max-height: 560px;
+}
+
+div.popup-screen {
+  padding: 25px 70px;
+}
+
+div.popup-screen .image-boxes {
+  max-width: 100%;
+  height: auto;
+}
+
+div.popup-screen .image-boxes img {
+  width: 100% !important;
+  height: 20.4rem !important;
+}
+#popu-page-11 .owl-carousel .owl-item img {
+  display: block;
+  width: 106%;
+  margin-left: 10px;
+}
+
+div.popup-screen .text-boxes {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 25px;
+}
+
+div.popup-screen .text-boxes h2 {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 40px;
+  font-family: "Montserrat";
+  margin: 0;
+}
+
+div.popup-screen .text-boxes h3 {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  font-family: "Montserrat";
+}
+
+.col-lg-12.slider-imgs {
+  margin-top: 20px;
+}
+
+div#popu-page-11 .owl-prev {
+  position: absolute;
+  left: -8%;
+  top: 36%;
+}
+
+div#popu-page-11 .owl-next {
+  position: absolute;
+  right: -8%;
+  top: 36%;
+}
+
+.detail-slider .owl-stage-outer.ng-star-inserted {
+  background-color: #e6e8ec;
+  padding: 60px 10px;
+}
+
+.detail-slider .carousel-cell1 {
+  max-height: 237px;
+}
+
+div.popup-screen .text-boxes p {
+  font-size: 12px;
+  font-family: "Montserrat";
+  line-height: 25px;
+  font-weight: 400;
+}
+
+/* @media only screen and (max-width: 770px) and (min-width: 480px){ */
+
+@media only screen and (max-width: 990px) and (min-width: 480px) {
+  div#popu-page-11 {
+    max-height: 720px;
+  }
+
+  .founder-media22 .media-box {
+    /* margin-left: -17px; */
+    margin-top: 10px;
+  }
+  div#popu-page-11 .founder-media22 h1 {
+    margin-bottom: -8px;
+  }
+
+  div.popup-screen .image-boxes img {
+    width: 100% !important;
+    height: 23.4rem !important;
+    object-fit: cover;
+  }
+  div.popup-screen {
+    padding: 36px 29px;
+  }
+
+  div.popup-screen .image-boxes img {
+    max-width: 100%;
+    height: 80%;
+  }
+
+  div#popu-page-11 .image-boxes {
+    display: flex;
+    align-items: center;
+  }
+
+  div#popu-page-11 .owl-prev {
+    position: absolute;
+    left: -8%;
+    top: 36%;
+  }
+  div.popup-screen .text-boxes p {
+    font-size: 12px;
+    font-family: "Montserrat";
+    line-height: 21px;
+    font-weight: 400;
+  }
+}
+
+@media only screen and (max-width: 480px) and (min-width: 310px) {
+  div#popu-page-11 {
+    max-height: 730px;
+  }
+  div.popup-screen {
+    padding: 26px 10px;
+  }
+
+  div.popup-screen .text-boxes h2 {
+    font-size: 20px;
+    line-height: 34px;
+  }
+
+  div.popup-screen .text-boxes h3 {
+    font-size: 12px;
+    line-height: 17px;
+  }
+
+  div.popup-screen .text-boxes {
+    padding: 11px;
+  }
+
+  div#popu-page-11 .content-svg-text1 img {
+    padding-left: 0;
+  }
+
+  div#popu-page-11 .owl-prev,
+  div#popu-page-11 .owl-next {
+    padding: 8px 10px !important;
+  }
+  .founder-media22 .media-box {
+    margin-left: -17px;
+    margin-top: -25px;
+  }
+}
+/*----####### Popup page end ######----*/

@@ -28,6 +28,8 @@ import { ViewAttendanceComponent } from './pages/view-attendance/view-attendance
 import { OnlineSchoolComponent } from './component/home/online-school/online-school.component';
 import { HomeDetailModelComponent } from './component/home/home-detail-model/home-detail-model.component';
 import { TheForceComponent } from './pages/the-force/the-force.component';
+import { ShowRunnerComponent } from './pages/show-runner/show-runner.component';
+import { ShowRunnerInnerComponent } from './pages/show-runner-inner/show-runner-inner.component';
 
 const routes: Routes = [
   {
@@ -141,6 +143,18 @@ const routes: Routes = [
   {
     path: 'theForce',
     component: TheForceComponent,
+  },
+  {
+    path: 'theForce',
+    component: TheForceComponent,
+  },
+  {
+    path: 'showRunner',
+    component: ShowRunnerComponent,
+  },
+  {
+    path: 'showrunnerInner',
+    component: ShowRunnerInnerComponent,
   },
 ];
 
