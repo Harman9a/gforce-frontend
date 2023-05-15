@@ -59,6 +59,7 @@ export class HomeDetailModelComponent {
 
   getClasses() {
     this.ds.getClasses().subscribe((result: any) => {
+      console.log(result);
       result.map((x: any) => {
         this.classList.push({
           id: x.id,
@@ -69,15 +70,15 @@ export class HomeDetailModelComponent {
         });
       });
     });
-    this.ds.getWorkShop().subscribe((result: any) => {
-      console.log(result);
-      result.map((x: any) => {
-        this.workshopList.push({
-          id: x.id,
-          img: this.ds.baseurl + 'WorkshopImage/' + x.image,
-          txt: x.title,
-        });
-      });
-    });
+    // this.ds.getWorkShop().subscribe((result: any) => {
+    //   console.log(result);
+    //   result.map((x: any) => {
+    //     this.workshopList.push({
+    //       id: x.id,
+    //       img: this.ds.baseurl + 'WorkshopImage/' + x.image,
+    //       txt: x.title,
+    //     });
+    //   });
+    // });
   }
 }

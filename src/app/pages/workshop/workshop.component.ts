@@ -83,7 +83,7 @@ export class WorkshopComponent {
           text1: x.title,
           text2: x.branchName + ' Branch',
           text3: 'Face to Face',
-          text4: `${workshopdates[0]} 5:00 PM`,
+          text4: `${workshopdates[0]} ${x.starttime}`,
           text5: 'PHP ' + x.price,
         });
       });

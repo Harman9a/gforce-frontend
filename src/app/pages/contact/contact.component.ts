@@ -15,19 +15,59 @@ export class ContactComponent {
   phone: any = '';
   message: any = '';
 
-  handleSubmit() {
-    let data: any = new FormData();
-    data.append('name', this.name);
-    data.append('email', this.email);
-    data.append('phone', this.phone);
-    data.append('message', this.message);
+  nameErr: any = false;
+  emailErr: any = false;
+  phoneErr: any = false;
+  messageErr: any = false;
 
-    this.ds.submitContactForm(data).subscribe((res: any) => {
-      this.email = '';
-      this.message = '';
-      this.name = '';
-      this.phone = '';
-      Swal.fire('', 'your request has been submitted', 'success');
-    });
+  handleSubmit() {
+    let result = true;
+
+    if (this.name == '') {
+      this.nameErr = true;
+      result = false;
+    } else {
+      this.nameErr = false;
+      result = true;
+    }
+
+    if (this.email == '') {
+      this.emailErr = true;
+      result = false;
+    } else {
+      this.emailErr = false;
+      result = true;
+    }
+
+    if (this.phone == '') {
+      this.phoneErr = true;
+      result = false;
+    } else {
+      this.phoneErr = false;
+      result = true;
+    }
+
+    if (this.message == '') {
+      this.messageErr = true;
+      result = false;
+    } else {
+      this.messageErr = false;
+      result = true;
+    }
+
+    if (result) {
+      let data: any = new FormData();
+      data.append('name', this.name);
+      data.append('email', this.email);
+      data.append('phone', this.phone);
+      data.append('message', this.message);
+      this.ds.submitContactForm(data).subscribe((res: any) => {
+        this.email = '';
+        this.message = '';
+        this.name = '';
+        this.phone = '';
+        Swal.fire('', 'your request has been submitted', 'success');
+      });
+    }
   }
 }

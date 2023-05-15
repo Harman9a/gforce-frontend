@@ -67,24 +67,20 @@
               <th>Branch</th>
               <th>Date</th>
               <th>Time</th>
-              <th>Duration</th>
               <th>Teacher</th>
-              <th>Status</th>
               <th>Price</th>
-              <th>QR Code/Links</th>
               <th>Actions</th>
             </tr>
           </thead>
-          <tr>
+          <tr *ngFor="let i of allClasses">
             <td>Regular</td>
-            <td>Cebu</td>
-            <td>22/09/2022</td>
-            <td>1-2pm</td>
-            <td>30days</td>
-            <td>Jaja</td>
-            <td>Active</td>
-            <td>$445</td>
-            <td>78456v7475bb</td>
+            <td>{{ i.branchName }}</td>
+            <td>
+              <span *ngFor="let x of i.workshopdatesArr">{{ x }}</span>
+            </td>
+            <td>{{ i.starttime }}</td>
+            <td>{{ i.trainerName }}</td>
+            <td>${{ i.advancepayment }}</td>
             <td><i class="fa fa-eye" aria-hidden="true"></i></td>
           </tr>
         </table>

@@ -25,6 +25,15 @@ export class CareerComponent {
   fileToUpload: any = '';
   fileToUpload2: any = '';
 
+  nameErr: any = false;
+  interestedinErr: any = false;
+  emailErr: any = false;
+  coverlatterErr: any = false;
+  messageErr: any = false;
+  phoneErr: any = false;
+  fileToUploadErr: any = false;
+  fileToUpload2Err: any = false;
+
   allCategory: any = [];
   filtredJobs: any = [];
   alljobs: any = [];
@@ -73,25 +82,91 @@ export class CareerComponent {
   }
 
   handleSubmit() {
-    let data = new FormData();
+    let result = true;
 
-    data.append('email', this.email);
-    data.append('intrestedin', this.interestedin);
-    data.append('coverlatter', this.fileToUpload2);
-    data.append('message', this.message);
-    data.append('name', this.name);
-    data.append('phone', this.phone);
-    data.append('resume', this.fileToUpload);
+    if (this.name == '') {
+      this.nameErr = true;
+      result = false;
+    } else {
+      this.nameErr = false;
+      result = true;
+    }
 
-    this.ds.submitCareerForm(data).subscribe((res: any) => {
-      this.email = '';
-      this.interestedin = '';
-      this.resume = '';
-      this.cover = '';
-      this.message = '';
-      this.name = '';
-      this.phone = '';
-      Swal.fire('', 'your request has been submitted', 'success');
-    });
+    if (this.interestedin == '') {
+      this.interestedinErr = true;
+      result = false;
+    } else {
+      this.interestedinErr = false;
+      result = true;
+    }
+
+    if (this.email == '') {
+      this.emailErr = true;
+      result = false;
+    } else {
+      this.emailErr = false;
+      result = true;
+    }
+
+    if (this.cover == '') {
+      this.coverlatterErr = true;
+      result = false;
+    } else {
+      this.coverlatterErr = false;
+      result = true;
+    }
+
+    if (this.message == '') {
+      this.messageErr = true;
+      result = false;
+    } else {
+      this.messageErr = false;
+      result = true;
+    }
+
+    if (this.phone == '') {
+      this.phoneErr = true;
+      result = false;
+    } else {
+      this.phoneErr = false;
+      result = true;
+    }
+
+    if (this.fileToUpload == '') {
+      this.fileToUploadErr = true;
+      result = false;
+    } else {
+      this.fileToUploadErr = false;
+      result = true;
+    }
+
+    if (this.fileToUpload2 == '') {
+      this.fileToUpload2Err = true;
+      result = false;
+    } else {
+      this.fileToUpload2Err = false;
+      result = true;
+    }
+
+    if (result) {
+      let data = new FormData();
+      data.append('email', this.email);
+      data.append('intrestedin', this.interestedin);
+      data.append('coverlatter', this.fileToUpload2);
+      data.append('message', this.message);
+      data.append('name', this.name);
+      data.append('phone', this.phone);
+      data.append('resume', this.fileToUpload);
+      this.ds.submitCareerForm(data).subscribe((res: any) => {
+        this.email = '';
+        this.interestedin = '';
+        this.resume = '';
+        this.cover = '';
+        this.message = '';
+        this.name = '';
+        this.phone = '';
+        Swal.fire('', 'your request has been submitted', 'success');
+      });
+    }
   }
 }

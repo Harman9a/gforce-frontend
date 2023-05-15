@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 export class DataService {
   constructor(private http: HttpClient) {}
 
-  baseurl = 'http://localhost/harman/GForce/UpdatedGforce/';
+  baseurl = 'http://localhost/harman/GForce/backend_live/';
   frontendurl = 'http://localhost:4200';
 
   // baseurl = 'https://gforce.techiespreview.website/admin/';
@@ -113,5 +113,9 @@ export class DataService {
 
   getSettingData() {
     return this.http.get(this.baseurl + 'api/getSettingData');
+  }
+
+  getEnrolledWorkshop(data: any) {
+    return this.http.post(this.baseurl + 'api/getEnrolledWorkshop', data);
   }
 }

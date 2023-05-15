@@ -27,6 +27,7 @@ export class SClaessesComponent {
   getClasses() {
     let data = new FormData();
     this.ds.getEnrolledClasses(data).subscribe((res: any) => {
+      console.log(res);
       this.allClasses = res;
     });
   }

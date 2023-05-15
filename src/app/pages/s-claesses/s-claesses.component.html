@@ -67,11 +67,8 @@
               <th>Branch</th>
               <th>Date</th>
               <th>Time</th>
-              <th>Duration</th>
               <th>Teacher</th>
-              <th>Status</th>
               <th>Price</th>
-              <th>QR Code/Links</th>
               <th>Actions</th>
             </tr>
           </thead>
@@ -79,12 +76,9 @@
             <td>Regular</td>
             <td>{{ i.branchName }}</td>
             <td>{{ i.scheduledate }}</td>
-            <td>1-2pm</td>
-            <td>30days</td>
-            <td>Jaja</td>
-            <td>Active</td>
-            <td>$445</td>
-            <td>78456v7475bb</td>
+            <td>{{ i.scheduletime }}</td>
+            <td>{{ i.trainerName }}</td>
+            <td>${{ i.advancepayment }}</td>
             <td><i class="fa fa-eye" aria-hidden="true"></i></td>
           </tr>
         </table>

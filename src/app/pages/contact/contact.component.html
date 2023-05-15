@@ -107,18 +107,21 @@
             name="yourname"
             placeholder="Your name"
           />
+          <p *ngIf="nameErr" class="errorTxt">required</p>
           <input
             [(ngModel)]="email"
             type="text"
             name="email"
             placeholder="Email address"
           />
+          <p *ngIf="emailErr" class="errorTxt">required</p>
           <input
             [(ngModel)]="phone"
             type="text"
             name="phno"
             placeholder="Phone number"
           />
+          <p *ngIf="phoneErr" class="errorTxt">required</p>
           <textarea
             [(ngModel)]="message"
             name="message"
@@ -127,6 +130,7 @@
             rows="10"
             placeholder="Message"
           ></textarea>
+          <p *ngIf="messageErr" class="errorTxt">required</p>
           <a><button (click)="handleSubmit()">Submit &rarr;</button></a>
         </form>
       </div>

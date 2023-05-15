@@ -14,24 +14,28 @@
             [(ngModel)]="name"
             placeholder="Your name"
           />
+          <p *ngIf="nameErr" class="errorTxt">required</p>
           <input
             type="text"
             name="phoneno"
             [(ngModel)]="phone"
             placeholder="Phone number"
           />
+          <p *ngIf="phoneErr" class="errorTxt">required</p>
           <input
             type="text"
             name="interestedin"
             placeholder="Interested in"
             [(ngModel)]="interestedin"
           />
+          <p *ngIf="interestedinErr" class="errorTxt">required</p>
           <input
             type="text"
             [(ngModel)]="email"
             name="email"
             placeholder="Email address"
           />
+          <p *ngIf="emailErr" class="errorTxt">required</p>
           <!-- <input
             type="text"
             name="new_file"
@@ -47,6 +51,7 @@
             [(ngModel)]="resume"
             (change)="handleFileInput($event.target)"
           />
+          <p *ngIf="fileToUploadErr" class="errorTxt">required</p>
           <!-- <input
             type="text"
             name="new_file"
@@ -61,6 +66,7 @@
             [(ngModel)]="cover"
             (change)="handleFileInputcover($event.target)"
           />
+          <p *ngIf="fileToUpload2Err" class="errorTxt">required</p>
 
           <!-- <input type="file" name="savefile" placeholder="Uploade CV/Resume">
                             <input type="file" name="coverletter" placeholder="Upload Cover Letter"> -->
@@ -70,6 +76,7 @@
             placeholder="Any additional Info"
             [(ngModel)]="message"
           ></textarea>
+          <p *ngIf="messageErr" class="errorTxt">required</p>
 
           <a (click)="handleSubmit()"><button>Submit &rarr;</button></a>
         </form>
