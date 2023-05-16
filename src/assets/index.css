@@ -6060,12 +6060,13 @@ input.file_input_with_replacement {
 .blog-card-data {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   padding-top: 90px;
 }
 .blog-card-content {
   width: 32%;
   padding-bottom: 60px;
+  margin-right: 1rem;
 }
 .blog-card-content img {
   width: 100%;

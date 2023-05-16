@@ -76,9 +76,8 @@
         <div class="blog-card-content" *ngFor="let b of abc">
           <div class="bolg-card-image">
             <img
-              [src]="
-                'https://gforce.techiespreview.website/admin/BlogImg/' + b.image
-              "
+              style="height: 200px"
+              [src]="ds.baseurl + 'BlogImg/' + b.image"
               alt=""
             />
           </div>

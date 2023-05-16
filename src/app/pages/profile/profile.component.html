@@ -39,7 +39,11 @@
     <div class="bg-img-cut-flex">
       <div class="editprofile-div-imf">
         <div class="edit-profile-img-form">
-          <img src="./assets/image/Ellipse 21.png" alt="" />
+          <!-- <img src="./assets/image/Ellipse 21.png" alt="" /> -->
+          <img
+            [src]="ds.baseurl + 'uploadImages/users/' + activeUser.image"
+            alt=""
+          />
           <h3>
             {{ activeUser.firstname }} {{ activeUser.middlename }}
             {{ activeUser.lastname }}
@@ -57,43 +61,27 @@
       <div class="editprofile-div-imf1">
         <form action="#">
           <h2>Please Enter the input filed</h2>
+          <input type="text" placeholder="First Name" [(ngModel)]="fName" />
+          <input type="text" placeholder="Middle Name" [(ngModel)]="mName" />
+          <input type="text" placeholder="Last Name" [(ngModel)]="lName" />
+          <input type="text" placeholder=" Birth Dtae" [(ngModel)]="dob" />
           <input
             type="text"
-            placeholder="Parent's First Name"
-            [value]="activeUser.firstname"
+            placeholder="Mobile Number"
+            [(ngModel)]="pNumber"
           />
           <input
             type="text"
-            placeholder="Parent's Middle Name"
-            [value]="activeUser.middlename"
-          />
-          <input
-            type="text"
-            placeholder="Parent's Last Name"
-            [value]="activeUser.lastname"
-          />
-          <input
-            type="text"
-            placeholder="Parent's  Birth Dtae"
-            [value]="activeUser.dob"
-          />
-          <input
-            type="text"
-            placeholder="Parent's Mobile Number"
-            [value]="activeUser.phone"
-          />
-          <input
-            type="text"
-            placeholder="Parent's Complete Adress"
-            [value]="activeUser.address"
+            placeholder="Complete Adress"
+            [(ngModel)]="address"
           />
           <input
             type="email"
-            placeholder="Student's Emaill Adress"
-            [value]="activeUser.email"
+            placeholder="Emaill Adress"
+            [(ngModel)]="email"
           /><br />
 
-          <a href="#">
+          <a (click)="handleUpdate()">
             <button>Save Change &rarr;</button>
           </a>
         </form>

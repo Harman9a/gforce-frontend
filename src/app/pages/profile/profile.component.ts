@@ -8,7 +8,7 @@ import { DataService } from 'src/app/data.service';
   styleUrls: ['./profile.component.css'],
 })
 export class ProfileComponent {
-  constructor(private ds: DataService, private router: Router) {
+  constructor(public ds: DataService, private router: Router) {
     let isLogin: any = localStorage.getItem('isLogin');
     if (isLogin != null && isLogin != '') {
       this.getProfile();
@@ -19,6 +19,18 @@ export class ProfileComponent {
 
   activeUser: any = [];
 
+  fName = '';
+  mName = '';
+  lName = '';
+  email = '';
+  dob = '';
+  pNumber = '';
+  address = '';
+  password = '';
+  con_password = '';
+  profile_img = '';
+  file2: any = '';
+
   getProfile() {
     let data: any = new FormData();
     let isLogin: any = localStorage.getItem('isLogin');
@@ -28,7 +40,14 @@ export class ProfileComponent {
 
     this.ds.getProfile(data).subscribe((res: any) => {
       if (res.length != 0) {
-        this.activeUser = res[0];
+        let user = res[0];
+        console.log(res);
+
+        this.fName = user.firstname;
+        this.mName = user.middlename;
+        this.lName = user.lastname;
+
+        this.activeUser = user;
       }
     });
   }
@@ -36,5 +55,25 @@ export class ProfileComponent {
   handleLogout() {
     localStorage.setItem('isLogin', '');
     this.router.navigateByUrl('login');
+  }
+
+  handleUpdate() {
+    let data: any = new FormData();
+    data.append('fName', 'this.fName');
+    this.ds.signup(data).subscribe((res) => {
+      // this.fName = '';
+      // this.mName = '';
+      // this.lName = '';
+      // this.email = '';
+      // this.dob = '';
+      // this.pNumber = '';
+      // this.address = '';
+      // this.password = '';
+      // this.con_password = '';
+      // this.profile_img = '';
+      // this.file = '';
+      // Swal.fire('', 'Account Created Successfully', 'success');
+      this.router.navigateByUrl('login');
+    });
   }
 }

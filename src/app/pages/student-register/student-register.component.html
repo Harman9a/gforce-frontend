@@ -82,14 +82,16 @@
             />
             <p *ngIf="lNameErr" class="errorTxt">required</p>
             <input
-              type="text"
+              type="date"
+              class="myDateIpt"
               placeholder="Student's Birth Date"
               [(ngModel)]="dob"
               required
             />
             <p *ngIf="dobErr" class="errorTxt">required</p>
             <input
-              type="text"
+              type="number"
+              class="myDateIpt"
               placeholder="Student's Mobile Number"
               [(ngModel)]="pNumber"
               required
@@ -223,14 +225,16 @@
             />
             <p *ngIf="lName2Err" class="errorTxt">required</p>
             <input
-              type="text"
+              type="date"
+              class="myDateIpt"
               placeholder="Parent's Birth Date"
               [(ngModel)]="dob2"
               required
             />
             <p *ngIf="dob2Err" class="errorTxt">required</p>
             <input
-              type="text"
+              type="number"
+              class="myDateIpt"
               placeholder="Parent's Mobile Number"
               [(ngModel)]="pNumber2"
               required

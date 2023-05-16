@@ -7,7 +7,7 @@ import { DataService } from 'src/app/data.service';
   styleUrls: ['./blog.component.css'],
 })
 export class BlogComponent {
-  constructor(private ds: DataService) {
+  constructor(public ds: DataService) {
     this.getBlogs();
     this.getBlogsCat();
   }
