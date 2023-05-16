@@ -30,11 +30,18 @@ import { HomeDetailModelComponent } from './component/home/home-detail-model/hom
 import { TheForceComponent } from './pages/the-force/the-force.component';
 import { ShowRunnerComponent } from './pages/show-runner/show-runner.component';
 import { ShowRunnerInnerComponent } from './pages/show-runner-inner/show-runner-inner.component';
+import { TermsConditionsComponent } from './pages/terms-conditions/terms-conditions.component';
+import { PrivacyPoliciesComponent } from './pages/privacy-policies/privacy-policies.component';
+import { AboutUsComponent } from './pages/about-us/about-us.component';
 
 const routes: Routes = [
   {
     path: '',
     component: HomepageComponent,
+  },
+  {
+    path: 'about-us',
+    component: AboutUsComponent,
   },
   {
     path: 'founder',
@@ -145,16 +152,20 @@ const routes: Routes = [
     component: TheForceComponent,
   },
   {
-    path: 'theForce',
-    component: TheForceComponent,
-  },
-  {
     path: 'showRunner',
     component: ShowRunnerComponent,
   },
   {
     path: 'showrunnerInner',
     component: ShowRunnerInnerComponent,
+  },
+  {
+    path: 'terms-coditions',
+    component: TermsConditionsComponent,
+  },
+  {
+    path: 'privacy-policies',
+    component: PrivacyPoliciesComponent,
   },
 ];
 

@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter&family=Montserrat:wght@400;500;600;700&family=Poppins:wght@600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter&family=Montserrat:wght@400;600;700&family=Poppins:wght@600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter&family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@600&family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&display=swap");
 
 * {
   margin: 0;
@@ -32,10 +33,16 @@ header {
 
 .random-bhc {
   padding-right: 85px;
-
   padding-top: 4rem;
   font-weight: 400;
   font-family: inter;
+}
+
+.random-bhc li a {
+  font-size: 16px !important;
+  font-family: "Inter", sans-serif !important;
+  font-weight: 400 !important;
+  /* line-height: 14px !important; */
 }
 
 .ph-drop {
@@ -1071,6 +1078,12 @@ div.last-css {
 }
 
 @media only screen and (max-width: 990px) and (min-width: 770px) {
+  /* div.up-come-class .carousel-cell1 {
+    width: 97% !important;
+    height: 310px !important;
+    margin-left: 5px !important;
+  } */
+
   .color-nav1 a {
     margin-left: 22px;
   }
@@ -1168,6 +1181,18 @@ div.last-css {
 }
 
 @media only screen and (max-width: 770px) and (min-width: 480px) {
+  div.up-come-class .carousel-cell1 {
+    width: 97% !important;
+    height: 310px !important;
+    margin-left: 5px !important;
+  }
+
+  .orange-black-text {
+    position: absolute;
+    top: 88px;
+    right: -80px;
+  }
+
   button.navbar-toggler {
     margin-right: 17px;
   }
@@ -2314,7 +2339,7 @@ input[type="email"] {
   right: 0;
   margin-left: auto;
   margin-right: auto;
-  width: 44%;
+  width: 47%;
   text-align: center;
   padding: 20px;
 }
@@ -2336,6 +2361,18 @@ input[type="email"] {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+}
+
+.select-any-branch .owl-prev {
+  position: absolute;
+  top: 39%;
+  left: 0;
+}
+
+.select-any-branch .owl-next {
+  position: absolute;
+  top: 39%;
+  right: 0;
 }
 
 .select-any-branch h2 {
@@ -2951,6 +2988,7 @@ input[type="email"] {
 div.up-come-class .carousel-cell1 {
   width: 100%;
   height: 310px;
+  margin-left: 5px !important;
   /* margin-right: 20px; */
   counter-increment: carousel-cell;
   background-color: #fdfdfd;
@@ -5399,13 +5437,34 @@ progress {
 .banner-div-theschool2 img {
   width: 100%;
 }
+
+/* .banner-div-theschool1 {
+  width: 50%;
+}
+.banner-div-theschool2 {
+  width: 50%;
+  position: relative;
+  top: 0px;
+  right: 10%;
+} */
+
+/* .container.banner-the-school {
+  padding: 12px 12px 0 12px;
+} */
+
 .banner-div-text-pera {
   margin-top: 12rem;
   margin-left: 3rem;
 }
 
 .banner-div-text-pera h1 {
-  color: #f06f38;
+  color: #f06f38 !important;
+  font-size: 35px !important;
+  font-weight: 700 !important;
+  font-family: "Montserrat";
+  line-height: 20px !important;
+  margin: 15px 0px !important;
+  text-shadow: 1px 1px #000;
 }
 
 .banner-div-text-pera img {
@@ -7515,6 +7574,18 @@ thead {
   background-color: #e6e8ec;
 }
 
+div#okok .owl-prev {
+  position: absolute;
+  top: 39%;
+  left: 0;
+}
+
+div#okok .owl-next {
+  position: absolute;
+  top: 39%;
+  right: 0;
+}
+
 .owl-prev {
   position: absolute;
   top: 50%;
@@ -7639,6 +7710,10 @@ div.popup-screen .text-boxes p {
 }
 
 @media only screen and (max-width: 480px) and (min-width: 310px) {
+  .new-boton.width-ghat {
+    display: block;
+    flex: none;
+  }
   div#popu-page-11 {
     max-height: 730px;
   }
@@ -7757,7 +7832,7 @@ section#all-slides .owl-prev {
 section#all-slides .owl-next {
   position: absolute;
   top: 40%;
-  right: 20px;
+  right: 0px;
 }
 
 section#all-slides .col-lg-12.slider-imgs {
@@ -8173,6 +8248,12 @@ section#force-slide .forcebx2 h3 {
   section#force-slide .forcebx2 h3,
   section#force-slide .forcebx3 h3 {
     font-size: 32px;
+  }
+
+  section#force-slide .forcebx2 h3 {
+    position: relative;
+    top: 40%;
+    left: 32%;
   }
 
   section#force-slide {

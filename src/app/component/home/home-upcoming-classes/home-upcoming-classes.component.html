@@ -34,33 +34,36 @@
         </div>
       </div>
     </div> -->
-    <h2 class="at" style="padding-top: 47px; padding-bottom: 17px">
-      Upcoming Workshop &nbsp; &#62;
-    </h2>
-    <!-- <div
-      class="carousel jhdfj"
-      data-flickity='{ "wrapAround": true , "pageDots":false  } '
-    >
-      <div class="carousel-cell1" *ngFor="let i of workshopList">
-        <div class="content-svg-text1">
-          <img [src]="i.img" alt="" />
-          <h4>{{ i.txt }}</h4>
+
+    <div id="okok">
+      <h2 class="at" style="padding-top: 47px; padding-bottom: 17px">
+        Upcoming Workshop &nbsp; &#62;
+      </h2>
+      <!-- <div
+        class="carousel jhdfj"
+        data-flickity='{ "wrapAround": true , "pageDots":false  } '
+      >
+        <div class="carousel-cell1" *ngFor="let i of workshopList">
+          <div class="content-svg-text1">
+            <img [src]="i.img" alt="" />
+            <h4>{{ i.txt }}</h4>
+          </div>
         </div>
-      </div>
-    </div> -->
-    <owl-carousel-o [options]="customOptions2">
-      <ng-template carouselSlide *ngFor="let i of workshopList">
-        <div (click)="handleShowDetails()" style="cursor: pointer">
-          <div class="carousel-cell1">
-            <div class="content-svg-text1">
+      </div> -->
+      <owl-carousel-o [options]="customOptions2">
+        <ng-template carouselSlide *ngFor="let i of workshopList">
+          <div (click)="handleShowDetails()" style="cursor: pointer">
+            <div class="carousel-cell1">
               <div class="content-svg-text1">
-                <img [src]="i.img" alt="" />
-                <h4>{{ i.txt }}</h4>
+                <div class="content-svg-text1">
+                  <img [src]="i.img" alt="" />
+                  <h4>{{ i.txt }}</h4>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </ng-template>
-    </owl-carousel-o>
+        </ng-template>
+      </owl-carousel-o>
+    </div>
   </div>
 </div>

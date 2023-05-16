@@ -1,0 +1,28 @@
+section#force-banner {
+  background-color: #e6e8ec;
+}
+
+section#ft-prt {
+  margin: 90px 0 30px 0;
+}
+
+section#ft-prt h1 {
+  text-align: center;
+  color: #333333;
+  font-family: "Montserrat";
+  font-size: 24px;
+  font-weight: 700;
+}
+
+section#sd-prt {
+  margin: 0 0 50px 0;
+}
+
+section#sd-prt p {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 25px;
+  color: #333333;
+}

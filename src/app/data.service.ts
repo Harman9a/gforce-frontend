@@ -7,11 +7,11 @@ import { HttpClient } from '@angular/common/http';
 export class DataService {
   constructor(private http: HttpClient) {}
 
-  baseurl = 'http://localhost/harman/GForce/UpdatedGforce/';
-  frontendurl = 'http://localhost:4200';
+  // baseurl = 'http://localhost/harman/GForce/UpdatedGforce/';
+  // frontendurl = 'http://localhost:4200';
 
-  // baseurl = 'https://gforce.techiespreview.website/admin/';
-  // frontendurl = 'https://gforce.techiespreview.website';
+  baseurl = 'https://gforce.techiespreview.website/admin/';
+  frontendurl = 'https://gforce.techiespreview.website';
 
   signup(data: any) {
     return this.http.post(this.baseurl + 'api/signup', data);
@@ -117,5 +117,8 @@ export class DataService {
 
   getEnrolledWorkshop(data: any) {
     return this.http.post(this.baseurl + 'api/getEnrolledWorkshop', data);
+  }
+  getOtherData() {
+    return this.http.get(this.baseurl + 'api/getOtherData');
   }
 }

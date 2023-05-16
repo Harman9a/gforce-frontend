@@ -15,9 +15,9 @@ export class OnlineSchoolComponent {
   }
   classList: any = [];
   customOptions: OwlOptions = {
-    loop: false,
+    loop: true,
     dots: false,
-    autoplay: false,
+    autoplay: true,
     margin: 10,
     nav: true,
     navText: [

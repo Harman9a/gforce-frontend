@@ -47,9 +47,15 @@ import { OnlineSchoolComponent } from './component/home/online-school/online-sch
 import { TheForceComponent } from './pages/the-force/the-force.component';
 import { ShowRunnerComponent } from './pages/show-runner/show-runner.component';
 import { ShowRunnerInnerComponent } from './pages/show-runner-inner/show-runner-inner.component';
+import { AboutUsComponent } from './pages/about-us/about-us.component';
+import { TermsConditionsComponent } from './pages/terms-conditions/terms-conditions.component';
+import { PrivacyPoliciesComponent } from './pages/privacy-policies/privacy-policies.component';
 
 @NgModule({
   declarations: [
+    PrivacyPoliciesComponent,
+    TermsConditionsComponent,
+    AboutUsComponent,
     AppComponent,
     HomepageComponent,
     HeaderComponent,

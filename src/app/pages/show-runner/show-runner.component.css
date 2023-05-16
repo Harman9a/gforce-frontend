@@ -5,7 +5,9 @@
 }
 
 .showrunnerDivimg1 {
-  background-image: url(../../../assets/image/tg-2_3.png);
+  /* background-image: url(../../../assets/image/tg-2_3.png); */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.356), rgba(0, 0, 0, 0.356)),
+    url(../../../assets/image/tg-2_3.png);
   cursor: pointer;
   background-repeat: no-repeat;
   background-size: cover;
@@ -13,7 +15,8 @@
 }
 
 .showrunnerDivimg2 {
-  background-image: url(../../../assets/image/Rectangle_2857.png);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.356), rgba(0, 0, 0, 0.356)),
+    url(../../../assets/image/Rectangle_2857.png);
   cursor: pointer;
   background-repeat: no-repeat;
   background-size: cover;
@@ -56,9 +59,22 @@ section#show-runner h2 {
   margin-bottom: 30px;
 }
 
+@media only screen and (max-width: 990px) and (min-width: 480px) {
+  .showrunnerDivTxt {
+    font-size: 22px !important;
+  }
+}
 @media only screen and (max-width: 480px) and (min-width: 310px) {
   .showrunnerDiv {
     height: 273px;
     margin: 0 10px;
+  }
+
+  section#show-runner h2 {
+    margin: 0 0 30px 10px;
+  }
+
+  section#show-runner {
+    margin: 60px 0 0;
   }
 }
