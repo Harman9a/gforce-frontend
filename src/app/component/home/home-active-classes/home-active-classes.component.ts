@@ -3,6 +3,7 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 import { DataService } from 'src/app/data.service';
 import { MatDialog } from '@angular/material/dialog';
 import { HomeDetailModelComponent } from 'src/app/component/home/home-detail-model/home-detail-model.component';
+import * as AOS from 'aos';
 
 @Component({
   selector: 'app-home-active-classes',
@@ -14,6 +15,7 @@ export class HomeActiveClassesComponent {
 
   constructor(private ds: DataService, private dialog: MatDialog) {
     this.getEvents();
+    AOS.init();
   }
 
   customOptions: OwlOptions = {
