@@ -61,10 +61,11 @@ export class HomeActiveClassesComponent {
     });
   }
 
-  handleShowDetails(id: any) {
+  handleShowDetails(id: any, type: string) {
     const dialogRef = this.dialog.open(HomeDetailModelComponent, {
       data: {
         id: id,
+        type,
       },
     });
 

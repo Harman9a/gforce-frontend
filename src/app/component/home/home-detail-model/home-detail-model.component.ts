@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { DataService } from 'src/app/data.service';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-home-detail-model',
@@ -8,11 +9,17 @@ import { DataService } from 'src/app/data.service';
   styleUrls: ['./home-detail-model.component.css'],
 })
 export class HomeDetailModelComponent {
-  constructor(private ds: DataService) {
+  constructor(
+    public ds: DataService,
+    @Inject(MAT_DIALOG_DATA) public data: any
+  ) {
+    // console.log(data);
+
     this.getClasses();
   }
 
   classList: any = [];
+  activeClass: any = [];
   customOptions: OwlOptions = {
     loop: true,
     dots: false,
@@ -58,27 +65,18 @@ export class HomeDetailModelComponent {
   ];
 
   getClasses() {
-    this.ds.getClasses().subscribe((result: any) => {
-      console.log(result);
-      result.map((x: any) => {
-        this.classList.push({
-          id: x.id,
-          img: this.ds.baseurl + 'ProjectClassImages/' + x.classimg,
-          txt1: x.name,
-          txt2: x.branch,
-          dateTime: x.starttime + '-' + x.endtime,
+    let data = new FormData();
+    data.append('id', this.data.id);
+    data.append('type', this.data.type);
+
+    this.ds.getPopData(data).subscribe((result: any) => {
+      if (result.length != 0) {
+        result.map((x: any) => {
+          x.links = JSON.parse(x.links);
         });
-      });
+        this.activeClass = result[0];
+      }
+      console.log(this.activeClass);
     });
-    // this.ds.getWorkShop().subscribe((result: any) => {
-    //   console.log(result);
-    //   result.map((x: any) => {
-    //     this.workshopList.push({
-    //       id: x.id,
-    //       img: this.ds.baseurl + 'WorkshopImage/' + x.image,
-    //       txt: x.title,
-    //     });
-    //   });
-    // });
   }
 }

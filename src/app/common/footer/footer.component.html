@@ -6,8 +6,12 @@
         <p>Lorem Ipsum is simply dummy text.</p>
       </div>
       <div class="col-6 col-md-7 new-boton width-ghat">
-        <input type="email" placeholder="Enter your email" />
-        <button type="button">Submit &rarr;</button>
+        <input
+          type="email"
+          placeholder="Enter your email"
+          [(ngModel)]="email"
+        />
+        <button type="button" (click)="handleSubmit()">Submit &rarr;</button>
       </div>
     </div>
 
@@ -28,10 +32,10 @@
           <a routerLink="#"><i class="fa-brands fa-youtube"></i></a>
         </div>  -->
         <div class="media-box">
-          <div class="icon-icon-1">
-            <a routerLink="#"> <i class="fa-brands fa-facebook-f"></i></a>
+          <div class="icon-icon-1" *ngFor="let i of links">
+            <a [href]="i.text" target="_blank"> <i [class]="i.icon"></i></a>
           </div>
-          <div class="icon-icon-1">
+          <!-- <div class="icon-icon-1">
             <a routerLink="#"><i class="fa-brands fa-instagram"></i></a>
           </div>
           <div class="icon-icon-1">
@@ -39,7 +43,7 @@
           </div>
           <div class="icon-icon-1">
             <a routerLink="#"><i class="fa-brands fa-youtube"></i></a>
-          </div>
+          </div> -->
         </div>
       </div>
 
@@ -65,26 +69,26 @@
           </a>
         </p>
         <p>
-          <a href="mailto:contact@gforceofficial.com"
-            >contact@gforceofficial.com</a
+          <a href="mailto:contact@gforceofficial.com">
+            contact@gforceofficial.com</a
           >
         </p>
       </div>
       <div class="own-width5">
         <h2>Menu</h2>
-        <a routerLink="#">
+        <a routerLink="/">
           <li>Home</li>
         </a>
-        <a routerLink="#">
+        <a routerLink="/about-us">
           <li>About Us</li>
         </a>
-        <a routerLink="#">
+        <a routerLink="/blogs">
           <li>Blogs</li>
         </a>
-        <a routerLink="#">
+        <a routerLink="/career">
           <li>Careers</li>
         </a>
-        <a routerLink="#">
+        <a routerLink="/contact">
           <li>Contact</li>
         </a>
       </div>

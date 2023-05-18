@@ -33,6 +33,7 @@ import { ShowRunnerInnerComponent } from './pages/show-runner-inner/show-runner-
 import { TermsConditionsComponent } from './pages/terms-conditions/terms-conditions.component';
 import { PrivacyPoliciesComponent } from './pages/privacy-policies/privacy-policies.component';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
+import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
 
 const routes: Routes = [
   {
@@ -71,10 +72,10 @@ const routes: Routes = [
     path: 'cart',
     component: CartComponent,
   },
-  {
-    path: 'innerView',
-    component: InnerPageComponent,
-  },
+  // {
+  //   path: 'innerView',
+  //   component: InnerPageComponent,
+  // },
   {
     path: 'workshopView',
     component: WorkshopViewComponent,
@@ -166,6 +167,10 @@ const routes: Routes = [
   {
     path: 'privacy-policies',
     component: PrivacyPoliciesComponent,
+  },
+  {
+    path: 'forgot-password',
+    component: ForgotPasswordComponent,
   },
 ];
 

@@ -16,11 +16,13 @@ export class HomepageComponent {
     this.getHomeData();
   }
 
+  homeData: any = [];
+
   getHomeData() {
     this.ds.getSettingData().subscribe((res: any) => {
       if (res.length != 0) {
+        this.homeData = res[0];
         this.titleService.setTitle(res[0].page_title);
-        console.log(res[0]);
         this.metaService.updateTag({
           name: 'description',
           content: res[0].page_description,

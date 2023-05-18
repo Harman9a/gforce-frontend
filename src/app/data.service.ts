@@ -118,7 +118,36 @@ export class DataService {
   getEnrolledWorkshop(data: any) {
     return this.http.post(this.baseurl + 'api/getEnrolledWorkshop', data);
   }
+
+  updateUser(data: any) {
+    return this.http.post(this.baseurl + 'api/updateUser', data);
+  }
+
   getOtherData() {
     return this.http.get(this.baseurl + 'api/getOtherData');
+  }
+
+  handleEmailSubmit(data: any) {
+    return this.http.post(this.baseurl + 'api/handleEmailSubmit', data);
+  }
+
+  handleOtpSubmit(data: any) {
+    return this.http.post(this.baseurl + 'api/handleOtpSubmit', data);
+  }
+
+  handleNewPSubmit(data: any) {
+    return this.http.post(this.baseurl + 'api/handleNewPSubmit', data);
+  }
+
+  submitnewsletter(data: any) {
+    return this.http.post(this.baseurl + 'api/submitnewsletter', data);
+  }
+
+  getAchievement() {
+    return this.http.get(this.baseurl + 'api/getAchievement');
+  }
+
+  getPopData(data: any) {
+    return this.http.post(this.baseurl + 'api/getPopData', data);
   }
 }

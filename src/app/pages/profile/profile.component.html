@@ -54,32 +54,58 @@
             type="file"
             class="custom-file-input-edit-profile"
             name=""
-            id=""
+            (change)="onChange($event)"
+            [(ngModel)]="profile_img"
           />
         </div>
       </div>
       <div class="editprofile-div-imf1">
         <form action="#">
           <h2>Please Enter the input filed</h2>
-          <input type="text" placeholder="First Name" [(ngModel)]="fName" />
-          <input type="text" placeholder="Middle Name" [(ngModel)]="mName" />
-          <input type="text" placeholder="Last Name" [(ngModel)]="lName" />
-          <input type="text" placeholder=" Birth Dtae" [(ngModel)]="dob" />
           <input
             type="text"
+            placeholder="First Name"
+            [(ngModel)]="fName"
+            name="fName"
+          />
+          <input
+            type="text"
+            placeholder="Middle Name"
+            [(ngModel)]="mName"
+            name="mName"
+          />
+          <input
+            type="text"
+            placeholder="Last Name"
+            [(ngModel)]="lName"
+            name="lName"
+          />
+          <input
+            type="date"
+            style="display: unset"
+            placeholder=" Birth Date"
+            [(ngModel)]="dob"
+            name="dob"
+          />
+          <input
+            type="number"
             placeholder="Mobile Number"
             [(ngModel)]="pNumber"
+            name="pNumber"
           />
           <input
             type="text"
             placeholder="Complete Adress"
             [(ngModel)]="address"
+            name="address"
           />
           <input
             type="email"
             placeholder="Emaill Adress"
             [(ngModel)]="email"
-          /><br />
+            name="email"
+          />
+          <br />
 
           <a (click)="handleUpdate()">
             <button>Save Change &rarr;</button>

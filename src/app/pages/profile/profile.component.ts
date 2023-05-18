@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { DataService } from 'src/app/data.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-profile',
@@ -18,7 +19,7 @@ export class ProfileComponent {
   }
 
   activeUser: any = [];
-
+  token: any = '';
   fName = '';
   mName = '';
   lName = '';
@@ -29,12 +30,14 @@ export class ProfileComponent {
   password = '';
   con_password = '';
   profile_img = '';
-  file2: any = '';
+  file: any = '';
 
   getProfile() {
+    console.log(this.dob);
     let data: any = new FormData();
     let isLogin: any = localStorage.getItem('isLogin');
     let token = JSON.parse(isLogin).token;
+    this.token = token;
 
     data.append('token', token);
 
@@ -46,6 +49,10 @@ export class ProfileComponent {
         this.fName = user.firstname;
         this.mName = user.middlename;
         this.lName = user.lastname;
+        this.dob = user.dob;
+        this.pNumber = user.phone;
+        this.address = user.address;
+        this.email = user.email;
 
         this.activeUser = user;
       }
@@ -57,23 +64,27 @@ export class ProfileComponent {
     this.router.navigateByUrl('login');
   }
 
+  onChange(event: any) {
+    this.file = event.target.files[0];
+  }
+
   handleUpdate() {
     let data: any = new FormData();
-    data.append('fName', 'this.fName');
-    this.ds.signup(data).subscribe((res) => {
-      // this.fName = '';
-      // this.mName = '';
-      // this.lName = '';
-      // this.email = '';
-      // this.dob = '';
-      // this.pNumber = '';
-      // this.address = '';
-      // this.password = '';
-      // this.con_password = '';
-      // this.profile_img = '';
-      // this.file = '';
-      // Swal.fire('', 'Account Created Successfully', 'success');
-      this.router.navigateByUrl('login');
+
+    data.append('fName', this.fName);
+    data.append('mName', this.mName);
+    data.append('lName', this.mName);
+    data.append('dob', this.dob);
+    data.append('pNumber', this.pNumber);
+    data.append('address', this.address);
+    data.append('email', this.email);
+    data.append('file', this.file);
+    data.append('token', this.token);
+
+    this.ds.updateUser(data).subscribe((res) => {
+      console.log(res);
+      Swal.fire('', 'Account Updated Successfully', 'success');
+      // this.router.navigateByUrl('login');
     });
   }
 }

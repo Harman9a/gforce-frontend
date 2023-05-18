@@ -2,13 +2,13 @@
   <div class="container jbdfs">
     <h2>FOLLOW US</h2>
     <div class="hbmx">
-      <div class="react-img">
-        <a href="#">
-          <img src="./assets/image/Rectangle 36.png" alt="" />
-          <i class="fa-brands fa-facebook-f icon-con"></i
-        ></a>
+      <div class="react-img" *ngFor="let i of links">
+        <a [href]="i.text" target="_blank">
+          <img [src]="i.img" alt="" />
+          <i [class]="'fa-brands icon-con ' + i.icon"></i>
+        </a>
       </div>
-      <div class="react-img">
+      <!-- <div class="react-img">
         <a href="#">
           <img src="./assets/image/Rectangle 37.png" alt="" />
           <i class="fa-brands fa-instagram icon-con"></i
@@ -25,7 +25,7 @@
           <img src="./assets/image/Rectangle 39.png" alt="" />
           <i class="fa-brands fa-tiktok icon-con"></i
         ></a>
-      </div>
+      </div> -->
     </div>
   </div>
 </div>

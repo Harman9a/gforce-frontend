@@ -1,23 +1,23 @@
 <div class="container-fluid color-color">
   <div class="container p-l">
     <div class="row justify-content-between">
-      <div class="col-lg-3 col-md-6 col-sm-6 lorem-text-card">
-        <img src="./assets/image/5t5t 1.png" alt="" />
-        <div class="ghd">
-          <div class="pernvd">
-            <span>
-              <h2>4</h2>
-            </span>
-          </div>
-          <h2>Professional dance instructors</h2>
+      <div
+        class="col-lg-3 col-md-6 col-sm-6 lorem-text-card"
+        *ngFor="let i of homeData"
+      >
+        <div>
+          <img
+            style="width: 110px; height: 110px; margin: 5px 0"
+            [src]="ds.baseurl + 'AchievementImage/' + i.image"
+            alt=""
+          />
         </div>
-        <p class="aukha">
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s,
-        </p>
+        <div class="">
+          <h2 style="font-size: 15px !important">{{ i.title }}</h2>
+        </div>
+        <p class="aukha">{{ i.description }}</p>
       </div>
-      <div class="col-lg-3 col-md-6 col-sm-6 lorem-text-card">
+      <!-- <div class="col-lg-3 col-md-6 col-sm-6 lorem-text-card">
         <img src="./assets/image/uytre 1.png" alt="" />
         <div class="ghd">
           <div class="pernvd1">
@@ -64,7 +64,7 @@
           industry. Lorem Ipsum has been the industry's standard dummy text ever
           since the 1500s,
         </p>
-      </div>
+      </div> -->
     </div>
   </div>
 </div>

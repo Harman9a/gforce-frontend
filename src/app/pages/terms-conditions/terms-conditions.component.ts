@@ -15,7 +15,6 @@ export class TermsConditionsComponent {
 
   gettermdata() {
     this.ds.getOtherData().subscribe((res: any) => {
-      // console.log(res);
       this.abc = res.term_condetion;
     });
   }

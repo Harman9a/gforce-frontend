@@ -32,72 +32,52 @@
       >
         <ul class="navbar-nav random-bhc">
           <li class="nav-item">
-            <a class="nav-link active ms-3" aria-current="page" routerLink="/"
+            <a
+              [class]="'nav-link ms-3 ' + link1"
+              aria-current="page"
+              routerLink="/"
+              (click)="handleActiveLink(1)"
               >Home</a
             >
           </li>
 
           <li class="nav-item">
             <a
-              class="nav-link active ms-3"
+              [class]="'nav-link ms-3 ' + link2"
               aria-current="page"
               routerLink="/theForce"
+              (click)="handleActiveLink(2)"
               >The Force</a
             >
           </li>
 
-          <!-- <li class="nav-item dropdown">
-            <a
-              class="nav-link dropdown-toggle ms-3"
-              routerLink="theForce"
-              id="navbarDropdown"
-              role="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              The Force
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li>
-                <a class="dropdown-item" routerLink="/founder">Founder</a>
-              </li>
-              <li>
-                <a class="dropdown-item" routerLink="/performing"
-                  >Performing Artists</a
-                >
-              </li>
-            </ul>
-          </li> -->
-
           <li class="nav-item">
             <a
-              class="nav-link active ms-3"
+              [class]="'nav-link ms-3 ' + link3"
               aria-current="page"
               routerLink="/school"
+              (click)="handleActiveLink(3)"
               >The School</a
             >
           </li>
           <li class="nav-item">
             <a
-              class="nav-link active ms-3"
+              [class]="'nav-link ms-3 ' + link4"
               aria-current="page"
               routerLink="/workshop"
+              (click)="handleActiveLink(4)"
               >The Workshop</a
             >
           </li>
-          <!-- <li class="nav-item">
-            <a class="nav-link active ms-3" aria-current="page" routerLink="#"
-              >The Shop</a
-            >
-          </li> -->
           <li class="nav-item dropdown">
             <a
-              class="nav-link dropdown-toggle ms-3"
+              [class]="'nav-link dropdown-toggle ms-3 ' + link5"
               routerLink="#"
               id="navbarDropdown"
               role="button"
               data-bs-toggle="dropdown"
               aria-expanded="false"
+              (click)="handleActiveLink(5)"
             >
               The Shop
             </a>
@@ -124,25 +104,28 @@
           </li>
           <li class="nav-item">
             <a
-              class="nav-link active ms-3"
+              [class]="'nav-link ms-3 ' + link6"
               aria-current="page"
               routerLink="/career"
+              (click)="handleActiveLink(6)"
               >Careers</a
             >
           </li>
           <li class="nav-item">
             <a
-              class="nav-link active ms-3"
+              [class]="'nav-link ms-3 ' + link7"
               aria-current="page"
               routerLink="/blog"
+              (click)="handleActiveLink(7)"
               >Blogs</a
             >
           </li>
           <li class="nav-item">
             <a
-              class="nav-link active ms-3"
+              [class]="'nav-link ms-3 ' + link8"
               aria-current="page"
               routerLink="/contact"
+              (click)="handleActiveLink(8)"
               >Contact</a
             >
           </li>

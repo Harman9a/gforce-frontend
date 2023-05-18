@@ -5,7 +5,7 @@
         <a href="#">
           <h2>About G-Force</h2>
         </a>
-        <p>
+        <!-- <p>
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been the industry's standard dummy text ever
           since the 1500s, when an unknown printer took a galley of type and
@@ -15,16 +15,21 @@
           the release of Letraset sheets containing Lorem Ipsum passages, and
           more recently with desktop publishing software like Aldus PageMaker
           including versions of Lorem Ipsum.
-        </p>
+        </p> -->
+        <div [innerHTML]="homeData.abt_description"></div>
 
-        <button>Read more &rarr;</button>
+        <button routerLink="/about-us">Read more &rarr;</button>
       </div>
       <div class="ramdin-2">
-        <img src="./assets/image/Group 16058.png" alt="" width="100%" />
+        <img
+          [src]="ds.baseurl + 'AboutusImage/' + homeData.abt_image"
+          alt=""
+          width="100%"
+        />
       </div>
       <div class="ramdin-3 rotate-text">
         <h2>Dance <br />With Us:</h2>
-        <p>LOREM IPSUM IS SIMPLY DUMMY</p>
+        <p>{{ homeData.abt_sub_title }}</p>
       </div>
     </div>
   </div>

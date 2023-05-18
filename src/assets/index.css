@@ -610,6 +610,7 @@ input[type="email"] {
   font-size: 12px;
   text-decoration: none;
   color: #333333;
+  transition: all 0.5s;
 }
 
 .own-width5 {
@@ -623,6 +624,15 @@ input[type="email"] {
   font-weight: 400;
   font-size: 12px;
   line-height: 30px;
+  transition: all 0.6s;
+}
+
+.own-width5 a li:hover {
+  color: #f06f38;
+}
+
+.own-width4 p a:hover {
+  color: #f06f38;
 }
 
 .own-width5 a {
@@ -636,6 +646,7 @@ input[type="email"] {
   display: block;
   font-size: 20px;
   margin: 4px 5px;
+  transition: all 0.5s;
 }
 
 .icon-icon-1 a {
@@ -782,7 +793,7 @@ input[type="email"] {
   font-size: 18px;
 } */
 
-.own-width5 li {
+/* .own-width5 li {
   list-style: none;
   font-family: "Montserrat";
   font-weight: 400;
@@ -794,7 +805,7 @@ input[type="email"] {
   line-height: 20px;
   text-decoration: none;
   color: #333333;
-}
+} */
 
 .icon-icon-1 {
   width: 33px;
@@ -870,6 +881,9 @@ input[type="email"] {
 }
 
 /*******************************************************************************FOUNDING DIRECTOR PAGE CSS ***********************************************************************/
+.new-boton button {
+  transition: all 0.5s;
+}
 
 div.last-css {
   padding-top: 90px;
@@ -1586,7 +1600,7 @@ input[type="email"] {
   font-size: 18px;
 } */
 
-.own-width5 li {
+/* .own-width5 li {
   list-style: none;
   font-family: "Montserrat";
   font-weight: 400;
@@ -1598,7 +1612,7 @@ input[type="email"] {
   line-height: 20px;
   text-decoration: none;
   color: #333333;
-}
+} */
 
 /* .icon-icon-1 {
   width: 33px;
@@ -1855,19 +1869,19 @@ input[type="email"] {
   font-size: 18px !important;
 }
 
-.own-width5 li {
+/* .own-width5 li {
   list-style: none;
   font-family: "Montserrat";
   font-weight: 400;
   font-size: 12px;
   line-height: 30px;
-}
+} */
 
-.own-width5 a {
+/* .own-width5 a {
   line-height: 20px;
   text-decoration: none;
   color: #333333;
-}
+} */
 
 /* .icon-icon-1 {
   width: 33px;
@@ -2342,6 +2356,13 @@ input[type="email"] {
   width: 47%;
   text-align: center;
   padding: 20px;
+  transition: all 0.5s;
+}
+
+.white-text:hover {
+  background-color: #f06f38;
+  border: 1px solid #f9f9f9;
+  color: f9f9f9;
 }
 
 .white-text {
@@ -2417,6 +2438,12 @@ input[type="email"] {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: all 0.5s;
+}
+.select-card-text-select:hover {
+  background-color: rgba(0, 0, 0, 0.55);
+  color: white;
+  border: 1px solid #fff;
 }
 
 .select-card-text-select-1 {
@@ -2523,7 +2550,7 @@ input[type="email"] {
   color: #333333;
 }
 
-.nab-container-card button {
+/* .nab-container-card button {
   display: block;
   margin: 0px auto;
   padding: 9px 27px;
@@ -2531,7 +2558,7 @@ input[type="email"] {
   border: 1px solid black;
   margin-top: 20px;
   margin-bottom: 40px;
-}
+} */
 
 .nab-card-img img {
   display: block;
@@ -2991,9 +3018,13 @@ div.up-come-class .carousel-cell1 {
   margin-left: 5px !important;
   /* margin-right: 20px; */
   counter-increment: carousel-cell;
+  transition: all 0.5s ;
   background-color: #fdfdfd;
 }
 
+div.up-come-class .carousel-cell1:hover {
+  background-color: #5c5c5e45;
+}
 .carousel-cell1 {
   width: 100%;
   /* height: 310px;
@@ -3292,7 +3323,18 @@ input[type="date"] {
   border: 1px solid black;
   margin-top: 20px;
   margin-bottom: 40px;
+  transition: all 0.5s;
 }
+
+.nab-container-card button:hover {
+  background-color: #333333;
+  color: white;
+}
+
+.nab-card-img img:hover {
+  opacity: 0.7;
+}
+
 .nab-card-img img {
   display: block;
   margin: 0 auto;
@@ -3421,12 +3463,19 @@ select::-ms-expand {
     padding-left: 2rem !important;
   }
   .grey-crd2 button {
-    margin-left: 2rem;
-    margin-top: 10px;
+    margin-left: 8rem;
+    margin-top: 40px;
     background: #333333;
     color: #f9f9f9;
-    padding: 6px 10px;
+    padding: 14px 24px;
+    transition: all 0.5s;
+    border: none;
   }
+
+  .grey-crd2 button:hover {
+    background-color: #f06f38;
+  }
+
   .nab-container-card {
     margin-left: 10px;
   }
@@ -3532,24 +3581,25 @@ select::-ms-expand {
     padding: 40px 7px 25px 9px;
   }
   .pop-form-end-pop h2 {
-    font-size: 20px;
-    font-family: "Montserrat";
-    font-weight: 500;
-    color: #fff;
-    line-height: 1rem;
-    padding-bottom: 12px;
+    font-size: 20px !important;
+    font-family: "Montserrat" !important;
+    font-weight: 500 !important;
+    color: #fff !important;
+    line-height: 1rem !important;
+    padding-bottom: 12px !important;
   }
   .pop-form-end-pop h4 {
-    font-size: 16px;
-    font-family: "Montserrat";
-    font-weight: 400;
-    color: #f9f9f9;
+    font-size: 16px !important;
+    font-family: "Montserrat" !important;
+    font-weight: 400 !important;
+    color: #f9f9f9 !important;
   }
   .pop-form-end-pop p {
     font-size: 12px;
     font-family: "Montserrat";
     font-weight: 400;
     color: #f9f9f9;
+    line-height: 25px;
     padding: 0px !important;
   }
   .theschool-inner-foot {
@@ -5152,7 +5202,13 @@ progress {
   background: #333333;
   color: #f9f9f9;
   margin-top: 40px;
-  padding: 10px 19px;
+  padding: 14px 24px;
+  border: none;
+  transition: all 0.5s;
+}
+
+.cont button:hover {
+  background-color: #f06f38;
 }
 /*****************************end image content text *******************/
 
@@ -5745,9 +5801,17 @@ input.file_input_with_replacement {
   border: 1px solid #f9f9f9;
   margin-top: 2rem;
   margin-bottom: 3rem;
-  padding: 11px;
+  padding: 16px 24px;
+  transition: all 0.5s;
 }
 
+.frame-div-two form button:hover {
+  background-color: #f06f38;
+}
+
+.frame-div-four-img {
+  padding: 5rem 0;
+}
 /* ****************************************************open-position-sect start ********************************* */
 .open-position-sect {
   margin-top: 12rem;
@@ -6125,7 +6189,7 @@ input.file_input_with_replacement {
 .blog-card-content {
   width: 32%;
   padding-bottom: 60px;
-  margin-right: 1rem;
+  margin-right: 0.5rem;
 }
 .blog-card-content img {
   width: 100%;
@@ -7335,7 +7399,14 @@ thead {
   font-family: "Montserrat";
   font-size: 12px;
   font-weight: 400;
+  transition: all 0.5s;
+  border: none;
 }
+
+.div-contact-form form button:hover {
+  background-color: #f06f38;
+}
+
 .div-contact-form form input::placeholder {
   font-family: "Montserrat";
   font-size: 12px;
@@ -7743,6 +7814,14 @@ div.popup-screen .text-boxes p {
 
 /*----####### Online school start######----*/
 
+img.back-op:hover {
+  outline: 130px solid rgba(48, 52, 45, 0.44) !important;
+  outline-offset: -130px;
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+}
+
 header#onln-scl .container-fluid {
   margin: 0;
   padding: 0;
@@ -8108,6 +8187,13 @@ section#mid-img .bottom {
 
 /*----####### The school end ######----*/
 /*----####### The force start ######----*/
+section#force-slide .forcebx1:hover h3,
+section#force-slide .forcebx2:hover h3,
+section#force-slide .forcebx3:hover h3 {
+  color: rgb(0, 0, 0);
+  text-shadow: 2px 1px #f06f38;
+}
+
 section#force-banner {
   background-color: #e6e8ec;
 }
