@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { DataService } from 'src/app/data.service';
 import { HomeDetailModelComponent } from '../home-detail-model/home-detail-model.component';
+import * as Aos from 'aos';
 
 @Component({
   selector: 'app-online-school',
@@ -12,6 +13,7 @@ import { HomeDetailModelComponent } from '../home-detail-model/home-detail-model
 export class OnlineSchoolComponent {
   constructor(private ds: DataService, private dialog: MatDialog) {
     this.getClasses();
+    Aos.init();
   }
   classList: any = [];
   customOptions: OwlOptions = {

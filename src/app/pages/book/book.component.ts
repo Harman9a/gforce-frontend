@@ -52,7 +52,12 @@ export class BookComponent {
     data.append('emonth', this.exMonth);
     data.append('eyear', this.exYear);
     data.append('cvv', this.cvv);
-    data.append('boat', this.activeWorkshop.price);
+    data.append(
+      'boat',
+      this.activeWorkshop.price == undefined
+        ? this.activeWorkshop.advancepayment
+        : this.activeWorkshop.price
+    );
 
     this.ds.handlePayment(data).subscribe((res: any) => {
       let payment_id = res.payment_method;
@@ -63,7 +68,12 @@ export class BookComponent {
       data2.append('payment_id', payment_id);
       data2.append('payment_intent_id', payment_intent);
       data2.append('type', this.bookingType);
-      data2.append('price', this.activeWorkshop.price);
+      data2.append(
+        'price',
+        this.activeWorkshop.price == undefined
+          ? this.activeWorkshop.advancepayment
+          : this.activeWorkshop.price
+      );
       this.ds.savePaymentId(data2).subscribe((res2: any) => {
         this.spinner.hide();
         window.location.href = res.next_action.redirect_to_url.url;

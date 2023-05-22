@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import * as Aos from 'aos';
 import { DataService } from 'src/app/data.service';
 
 @Component({
@@ -10,6 +11,7 @@ export class BlogComponent {
   constructor(public ds: DataService) {
     this.getBlogs();
     this.getBlogsCat();
+    Aos.init();
   }
   abc: any = [];
 

@@ -1,7 +1,12 @@
 <div class="container-fluid">
   <div class="container jbdfs">
     <h2>FOLLOW US</h2>
-    <div class="hbmx">
+    <div
+      class="hbmx"
+      data-aos="fade-down"
+      data-aos-once="false"
+      data-aos-duration="2000"
+    >
       <div class="react-img" *ngFor="let i of links">
         <a [href]="i.text" target="_blank">
           <img [src]="i.img" alt="" />

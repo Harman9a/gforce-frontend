@@ -1,7 +1,12 @@
 <header>
   <div class="container">
     <div class="row p-212">
-      <div class="col-12">
+      <div
+        class="col-12"
+        data-aos="fade-down"
+        data-aos-once="false"
+        data-aos-duration="2000"
+      >
         <img src="./assets/image/Group 16134.png" alt="" style="width: 100%" />
       </div>
     </div>
@@ -13,10 +18,20 @@
 <div class="container-fluid">
   <div class="container">
     <div class="greybg">
-      <div class="grey-crd1">
+      <div
+        class="grey-crd1"
+        data-aos="fade-right"
+        data-aos-once="false"
+        data-aos-duration="2000"
+      >
         <img src="./assets/image/Group 244 1.png" alt="" />
       </div>
-      <div class="grey-crd2">
+      <div
+        class="grey-crd2"
+        data-aos="fade-right"
+        data-aos-once="false"
+        data-aos-duration="2000"
+      >
         <h2>The School</h2>
         <p>
           Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -39,7 +54,7 @@
           including versions of Lorem Ipsum.
         </p>
 
-        <a href="#"><button>Register Now &rarr;</button></a>
+        <!-- <a href="#"><button>Register Now &rarr;</button></a> -->
       </div>
     </div>
   </div>
@@ -74,7 +89,7 @@ image and content section end
         (click)="changeBranch(i.id, i.batch)"
       >
         <button
-          class="nav-link active tabs-boton"
+          [class]="'nav-link tabs-boton ' + i.status"
           id="pills-batch1-tab"
           data-bs-toggle="pill"
           data-bs-target="#pills-batch1"
@@ -110,12 +125,7 @@ image and content section end
         <div class="nab-container">
           <div class="nab-container-card" *ngFor="let j of tabList">
             <div class="nab-card-img">
-              <img
-                style="cursor: pointer"
-                routerLink="/workshopView"
-                [src]="j.img"
-                alt=""
-              />
+              <img [src]="j.img" alt="" />
             </div>
 
             <h2>{{ j.text1 }}</h2>
@@ -146,7 +156,12 @@ image and content section end
       allowfullscreen
     ></iframe>
   </div>
-  <div class="pop-form-end-pop">
+  <div
+    class="pop-form-end-pop"
+    data-aos="fade-left"
+    data-aos-once="false"
+    data-aos-duration="2000"
+  >
     <h2>info</h2>
     <h4>
       <i class="bi bi-geo-alt"></i>&nbsp;&nbsp;G-Force Dance Center Alabang

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import * as Aos from 'aos';
 import { DataService } from 'src/app/data.service';
 import Swal from 'sweetalert2';
 
@@ -11,6 +12,7 @@ export class CareerComponent {
   constructor(private ds: DataService) {
     this.getCategorys();
     this.getJobs();
+    Aos.init();
   }
 
   name: any = '';

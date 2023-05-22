@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { DataService } from 'src/app/data.service';
 import { HomeDetailModelComponent } from '../../component/home/home-detail-model/home-detail-model.component';
+import * as Aos from 'aos';
 
 @Component({
   selector: 'app-show-runner-inner',
@@ -12,6 +13,7 @@ import { HomeDetailModelComponent } from '../../component/home/home-detail-model
 export class ShowRunnerInnerComponent {
   constructor(private ds: DataService, private dialog: MatDialog) {
     this.getClasses();
+    Aos.init();
   }
 
   classList: any = [];

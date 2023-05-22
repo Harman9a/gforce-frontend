@@ -160,8 +160,17 @@
                 (click)="handlePayment()"
                 style="cursor: pointer"
               >
-                <div class="card-footer text-center">
+                <div
+                  class="card-footer text-center"
+                  *ngIf="activeWorkshop.price"
+                >
                   Pay ₱{{ activeWorkshop.price }} &#8594;
+                </div>
+                <div
+                  class="card-footer text-center"
+                  *ngIf="!activeWorkshop.price"
+                >
+                  Pay ₱{{ activeWorkshop.advancepayment }} &#8594;
                 </div>
               </a>
             </div>

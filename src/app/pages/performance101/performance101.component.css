@@ -1,0 +1,74 @@
+/*----####### The force start ######----*/
+section#gforce-banner {
+  background-image: url("../../../assets/image/Rectangle034.png");
+  height: 40rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+section#gforce-banner .img8 {
+  max-width: 100%;
+  padding: 37px 0 30px;
+  position: absolute;
+  left: 23%;
+  top: 60%;
+}
+
+section#gforce-banner .img8 img {
+  width: 90%;
+}
+
+@media only screen and (max-width: 1000px) and (min-width: 790px) {
+  section#gforce-banner {
+    height: 28rem;
+  }
+
+  section#gforce-banner .img8 {
+    max-width: 100%;
+    padding: 37px 0 30px;
+    position: absolute;
+    left: 17%;
+    top: 25%;
+  }
+
+  section#gforce-banner .img8 img {
+    width: 77%;
+  }
+}
+
+@media only screen and (max-width: 790px) and (min-width: 480px) {
+  section#gforce-banner {
+    height: 28rem;
+  }
+
+  section#gforce-banner .img8 {
+    max-width: 100%;
+    padding: 37px 0 30px;
+    position: absolute;
+    left: 17%;
+    top: 25%;
+  }
+
+  section#gforce-banner .img8 img {
+    width: 77%;
+  }
+}
+
+@media only screen and (max-width: 480px) and (min-width: 310px) {
+  section#gforce-banner {
+    height: 13rem;
+  }
+
+  section#gforce-banner .img8 {
+    max-width: 100%;
+    padding: 37px 0 30px;
+    position: absolute;
+    left: 17%;
+    top: 18%;
+  }
+
+  section#gforce-banner .img8 img {
+    width: 70%;
+  }
+}

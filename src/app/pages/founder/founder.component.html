@@ -3,11 +3,16 @@
     <div class="container">
       <div class="row">
         <div class="col-6">
-          <div class="top-img1">
+          <div
+            class="top-img1"
+            data-aos="fade-down"
+            data-aos-once="false"
+            data-aos-duration="2000"
+          >
             <img src="./assets/image/Group 16061.png" alt="" />
           </div>
         </div>
-        <div class="col-6 ">
+        <div class="col-6">
           <img
             src="./assets/image/Group 16060.png"
             alt=""
@@ -21,7 +26,12 @@
 <div class="container-fluid">
   <div class="container top-mossa s">
     <div class="row">
-      <div class="col-lg-6 col-md-6 col-sm-12 top-img-mossa">
+      <div
+        class="col-lg-6 col-md-6 col-sm-12 top-img-mossa"
+        data-aos="fade-right"
+        data-aos-once="false"
+        data-aos-duration="2000"
+      >
         <img src="./assets/image/image-width.png" alt="" style="width: 100%" />
       </div>
       <div class="col-lg-6 col-md-6 col-sm-12 mon-we">
@@ -48,11 +58,42 @@
           more recently with desktop publishing software like Aldus PageMaker
           including versions of Lorem Ipsum.
         </p>
-        <a href="#"
+        <!-- <a href="#"
           ><button class="regiter-button">Register Now &rarr;</button></a
-        >
+        > -->
       </div>
     </div>
   </div>
 </div>
+
+<div style="margin-top: 5rem">
+  <owl-carousel-o [options]="customOptions">
+    <ng-template carouselSlide class="select-card">
+      <div class="slider-img-1">
+        <img src="./assets/image/one (2).png" alt="" />
+      </div>
+    </ng-template>
+    <ng-template carouselSlide class="select-card">
+      <div class="slider-img-1">
+        <img src="./assets/image/two.png" alt="" />
+      </div>
+    </ng-template>
+    <ng-template carouselSlide class="select-card">
+      <div class="slider-img-1">
+        <img src="./assets/image/three.png" alt="" />
+      </div>
+    </ng-template>
+    <ng-template carouselSlide class="select-card">
+      <div class="slider-img-1">
+        <img src="./assets/image/four.png" alt="" />
+      </div>
+    </ng-template>
+    <ng-template carouselSlide class="select-card">
+      <div class="slider-img-1">
+        <img src="./assets/image/five.png" alt="" />
+      </div>
+    </ng-template>
+  </owl-carousel-o>
+</div>
+
 <app-home-social></app-home-social>

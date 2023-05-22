@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import * as Aos from 'aos';
 import { DataService } from 'src/app/data.service';
 import Swal from 'sweetalert2';
 
@@ -8,7 +9,9 @@ import Swal from 'sweetalert2';
   styleUrls: ['./contact.component.css'],
 })
 export class ContactComponent {
-  constructor(private ds: DataService) {}
+  constructor(private ds: DataService) {
+    Aos.init();
+  }
 
   name: any = '';
   email: any = '';

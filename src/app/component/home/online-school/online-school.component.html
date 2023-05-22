@@ -1,115 +1,130 @@
 <!-----Banner image start------->
 <header id="onln-scl">
-    <div class="container-fluid">
-      <div class="row p-212">
-        <div class="col-12">
-          <img src="./assets/image/Group 16130.png" alt="" style="width: 100%" />
-        </div>
+  <div class="container-fluid">
+    <div class="row p-212">
+      <div
+        class="col-12"
+        data-aos="fade-down"
+        data-aos-once="false"
+        data-aos-duration="2000"
+      >
+        <img src="./assets/image/Group 16130.png" alt="" style="width: 100%" />
       </div>
     </div>
-  </header>
+  </div>
+</header>
 <!-----Banner image end------->
-
 
 <!-----online school text start------->
 
 <div class="container-fluid" id="schol-boox">
-    <div class="container">
-      <div class="greybg">
-        <div class="grey-crd1">
-          <img src="./assets/image/Rectangle 2853.png" alt="" />
-        </div>
-        <div class="grey-crd2">
-          <h2>Online School </h2>
-          <h4> Passion for Dance</h4>
-          <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-          </p>
-
-        </div>
+  <div class="container">
+    <div class="greybg">
+      <div
+        class="grey-crd1"
+        data-aos="fade-down"
+        data-aos-once="false"
+        data-aos-duration="2000"
+      >
+        <img src="./assets/image/Rectangle 2853.png" alt="" />
+      </div>
+      <div class="grey-crd2">
+        <h2>Online School</h2>
+        <h4>Passion for Dance</h4>
+        <p>
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry's standard dummy text ever
+          since the 1500s, when an unknown printer took a galley of type and
+          scrambled it to make a type specimen book. It has survived not only
+          five centuries, but also the leap into electronic typesetting,
+          remaining essentially unchanged. It was popularised in the 1960s with
+          the release of Letraset sheets containing Lorem Ipsum passages, and
+          more recently with desktop publishing software like Aldus PageMaker
+          including versions of Lorem Ipsum.
+        </p>
       </div>
     </div>
   </div>
+</div>
 
-  <section id="all-slides">
-<div class="col-lg-12 slider-imgs">
+<section id="all-slides">
+  <div class="col-lg-12 slider-imgs">
     <h2>New rehearsal &rarr;</h2>
-        <owl-carousel-o [options]="customOptions">
-          <ng-template carouselSlide *ngFor="let i of workshopList">
-            <div>
-              <div class="carousel-cell1">
-                <div class="content-svg-text1">
-                  <div class="content-svg-text1">
-                    <img [src]="i.img" alt="" />
-                    <h4>{{ i.txt }}</h4>
-                  </div>
-                </div>
+    <owl-carousel-o [options]="customOptions">
+      <ng-template carouselSlide *ngFor="let i of workshopList">
+        <div>
+          <div class="carousel-cell1">
+            <div class="content-svg-text1">
+              <div class="content-svg-text1">
+                <img [src]="i.img" alt="" />
+                <h4>{{ i.txt }}</h4>
               </div>
             </div>
-          </ng-template>
-        </owl-carousel-o>
-      </div>
-  </section>
-
-  <section id="all-slides" class=" slides-sp">
-    <div class="col-lg-12 slider-imgs">
-        <h2>Hip-hop classes &rarr;</h2>
-            <owl-carousel-o [options]="customOptions">
-              <ng-template carouselSlide *ngFor="let i of workshopList">
-                <div>
-                  <div class="carousel-cell1">
-                    <div class="content-svg-text1">
-                      <div class="content-svg-text1">
-                        <img [src]="i.img" alt="" />
-                        <h4>{{ i.txt }}</h4>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </ng-template>
-            </owl-carousel-o>
           </div>
-      </section>
+        </div>
+      </ng-template>
+    </owl-carousel-o>
+  </div>
+</section>
 
-      <section id="all-slides" class="slides-sp">
-        <div class="col-lg-12 slider-imgs">
-            <h2>Sexy classes &rarr;</h2>
-                <owl-carousel-o [options]="customOptions">
-                  <ng-template carouselSlide *ngFor="let i of workshopList">
-                    <div>
-                      <div class="carousel-cell1">
-                        <div class="content-svg-text1">
-                          <div class="content-svg-text1">
-                            <img [src]="i.img" alt="" />
-                            <h4>{{ i.txt }}</h4>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </ng-template>
-                </owl-carousel-o>
+<section id="all-slides" class="slides-sp">
+  <div class="col-lg-12 slider-imgs">
+    <h2>Hip-hop classes &rarr;</h2>
+    <owl-carousel-o [options]="customOptions">
+      <ng-template carouselSlide *ngFor="let i of workshopList">
+        <div>
+          <div class="carousel-cell1">
+            <div class="content-svg-text1">
+              <div class="content-svg-text1">
+                <img [src]="i.img" alt="" />
+                <h4>{{ i.txt }}</h4>
               </div>
-          </section>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </owl-carousel-o>
+  </div>
+</section>
 
-          <section id="all-slides" class="slides-sp">
-            <div class="col-lg-12 slider-imgs">
-                <h2>Kpop classes &rarr;</h2>
-                    <owl-carousel-o [options]="customOptions">
-                      <ng-template carouselSlide *ngFor="let i of workshopList">
-                        <div>
-                          <div class="carousel-cell1">
-                            <div class="content-svg-text1">
-                              <div class="content-svg-text1">
-                                <img [src]="i.img" alt="" />
-                                <h4>{{ i.txt }}</h4>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </ng-template>
-                    </owl-carousel-o>
-                  </div>
-              </section>
-  
+<section id="all-slides" class="slides-sp">
+  <div class="col-lg-12 slider-imgs">
+    <h2>Sexy classes &rarr;</h2>
+    <owl-carousel-o [options]="customOptions">
+      <ng-template carouselSlide *ngFor="let i of workshopList">
+        <div>
+          <div class="carousel-cell1">
+            <div class="content-svg-text1">
+              <div class="content-svg-text1">
+                <img [src]="i.img" alt="" />
+                <h4>{{ i.txt }}</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </owl-carousel-o>
+  </div>
+</section>
 
-  <!-----online school text end------->
+<section id="all-slides" class="slides-sp">
+  <div class="col-lg-12 slider-imgs">
+    <h2>Kpop classes &rarr;</h2>
+    <owl-carousel-o [options]="customOptions">
+      <ng-template carouselSlide *ngFor="let i of workshopList">
+        <div>
+          <div class="carousel-cell1">
+            <div class="content-svg-text1">
+              <div class="content-svg-text1">
+                <img [src]="i.img" alt="" />
+                <h4>{{ i.txt }}</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </owl-carousel-o>
+  </div>
+</section>
+
+<!-----online school text end------->

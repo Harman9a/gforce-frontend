@@ -51,6 +51,9 @@ import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { TermsConditionsComponent } from './pages/terms-conditions/terms-conditions.component';
 import { PrivacyPoliciesComponent } from './pages/privacy-policies/privacy-policies.component';
 import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
+import { ShopComponent } from './pages/shop/shop.component';
+import { Performance101Component } from './pages/performance101/performance101.component';
+import { GforceProjectComponent } from './pages/gforce-project/gforce-project.component';
 
 @NgModule({
   declarations: [
@@ -98,6 +101,9 @@ import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password
     ShowRunnerComponent,
     ShowRunnerInnerComponent,
     ForgotPasswordComponent,
+    ShopComponent,
+    Performance101Component,
+    GforceProjectComponent,
   ],
   imports: [
     BrowserModule,

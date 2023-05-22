@@ -4,7 +4,10 @@
     <div class="up-come-class">
       <owl-carousel-o [options]="customOptions">
         <ng-template carouselSlide *ngFor="let i of classList">
-          <div (click)="handleShowDetails()" style="cursor: pointer">
+          <div
+            (click)="handleShowDetails(i.id, 'projectclass')"
+            style="cursor: pointer"
+          >
             <div class="carousel-cell1">
               <div class="content-svg-text1">
                 <img style="width: unset !important" [src]="i.img" alt="" />
@@ -52,7 +55,10 @@
       </div> -->
       <owl-carousel-o [options]="customOptions2">
         <ng-template carouselSlide *ngFor="let i of workshopList">
-          <div (click)="handleShowDetails()" style="cursor: pointer">
+          <div
+            (click)="handleShowDetails(i.id, 'workshop')"
+            style="cursor: pointer"
+          >
             <div class="carousel-cell1">
               <div class="content-svg-text1">
                 <div class="content-svg-text1">

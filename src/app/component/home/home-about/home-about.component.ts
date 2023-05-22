@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
+import * as Aos from 'aos';
 import { DataService } from 'src/app/data.service';
 
 @Component({
@@ -10,6 +11,7 @@ import { DataService } from 'src/app/data.service';
 export class HomeAboutComponent {
   constructor(public ds: DataService) {
     this.getHomeData();
+    Aos.init();
   }
 
   homeData: any = [];

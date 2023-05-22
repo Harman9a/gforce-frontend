@@ -10,6 +10,7 @@ import { DataService } from 'src/app/data.service';
 export class SClaessesComponent {
   constructor(private ds: DataService, private router: Router) {
     let isLogin: any = localStorage.getItem('isLogin');
+    this.token = JSON.parse(isLogin).token;
     if (isLogin != null && isLogin != '') {
       this.getClasses();
     } else {
@@ -18,7 +19,7 @@ export class SClaessesComponent {
   }
 
   allClasses: any = [];
-
+  token: any = [];
   handleLogout() {
     localStorage.setItem('isLogin', '');
     this.router.navigateByUrl('login');
@@ -26,6 +27,7 @@ export class SClaessesComponent {
 
   getClasses() {
     let data = new FormData();
+    data.append('token', this.token);
     this.ds.getEnrolledClasses(data).subscribe((res: any) => {
       console.log(res);
       this.allClasses = res;

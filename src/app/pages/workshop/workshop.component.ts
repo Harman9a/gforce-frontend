@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { DataService } from 'src/app/data.service';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import * as Aos from 'aos';
 
 @Component({
   selector: 'app-workshop',
@@ -10,6 +11,7 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 export class WorkshopComponent {
   constructor(private ds: DataService) {
     this.getBranch();
+    Aos.init();
   }
   customOptions: OwlOptions = {
     loop: true,

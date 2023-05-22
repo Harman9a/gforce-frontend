@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import * as Aos from 'aos';
 import { DataService } from 'src/app/data.service';
 
 @Component({
@@ -12,7 +13,9 @@ export class InnerBlogComponent {
     private ds: DataService,
     private route: ActivatedRoute,
     private router: Router
-  ) {}
+  ) {
+    Aos.init();
+  }
   innBlogData = [];
   blogId = '';
   blogRes: any = '';

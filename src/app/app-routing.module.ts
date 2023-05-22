@@ -34,6 +34,9 @@ import { TermsConditionsComponent } from './pages/terms-conditions/terms-conditi
 import { PrivacyPoliciesComponent } from './pages/privacy-policies/privacy-policies.component';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
+import { ShopComponent } from './pages/shop/shop.component';
+import { Performance101Component } from './pages/performance101/performance101.component';
+import { GforceProjectComponent } from './pages/gforce-project/gforce-project.component';
 
 const routes: Routes = [
   {
@@ -85,7 +88,7 @@ const routes: Routes = [
     component: SchoolComponent,
   },
   {
-    path: 'schoolView',
+    path: 'schoolView/:id',
     component: SchoolInnerComponent,
   },
   {
@@ -157,7 +160,7 @@ const routes: Routes = [
     component: ShowRunnerComponent,
   },
   {
-    path: 'showrunnerInner',
+    path: 'choreographers',
     component: ShowRunnerInnerComponent,
   },
   {
@@ -171,6 +174,18 @@ const routes: Routes = [
   {
     path: 'forgot-password',
     component: ForgotPasswordComponent,
+  },
+  {
+    path: 'shop',
+    component: ShopComponent,
+  },
+  {
+    path: 'performance101',
+    component: Performance101Component,
+  },
+  {
+    path: 'gforceproject',
+    component: GforceProjectComponent,
   },
 ];
 

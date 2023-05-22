@@ -110,10 +110,11 @@ export class HomeUpcomingClassesComponent {
     });
   }
 
-  handleShowDetails() {
+  handleShowDetails(id: any, type: string) {
     const dialogRef = this.dialog.open(HomeDetailModelComponent, {
       data: {
-        propertyData: 'ok',
+        id: id,
+        type,
       },
     });
 

@@ -11,9 +11,12 @@
       </div>
       <div class="col-lg-8 col-md-7 col-sm-12 text-boxes">
         <h2>{{ activeClass.trainer_name }}</h2>
-        <h3>{{ activeClass.classname }}</h3>
+        <h3 *ngIf="activeClass.classname">{{ activeClass.classname }}</h3>
+        <h3 *ngIf="activeClass.name">{{ activeClass.name }}</h3>
+        <h3 *ngIf="activeClass.title">{{ activeClass.title }}</h3>
         <div [innerHTML]="activeClass.description"></div>
-        <!-- <p>
+        <!-- <p style="height: 100px">
+
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been the industry's standard dummy text ever
           since the 1500s, when an unknown printer took a galley of type and
@@ -23,6 +26,7 @@
           the release of Letraset sheets containing Lorem Ipsum passages, and
           more recently with desktop publishing software like Aldus PageMaker
           including versions of Lorem Ipsum.
+ 
         </p> -->
         <div class="founder-media22">
           <h1>Social media</h1>

@@ -62,14 +62,14 @@
           </li>
           <li class="nav-item">
             <a
-              [class]="'nav-link ms-3 ' + link4"
+              [class]="'nav-link ms-3 ' + link6"
               aria-current="page"
-              routerLink="/workshop"
-              (click)="handleActiveLink(4)"
-              >The Workshop</a
+              routerLink="/onlineSchool"
+              (click)="handleActiveLink(6)"
+              >Online School</a
             >
           </li>
-          <li class="nav-item dropdown">
+          <!-- <li class="nav-item dropdown">
             <a
               [class]="'nav-link dropdown-toggle ms-3 ' + link5"
               routerLink="#"
@@ -101,8 +101,59 @@
                 </a>
               </li>
             </ul>
+          </li> -->
+          <li class="nav-item">
+            <a
+              [class]="'nav-link ms-3 ' + link4"
+              aria-current="page"
+              routerLink="/workshop"
+              (click)="handleActiveLink(4)"
+              >The Workshop</a
+            >
           </li>
           <li class="nav-item">
+            <a
+              [class]="'nav-link ms-3 ' + link5"
+              aria-current="page"
+              routerLink="/shop"
+              (click)="handleActiveLink(5)"
+              >The Shop</a
+            >
+          </li>
+          <!-- <li class="nav-item dropdown">
+            <a
+              [class]="'nav-link dropdown-toggle ms-3 ' + link5"
+              routerLink="#"
+              id="navbarDropdown"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+              (click)="handleActiveLink(5)"
+            >
+              The Shop
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li>
+                <a
+                  class="dropdown-item"
+                  href="https://www.lazada.com.ph/shop/g-force-dance-center"
+                  target="_blank"
+                >
+                  Lazada
+                </a>
+              </li>
+              <li>
+                <a
+                  class="dropdown-item"
+                  href="https://shopee.ph/gforcedancecenter?v=d9d&smtt=0.0.3"
+                  target="_blank"
+                >
+                  Shopee
+                </a>
+              </li>
+            </ul>
+          </li> -->
+          <!-- <li class="nav-item">
             <a
               [class]="'nav-link ms-3 ' + link6"
               aria-current="page"
@@ -110,7 +161,7 @@
               (click)="handleActiveLink(6)"
               >Careers</a
             >
-          </li>
+          </li> -->
           <li class="nav-item">
             <a
               [class]="'nav-link ms-3 ' + link7"
@@ -141,7 +192,7 @@
             <ul class="dropdown-menu top-menu-drop">
               <li><a class="dropdown-item" routerLink="#">EN</a></li>
               <li><a class="dropdown-item" routerLink="#">AR</a></li>
-              <li><a class="dropdown-item" routerLink="#">AD</a></li>
+              <!-- <li><a class="dropdown-item" routerLink="#">AD</a></li> -->
             </ul>
           </div>
           <i

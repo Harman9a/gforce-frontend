@@ -3018,7 +3018,7 @@ div.up-come-class .carousel-cell1 {
   margin-left: 5px !important;
   /* margin-right: 20px; */
   counter-increment: carousel-cell;
-  transition: all 0.5s ;
+  transition: all 0.5s;
   background-color: #fdfdfd;
 }
 
