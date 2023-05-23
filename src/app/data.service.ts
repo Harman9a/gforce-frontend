@@ -150,4 +150,7 @@ export class DataService {
   getPopData(data: any) {
     return this.http.post(this.baseurl + 'api/getPopData', data);
   }
+  getOnlineSchoolVideos() {
+    return this.http.get(this.baseurl + 'api/getOnlineSchoolData');
+  }
 }

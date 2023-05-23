@@ -10,7 +10,9 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 export class FounderComponent {
   constructor() {
     Aos.init();
+    // this.getFounderData();
   }
+
   customOptions: OwlOptions = {
     loop: true,
     dots: false,

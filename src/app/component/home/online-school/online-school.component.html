@@ -47,16 +47,16 @@
   </div>
 </div>
 
-<section id="all-slides">
+<section id="all-slides" *ngFor="let a of onlineData">
   <div class="col-lg-12 slider-imgs">
-    <h2>New rehearsal &rarr;</h2>
+    <h2>{{ a.name }} &rarr;</h2>
     <owl-carousel-o [options]="customOptions">
-      <ng-template carouselSlide *ngFor="let i of workshopList">
+      <ng-template carouselSlide *ngFor="let i of a.data">
         <div>
           <div class="carousel-cell1">
             <div class="content-svg-text1">
               <div class="content-svg-text1">
-                <img [src]="i.img" alt="" />
+                <img [src]="ds.baseurl + 'VideoImage/' + i.image" alt="" />
                 <h4>{{ i.txt }}</h4>
               </div>
             </div>
@@ -67,7 +67,7 @@
   </div>
 </section>
 
-<section id="all-slides" class="slides-sp">
+<!-- <section id="all-slides" class="slides-sp">
   <div class="col-lg-12 slider-imgs">
     <h2>Hip-hop classes &rarr;</h2>
     <owl-carousel-o [options]="customOptions">
@@ -125,6 +125,6 @@
       </ng-template>
     </owl-carousel-o>
   </div>
-</section>
+</section> -->
 
 <!-----online school text end------->

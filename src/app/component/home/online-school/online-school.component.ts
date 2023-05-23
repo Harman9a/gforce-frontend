@@ -11,7 +11,7 @@ import * as Aos from 'aos';
   styleUrls: ['./online-school.component.css'],
 })
 export class OnlineSchoolComponent {
-  constructor(private ds: DataService, private dialog: MatDialog) {
+  constructor(public ds: DataService, private dialog: MatDialog) {
     this.getClasses();
     Aos.init();
   }
@@ -44,27 +44,32 @@ export class OnlineSchoolComponent {
 
   workshopList: any = [];
 
+  onlineData: any = [];
+
   getClasses() {
-    this.ds.getClasses().subscribe((result: any) => {
-      result.map((x: any) => {
-        this.classList.push({
-          id: x.id,
-          img: this.ds.baseurl + 'ProjectClassImages/' + x.classimg,
-          txt1: x.name,
-          txt2: x.branch,
-          dateTime: x.starttime + ' to ' + x.endtime,
-        });
-      });
+    this.ds.getOnlineSchoolVideos().subscribe((result: any) => {
+      this.onlineData = result;
     });
-    this.ds.getWorkShop().subscribe((result: any) => {
-      result.map((x: any) => {
-        this.workshopList.push({
-          id: x.id,
-          img: this.ds.baseurl + 'WorkshopImage/' + x.image,
-          txt: x.title,
-        });
-      });
-    });
+    // this.ds.getClasses().subscribe((result: any) => {
+    //   result.map((x: any) => {
+    //     this.classList.push({
+    //       id: x.id,
+    //       img: this.ds.baseurl + 'ProjectClassImages/' + x.classimg,
+    //       txt1: x.name,
+    //       txt2: x.branch,
+    //       dateTime: x.starttime + ' to ' + x.endtime,
+    //     });
+    //   });
+    // });
+    // this.ds.getWorkShop().subscribe((result: any) => {
+    //   result.map((x: any) => {
+    //     this.workshopList.push({
+    //       id: x.id,
+    //       img: this.ds.baseurl + 'WorkshopImage/' + x.image,
+    //       txt: x.title,
+    //     });
+    //   });
+    // });
   }
 
   // handleShowDetails() {
