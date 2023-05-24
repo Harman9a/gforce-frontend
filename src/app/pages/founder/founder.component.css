@@ -1,0 +1,59 @@
+.social {
+  margin-top: 30px;
+}
+
+.social .media-box02 {
+  display: flex;
+  margin-left: 21px;
+  margin-top: 20px;
+}
+
+.social h3 {
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+}
+
+@media only screen and (max-width: 480px) and (min-width: 310px) {
+  .social h3 {
+    margin-bottom: 0;
+  }
+
+  .social .media-box02 {
+    margin-left: 0;
+    margin-top: 0;
+  }
+}
+
+@media only screen and (max-width: 770px) and (min-width: 480px) {
+  .social .media-box02 {
+    margin-left: 14px;
+    margin-top: 0;
+  }
+
+  .social .media-box02 .icon-icon-1 {
+    margin-left: 5px;
+    margin-top: 15px;
+  }
+
+  .social h3 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width: 990px) and (min-width: 770px) {
+  .social .media-box02 {
+    margin-left: -3px;
+    margin-top: 0;
+  }
+
+  .social .media-box02 .icon-icon-1 {
+    margin-left: 5px;
+    margin-top: 15px;
+  }
+
+  .social h3 {
+    margin: 0;
+  }
+}

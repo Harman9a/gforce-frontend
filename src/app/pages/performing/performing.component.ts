@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import * as Aos from 'aos';
+import { DataService } from 'src/app/data.service';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 
 @Component({
@@ -8,9 +9,14 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
   styleUrls: ['./performing.component.css'],
 })
 export class PerformingComponent {
-  constructor() {
+  constructor(public ds: DataService) {
     Aos.init();
+    this.getperforming();
   }
+
+  slide1: any = [];
+
+  performing: any = '';
   customOptions: OwlOptions = {
     loop: true,
     dots: false,
@@ -37,4 +43,16 @@ export class PerformingComponent {
       },
     },
   };
+
+  getperforming() {
+    this.ds.getArtistData().subscribe((data: any) => {
+      // console.log(data[0].name);
+      this.performing = data[0];
+      if (data.length != 0) {
+        // console.log(this.links);
+        this.slide1 = JSON.parse(data[0].multipleImage);
+        // console.log(this.slide1);
+      }
+    });
+  }
 }

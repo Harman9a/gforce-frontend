@@ -7,7 +7,12 @@
       <ng-template carouselSlide *ngFor="let i of classList">
         <div
           class="carousel-cell bindu-img1"
-          [style]="'background:url(' + i.bgImg + '); cursor: pointer'"
+          [style]="
+            'background:url(' +
+            i.bgImg +
+            '); cursor: pointer; background-position: right;
+        background-repeat: no-repeat;'
+          "
           (click)="handleShowDetails(i.id, 'openclass')"
         >
           <div class="content-svg-text">
@@ -17,8 +22,11 @@
               <div class="featureMid">
                 {{ i.day }}
               </div>
-              <div class="featureTxt">{{ i.featureTxt }}</div>
+              <!-- <div class="featureTxt">{{ i.featureTxt }}</div> -->
             </div>
+          </div>
+          <div class="slide-tt">
+            <div class="featureTxt">{{ i.featureTxt }}</div>
           </div>
         </div>
       </ng-template>

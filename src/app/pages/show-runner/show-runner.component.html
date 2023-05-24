@@ -8,7 +8,10 @@
         data-aos-duration="2000"
       >
         <div class="img7">
-          <img src="../../../assets/image/Group899.png" alt="The force page" />
+          <img
+            [src]="ds.baseurl + 'TheForceImage/' + runner.banner_image"
+            alt="The force page"
+          />
         </div>
       </div>
     </div>
@@ -30,6 +33,13 @@
           class="showrunnerDiv showrunnerDivimg1"
           style="display: flex; justify-content: center; align-items: center"
           routerLink="/founder"
+          [style]="
+            'background:linear gradient( #000, #000), url(' +
+            ds.baseurl +
+            'TheForceImage/' +
+            runner.image +
+            ')'
+          "
         >
           <h2 class="showrunnerDivTxt">DIRECTORS</h2>
         </div>
@@ -45,6 +55,13 @@
           class="showrunnerDiv showrunnerDivimg2"
           style="display: flex; justify-content: center; align-items: center"
           routerLink="/choreographers"
+          [style]="
+            'background:linear gradient( #000, #000), url(' +
+            ds.baseurl +
+            'TheForceImage/' +
+            runner.image1 +
+            ')'
+          "
         >
           <h2 class="showrunnerDivTxt">
             CHOREOGRAPHERS/ <br />

@@ -11,11 +11,13 @@ import * as Aos from 'aos';
   styleUrls: ['./show-runner-inner.component.css'],
 })
 export class ShowRunnerInnerComponent {
-  constructor(private ds: DataService, private dialog: MatDialog) {
+  constructor(public ds: DataService, private dialog: MatDialog) {
     this.getClasses();
+    this.getinnershow();
     Aos.init();
   }
 
+  innershow: any = '';
   classList: any = [];
   customOptions: OwlOptions = {
     loop: true,
@@ -76,5 +78,12 @@ export class ShowRunnerInnerComponent {
     });
 
     dialogRef.afterClosed().subscribe((result) => {});
+  }
+
+  getinnershow() {
+    this.ds.getChoreographersData().subscribe((res: any) => {
+      // console.log(res);
+      this.innershow = res[0];
+    });
   }
 }

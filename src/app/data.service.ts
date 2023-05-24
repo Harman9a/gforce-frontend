@@ -153,4 +153,19 @@ export class DataService {
   getOnlineSchoolVideos() {
     return this.http.get(this.baseurl + 'api/getOnlineSchoolData');
   }
+  getFounderData() {
+    return this.http.get(this.baseurl + 'api/getFounderData');
+  }
+  getArtistData() {
+    return this.http.get(this.baseurl + 'api/getArtistData');
+  }
+  getRunnerData() {
+    return this.http.get(this.baseurl + 'api/getRunnerData');
+  }
+  getChoreographersData() {
+    return this.http.get(this.baseurl + 'api/getChoreographersData');
+  }
+  getSingleVideoData(data: any) {
+    return this.http.post(this.baseurl + 'api/getSingleVideoData', data);
+  }
 }

@@ -204,7 +204,7 @@ path.st1.rabdh {
   margin-right: 388px;
   margin-left: 79px;
   position: absolute;
-  top: 30%;
+  top: 25%;
 }
 
 .jhdfj {
@@ -6456,6 +6456,7 @@ ul.pagination .active span {
   line-height: 30px;
   padding-left: 27px;
   margin-top: 2rem;
+  padding-top: 2rem;
 }
 
 .enrolled-div form.example input[type="text"] {
@@ -6821,16 +6822,16 @@ thead tr th {
     width: 60%;
     margin-top: 2rem;
     background-color: #e6e8ec;
-    height: 525px;
+    height: 600px;
   }
   .editprofile-div-imf {
     width: 35%;
     margin-top: 2rem;
     background-color: #e6e8ec;
-    height: 525px;
+    height: 600px;
   }
   .editprofile-div-imf1 form button {
-    margin-top: 5rem;
+    margin-top: 3rem;
   }
   .editprofile-div h2 {
     padding-top: 2rem;
@@ -8358,4 +8359,9 @@ section#force-slide .forcebx2 h3 {
 
 .container-fluid.color-dena {
   padding: 0;
+}
+
+.owl-carousel .owl-item img {
+  max-height: 259px !important;
+  max-width: 500px !important;
 }

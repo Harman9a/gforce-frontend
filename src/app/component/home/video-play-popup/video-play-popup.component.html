@@ -1,0 +1,64 @@
+<h2 mat-dialog-title>Video Session</h2>
+<mat-dialog-content class="mat-typography">
+  <div>
+    <div class="row" style="padding: 2rem; width: 100%">
+      <div class="col-12 mb-3" style="text-align: center">
+        <!-- <img
+          style="width: 80%"
+          src="../../../../assets/image/demoVideoImg.png"
+        /> -->
+        <iframe
+          height="400px"
+          width="100%"
+          [src]="videoData.trailer_video"
+        ></iframe>
+      </div>
+      <div class="col-8 mx-5 titleTxt">{{ videoData.title }}</div>
+      <!-- <div class="col-12 mx-5 titleSubTxt">Passion for Dance</div> -->
+      <div
+        class="col-12 mx-5 titleDesTxt"
+        [innerHTML]="videoData.description"
+      ></div>
+    </div>
+    <!-- <div class="row">
+      <div class="col-lg-12 slider-imgs">
+        <owl-carousel-o [options]="customOptions">
+          <ng-template carouselSlide *ngFor="let i of workshopList">
+            <div>
+              <div class="carousel-cell1">
+                <div class="content-svg-text1">
+                  <div class="content-svg-text1">
+                    <img [src]="i.img" alt="" />
+                    <h4>{{ i.txt }}</h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ng-template>
+        </owl-carousel-o>
+      </div>
+    </div> -->
+    <section id="all-slides" *ngFor="let a of onlineData">
+      <div class="col-lg-12 slider-imgs">
+        <h2>{{ a.name }} &rarr;</h2>
+        <owl-carousel-o [options]="customOptions">
+          <ng-template carouselSlide *ngFor="let i of a.data">
+            <div>
+              <div class="carousel-cell1">
+                <div class="content-svg-text1">
+                  <div class="content-svg-text1">
+                    <img [src]="ds.baseurl + 'VideoImage/' + i.image" alt="" />
+                    <h4>{{ i.title }}</h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ng-template>
+        </owl-carousel-o>
+      </div>
+    </section>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+</mat-dialog-actions>

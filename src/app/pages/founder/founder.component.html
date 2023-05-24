@@ -14,7 +14,7 @@
         </div>
         <div class="col-6">
           <img
-            src="./assets/image/Group 16060.png"
+            [src]="ds.baseurl + 'TheForceImage/' + found.banner_image"
             alt=""
             style="width: 100%"
           />
@@ -32,68 +32,61 @@
         data-aos-once="false"
         data-aos-duration="2000"
       >
-        <img src="./assets/image/image-width.png" alt="" style="width: 100%" />
+        <img
+          [src]="ds.baseurl + 'TheForceImage/' + found.image"
+          alt=""
+          style="width: 100%"
+        />
       </div>
       <div class="col-lg-6 col-md-6 col-sm-12 mon-we">
-        <h2>Maria Kim</h2>
-        <h3>Passion for Dance</h3>
+        <h2 [innerHTML]="found.name"></h2>
+        <h3 [innerHTML]="found.speciality"></h3>
         <br />
-        <p>
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book. It has survived not only
-          five centuries, but also the leap into electronic typesetting,
-          remaining essentially unchanged. It was popularised in the 1960s with
-          the release of Letraset sheets containing Lorem Ipsum passages, and
-          more recently with desktop publishing software like Aldus PageMaker
-          including versions of Lorem Ipsum. <br /><br />
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book. It has survived not only
-          five centuries, but also the leap into electronic typesetting,
-          remaining essentially unchanged. It was popularised in the 1960s with
-          the release of Letraset sheets containing Lorem Ipsum passages, and
-          more recently with desktop publishing software like Aldus PageMaker
-          including versions of Lorem Ipsum.
-        </p>
+        <p [innerHTML]="found.description"></p>
         <!-- <a href="#"
           ><button class="regiter-button">Register Now &rarr;</button></a
         > -->
+        <div class="social">
+          <h3>Social media</h3>
+          <div class="media-box02">
+            <div class="icon-icon-1" *ngFor="let i of links">
+              <a [href]="i.text" target="_blank"> <i [class]="i.icon"></i></a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-<div style="margin-top: 5rem">
-  <owl-carousel-o [options]="customOptions">
-    <ng-template carouselSlide class="select-card">
-      <div class="slider-img-1">
-        <img src="./assets/image/one (2).png" alt="" />
-      </div>
-    </ng-template>
-    <ng-template carouselSlide class="select-card">
-      <div class="slider-img-1">
-        <img src="./assets/image/two.png" alt="" />
-      </div>
-    </ng-template>
-    <ng-template carouselSlide class="select-card">
-      <div class="slider-img-1">
-        <img src="./assets/image/three.png" alt="" />
-      </div>
-    </ng-template>
-    <ng-template carouselSlide class="select-card">
-      <div class="slider-img-1">
-        <img src="./assets/image/four.png" alt="" />
-      </div>
-    </ng-template>
-    <ng-template carouselSlide class="select-card">
-      <div class="slider-img-1">
-        <img src="./assets/image/five.png" alt="" />
-      </div>
-    </ng-template>
-  </owl-carousel-o>
-</div>
+  <div style="margin-top: 5rem" class="found-slide">
+    <owl-carousel-o [options]="customOptions">
+      <ng-template carouselSlide class="select-card" *ngFor="let i of slide">
+        <div class="slider-img-1">
+          <img [src]="ds.baseurl + 'TheForceMultipleImage/' + i" alt="" />
+        </div>
+      </ng-template>
+      <!-- <ng-template carouselSlide class="select-card">
+        <div class="slider-img-1">
+          <img src="./assets/image/two.png" alt="" />
+        </div>
+      </ng-template>
+      <ng-template carouselSlide class="select-card">
+        <div class="slider-img-1">
+          <img src="./assets/image/three.png" alt="" />
+        </div>
+      </ng-template>
+      <ng-template carouselSlide class="select-card">
+        <div class="slider-img-1">
+          <img src="./assets/image/four.png" alt="" />
+        </div>
+      </ng-template>
+      <ng-template carouselSlide class="select-card">
+        <div class="slider-img-1">
+          <img src="./assets/image/five.png" alt="" />
+        </div>
+      </ng-template> -->
+    </owl-carousel-o>
+  </div>
 
-<app-home-social></app-home-social>
+  <app-home-social></app-home-social>
+</div>

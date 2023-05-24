@@ -10,7 +10,10 @@
           data-aos-once="false"
           data-aos-duration="2000"
         >
-          <img src="./assets/image/Group 16063.png" alt="" />
+          <img
+            [src]="ds.baseurl + 'TheForceImage/' + performing.banner_image"
+            alt=""
+          />
         </div>
       </div>
     </div>
@@ -19,42 +22,20 @@
 
 <div class="container-fluid rect-49">
   <div class="container rect-49-text">
-    <h2>Performing Artist</h2>
-    <p>
-      Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-      Lorem Ipsum has been the industry's standard dummy text ever since the
-      1500s, when an unknown printer took a galley of type and scrambled it to
-      make a type specimen book. It has survived not only five centuries, but
-      also the leap into electronic typesetting, remaining essentially
-      unchanged. It was popularised in the 1960s with the release of Letraset
-      sheets containing Lorem Ipsum passages, and more recently with desktop
-      publishing software like Aldus PageMaker including versions of Lorem
-      Ipsum.
-    </p>
-
-    <p>
-      Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-      Lorem Ipsum has been the industry's standard dummy text ever since the
-      1500s, when an unknown printer took a galley of type and scrambled it to
-      make a type specimen book. It has survived not only five centuries, but
-      also the leap into electronic typesetting, remaining essentially
-      unchanged. It was popularised in the 1960s with the release of Letraset
-      sheets containing Lorem Ipsum passages, and more recently with desktop
-      publishing software like Aldus PageMaker including versions of Lorem
-      Ipsum.
-    </p>
+    <h2 [innerHTML]="performing.name"></h2>
+    <p [innerHTML]="performing.description"></p>
 
     <!-- <a href="#"><button>Register Now&rarr;</button></a> -->
   </div>
 </div>
 <div style="margin-top: 5rem">
   <owl-carousel-o [options]="customOptions">
-    <ng-template carouselSlide class="select-card">
+    <ng-template carouselSlide class="select-card" *ngFor="let i of slide1">
       <div class="slider-img-1">
-        <img src="./assets/image/one (2).png" alt="" />
+        <img [src]="ds.baseurl + 'TheForceMultipleImage/' + i" alt="" />
       </div>
     </ng-template>
-    <ng-template carouselSlide class="select-card">
+    <!-- <ng-template carouselSlide class="select-card">
       <div class="slider-img-1">
         <img src="./assets/image/two.png" alt="" />
       </div>
@@ -73,17 +54,17 @@
       <div class="slider-img-1">
         <img src="./assets/image/five.png" alt="" />
       </div>
-    </ng-template>
+    </ng-template> -->
   </owl-carousel-o>
 </div>
 <div style="margin-top: 5rem">
   <owl-carousel-o [options]="customOptions">
-    <ng-template carouselSlide class="select-card">
+    <ng-template carouselSlide class="select-card" *ngFor="let i of slide1">
       <div class="slider-img-1">
-        <img src="./assets/image/one (2).png" alt="" />
+        <img [src]="ds.baseurl + 'TheForceMultipleImage/' + i" alt="" />
       </div>
     </ng-template>
-    <ng-template carouselSlide class="select-card">
+    <!-- <ng-template carouselSlide class="select-card">
       <div class="slider-img-1">
         <img src="./assets/image/two.png" alt="" />
       </div>
@@ -102,7 +83,7 @@
       <div class="slider-img-1">
         <img src="./assets/image/five.png" alt="" />
       </div>
-    </ng-template>
+    </ng-template> -->
   </owl-carousel-o>
 </div>
 

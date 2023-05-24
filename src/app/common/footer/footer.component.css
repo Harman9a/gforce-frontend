@@ -3,3 +3,16 @@
     margin-left: 10px;
   } */
 }
+
+.footerlinks ul li {
+  list-style-type: none;
+  display: inline-block;
+  margin: 0 5px;
+}
+
+.footerlinks ul li a {
+  color: #474d4e;
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+}

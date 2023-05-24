@@ -1,12 +1,12 @@
 <section class="creative-page">
   <div class="tab-editprofile">
-    <div class="tab-editprofile-img">
+    <!-- <div class="tab-editprofile-img">
       <img src="./assets/image/g-force-logo 2.png" alt="" /><img
         src="./assets/image/gforce_emblem 1.png"
         alt=""
       />
       <i class="fa fa-bars" onclick="myFunction()" aria-hidden="true"></i>
-    </div>
+    </div> -->
 
     <div class="button-tabs-sandwich" id="myDIV">
       <button class="tablinks" routerLink="/studentClasses">
@@ -99,13 +99,20 @@
             [(ngModel)]="address"
             name="address"
           />
+
           <input
             type="email"
             placeholder="Emaill Adress"
             [(ngModel)]="email"
             name="email"
           />
-          <br />
+
+          <select class="form-select" aria-label="Default select example">
+            <option selected style="display: none">Select Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+          </select>
 
           <a (click)="handleUpdate()">
             <button>Save Change &rarr;</button>

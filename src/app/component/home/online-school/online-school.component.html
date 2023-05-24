@@ -52,12 +52,12 @@
     <h2>{{ a.name }} &rarr;</h2>
     <owl-carousel-o [options]="customOptions">
       <ng-template carouselSlide *ngFor="let i of a.data">
-        <div>
+        <div (click)="showVideoPopup(i.id)">
           <div class="carousel-cell1">
             <div class="content-svg-text1">
               <div class="content-svg-text1">
                 <img [src]="ds.baseurl + 'VideoImage/' + i.image" alt="" />
-                <h4>{{ i.txt }}</h4>
+                <h4>{{ i.title }}</h4>
               </div>
             </div>
           </div>

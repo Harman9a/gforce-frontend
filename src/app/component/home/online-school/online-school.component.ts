@@ -4,6 +4,7 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 import { DataService } from 'src/app/data.service';
 import { HomeDetailModelComponent } from '../home-detail-model/home-detail-model.component';
 import * as Aos from 'aos';
+import { VideoPlayPopupComponent } from '../video-play-popup/video-play-popup.component';
 
 @Component({
   selector: 'app-online-school',
@@ -72,13 +73,13 @@ export class OnlineSchoolComponent {
     // });
   }
 
-  // handleShowDetails() {
-  //   const dialogRef = this.dialog.open(HomeDetailModelComponent, {
-  //     data: {
-  //       propertyData: 'ok',
-  //     },
-  //   });
+  showVideoPopup(id: number) {
+    const dialogRef = this.dialog.open(VideoPlayPopupComponent, {
+      data: {
+        id,
+      },
+    });
 
-  //   dialogRef.afterClosed().subscribe((result: any) => {});
-  // }
+    dialogRef.afterClosed().subscribe((result: any) => {});
+  }
 }

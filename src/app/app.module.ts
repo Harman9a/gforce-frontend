@@ -54,6 +54,7 @@ import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password
 import { ShopComponent } from './pages/shop/shop.component';
 import { Performance101Component } from './pages/performance101/performance101.component';
 import { GforceProjectComponent } from './pages/gforce-project/gforce-project.component';
+import { VideoPlayPopupComponent } from './component/home/video-play-popup/video-play-popup.component';
 
 @NgModule({
   declarations: [
@@ -104,6 +105,7 @@ import { GforceProjectComponent } from './pages/gforce-project/gforce-project.co
     ShopComponent,
     Performance101Component,
     GforceProjectComponent,
+    VideoPlayPopupComponent,
   ],
   imports: [
     BrowserModule,
