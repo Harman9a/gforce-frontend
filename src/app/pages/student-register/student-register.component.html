@@ -106,6 +106,18 @@
             <p *ngIf="addressErr" class="errorTxt">required</p>
           </div>
           <div class="tab-form" *ngIf="studentTabStatus == false">
+            <select
+              class="form-select myDateIpt"
+              aria-label="Default select example"
+              [(ngModel)]="gender"
+              name="gender"
+            >
+              <option value="demo" style="display: none">Select Gender</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="Other">Other</option>
+            </select>
+            <p *ngIf="genderErr" class="errorTxt">required</p>
             <input
               type="text"
               placeholder="Student's Email Address"
@@ -249,6 +261,18 @@
             <p *ngIf="address2Err" class="errorTxt">required</p>
           </div>
           <div class="tab-reg" *ngIf="parentTabStatus == false">
+            <select
+              class="form-select myDateIpt"
+              aria-label="Default select example"
+              [(ngModel)]="gender2"
+              name="gender"
+            >
+              <option value="demo" style="display: none">Select Gender</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="Other">Other</option>
+            </select>
+            <p *ngIf="gender2Err" class="errorTxt">required</p>
             <input
               type="email"
               placeholder="Parent's Email Address"
@@ -341,3 +365,5 @@
     </div>
   </div>
 </div>
+
+<ngx-spinner type="ball-scale-multiple"></ngx-spinner>

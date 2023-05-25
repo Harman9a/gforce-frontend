@@ -107,8 +107,14 @@
             name="email"
           />
 
-          <select class="form-select" aria-label="Default select example">
-            <option selected style="display: none">Select Gender</option>
+          <select
+            class="form-select"
+            aria-label="Default select example"
+            [(ngModel)]="gender"
+            (change)="demoFun()"
+            name="gender"
+          >
+            <option value="demo" style="display: none">Select Gender</option>
             <option value="Male">Male</option>
             <option value="Female">Female</option>
             <option value="Other">Other</option>
@@ -122,3 +128,5 @@
     </div>
   </div>
 </section>
+
+<ngx-spinner type="ball-scale-multiple"></ngx-spinner>

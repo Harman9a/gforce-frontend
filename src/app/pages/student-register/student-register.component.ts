@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { DataService } from 'src/app/data.service';
 import Swal from 'sweetalert2';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-student-register',
@@ -9,7 +10,11 @@ import Swal from 'sweetalert2';
   styleUrls: ['./student-register.component.css'],
 })
 export class StudentRegisterComponent {
-  constructor(private ds: DataService, private router: Router) {}
+  constructor(
+    private ds: DataService,
+    private router: Router,
+    private spinner: NgxSpinnerService
+  ) {}
 
   activeForm = 1;
   fName = '';
@@ -18,6 +23,7 @@ export class StudentRegisterComponent {
   email = '';
   dob = '';
   pNumber = '';
+  gender = 'demo';
   address = '';
   password = '';
   con_password = '';
@@ -32,6 +38,7 @@ export class StudentRegisterComponent {
   pNumberErr = false;
   addressErr = false;
   passwordErr = false;
+  genderErr = false;
   con_passwordErr = false;
   profile_imgErr = false;
   fileErr = false;
@@ -42,6 +49,7 @@ export class StudentRegisterComponent {
   email2 = '';
   dob2 = '';
   pNumber2 = '';
+  gender2 = 'demo';
   address2 = '';
   password2 = '';
   con_password2 = '';
@@ -55,6 +63,7 @@ export class StudentRegisterComponent {
   dob2Err = false;
   pNumber2Err = false;
   address2Err = false;
+  gender2Err = false;
   password2Err = false;
   con_password2Err = false;
   profile_img2Err = false;
@@ -76,6 +85,14 @@ export class StudentRegisterComponent {
 
   handleSubmit() {
     let result = true;
+
+    if (this.gender == '') {
+      this.genderErr = true;
+      result = false;
+    } else {
+      this.genderErr = false;
+      result = true;
+    }
 
     if (this.email == '') {
       this.emailErr = true;
@@ -110,18 +127,22 @@ export class StudentRegisterComponent {
     }
 
     if (result) {
+      this.spinner.show();
       let data: any = new FormData();
       data.append('fName', this.fName);
       data.append('mName', this.mName);
       data.append('lName', this.lName);
       data.append('email', this.email);
       data.append('dob', this.dob);
+      data.append('gender', this.gender);
       data.append('pNumber', this.pNumber);
       data.append('address', this.address);
       data.append('password', this.password);
       data.append('profile_img', this.file);
       data.append('type', this.activeForm);
       this.ds.signup(data).subscribe((res) => {
+        this.spinner.hide();
+
         this.fName = '';
         this.mName = '';
         this.lName = '';
@@ -141,6 +162,14 @@ export class StudentRegisterComponent {
 
   handleSubmit2() {
     let result = true;
+
+    if (this.gender2 == '') {
+      this.gender2Err = true;
+      result = false;
+    } else {
+      this.gender2Err = false;
+      result = true;
+    }
 
     if (this.email2 == '') {
       this.email2Err = true;
@@ -175,6 +204,8 @@ export class StudentRegisterComponent {
     }
 
     if (result) {
+      this.spinner.show();
+
       let data: any = new FormData();
       data.append('fName', this.fName2);
       data.append('mName', this.mName2);
@@ -182,12 +213,15 @@ export class StudentRegisterComponent {
       data.append('email', this.email2);
       data.append('dob', this.dob2);
       data.append('pNumber', this.pNumber2);
+      data.append('gender', this.gender2);
       data.append('address', this.address2);
       data.append('password', this.password2);
       data.append('profile_img', this.file2);
       data.append('type', this.activeForm);
 
       this.ds.signup(data).subscribe((res) => {
+        this.spinner.hide();
+
         this.fName2 = '';
         this.mName2 = '';
         this.lName2 = '';

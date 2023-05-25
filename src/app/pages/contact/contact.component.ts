@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import * as Aos from 'aos';
 import { DataService } from 'src/app/data.service';
 import Swal from 'sweetalert2';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-contact',
@@ -9,8 +10,9 @@ import Swal from 'sweetalert2';
   styleUrls: ['./contact.component.css'],
 })
 export class ContactComponent {
-  constructor(private ds: DataService) {
+  constructor(private ds: DataService, private spinner: NgxSpinnerService) {
     Aos.init();
+    this.getData();
   }
 
   name: any = '';
@@ -22,6 +24,20 @@ export class ContactComponent {
   emailErr: any = false;
   phoneErr: any = false;
   messageErr: any = false;
+
+  branchList: any = [];
+  links: any = [];
+
+  getData() {
+    this.ds.getBranch().subscribe((res: any) => {
+      this.branchList = res;
+    });
+    this.ds.getSettingData().subscribe((res: any) => {
+      if (res.length != 0) {
+        this.links = JSON.parse(res[0].ameneties);
+      }
+    });
+  }
 
   handleSubmit() {
     let result = true;
@@ -59,12 +75,14 @@ export class ContactComponent {
     }
 
     if (result) {
+      this.spinner.show();
       let data: any = new FormData();
       data.append('name', this.name);
       data.append('email', this.email);
       data.append('phone', this.phone);
       data.append('message', this.message);
       this.ds.submitContactForm(data).subscribe((res: any) => {
+        this.spinner.hide();
         this.email = '';
         this.message = '';
         this.name = '';

@@ -61,17 +61,16 @@
       </div>
       <div class="own-width4">
         <h2>Contact</h2>
-        <p>Phone: <a href="tel:+97142217772"> 9714-221-777 2 </a></p>
+        <p>
+          Phone: <a [href]="'tel:' + footerNumber"> {{ footerNumber }} </a>
+        </p>
         <p>
           <a href="https://goo.gl/maps/2sjrwx54TEdaV4ND9">
-            Miles Wig Making LLC, 26th St.,Al-Quoz industrial Area2, P.O. Box:
-            29878, Dubai, United Arab Emirates.
+            {{ footerAddress }}
           </a>
         </p>
         <p>
-          <a href="mailto:contact@gforceofficial.com">
-            contact@gforceofficial.com</a
-          >
+          <a [href]="'mailto:' + cUsEmail"> {{ cUsEmail }}</a>
         </p>
       </div>
       <div class="own-width5">
@@ -109,3 +108,5 @@
     </div>
   </div>
 </div>
+
+<ngx-spinner type="ball-scale-multiple"></ngx-spinner>

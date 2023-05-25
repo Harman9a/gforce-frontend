@@ -8,10 +8,18 @@
           src="../../../../assets/image/demoVideoImg.png"
         /> -->
         <iframe
+          *ngIf="videoLink"
           height="400px"
           width="100%"
-          [src]="videoData.trailer_video"
+          [src]="videoLink"
         ></iframe>
+        <video
+          *ngIf="videoFile"
+          height="400px"
+          width="100%"
+          [src]="ds.baseurl + 'VideoImage/' + videoFile"
+          controls
+        ></video>
       </div>
       <div class="col-8 mx-5 titleTxt">{{ videoData.title }}</div>
       <!-- <div class="col-12 mx-5 titleSubTxt">Passion for Dance</div> -->
@@ -60,5 +68,5 @@
   </div>
 </mat-dialog-content>
 <mat-dialog-actions align="end">
-  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-dialog-close class="closeBtn">Cancel</button>
 </mat-dialog-actions>

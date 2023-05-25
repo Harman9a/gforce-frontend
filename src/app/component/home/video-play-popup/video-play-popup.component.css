@@ -24,3 +24,14 @@
   letter-spacing: 0em;
   text-align: left;
 }
+
+.closeBtn {
+  padding: 10px 20px;
+  background-color: #333333;
+  color: #f9f9f9;
+  margin-left: 1rem;
+  font-size: 10px;
+  font-family: "Montserrat";
+  line-height: 15px;
+  border: none;
+}

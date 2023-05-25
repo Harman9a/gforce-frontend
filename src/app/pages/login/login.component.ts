@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { DataService } from 'src/app/data.service';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-login',
@@ -8,7 +9,11 @@ import { DataService } from 'src/app/data.service';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
-  constructor(private ds: DataService, private router: Router) {}
+  constructor(
+    private ds: DataService,
+    private router: Router,
+    private spinner: NgxSpinnerService
+  ) {}
   email: string = 'fml@gmail.com';
   password: string = '123';
 
@@ -42,6 +47,7 @@ export class LoginComponent {
   }
 
   handleSubmit() {
+    this.spinner.show();
     let token = this.crypt('salt', this.email);
     let data = new FormData();
     data.append('email', this.email);
@@ -49,6 +55,7 @@ export class LoginComponent {
     data.append('token', token);
 
     this.ds.signin(data).subscribe((res: any) => {
+      this.spinner.hide();
       if (res.length != 0) {
         this.invalidUser = false;
         let storage = { token: token, email: this.email };

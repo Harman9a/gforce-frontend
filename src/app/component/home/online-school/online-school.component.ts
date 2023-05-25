@@ -46,31 +46,17 @@ export class OnlineSchoolComponent {
   workshopList: any = [];
 
   onlineData: any = [];
+  schoolData: any = [];
 
   getClasses() {
+    this.ds.getOnlineSchool().subscribe((result: any) => {
+      if (result.length != 0) {
+        this.schoolData = result[0];
+      }
+    });
     this.ds.getOnlineSchoolVideos().subscribe((result: any) => {
       this.onlineData = result;
     });
-    // this.ds.getClasses().subscribe((result: any) => {
-    //   result.map((x: any) => {
-    //     this.classList.push({
-    //       id: x.id,
-    //       img: this.ds.baseurl + 'ProjectClassImages/' + x.classimg,
-    //       txt1: x.name,
-    //       txt2: x.branch,
-    //       dateTime: x.starttime + ' to ' + x.endtime,
-    //     });
-    //   });
-    // });
-    // this.ds.getWorkShop().subscribe((result: any) => {
-    //   result.map((x: any) => {
-    //     this.workshopList.push({
-    //       id: x.id,
-    //       img: this.ds.baseurl + 'WorkshopImage/' + x.image,
-    //       txt: x.title,
-    //     });
-    //   });
-    // });
   }
 
   showVideoPopup(id: number) {

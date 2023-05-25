@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { DataService } from 'src/app/data.service';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-attendance',
@@ -8,7 +9,11 @@ import { DataService } from 'src/app/data.service';
   styleUrls: ['./attendance.component.css'],
 })
 export class AttendanceComponent {
-  constructor(private ds: DataService, private router: Router) {
+  constructor(
+    private ds: DataService,
+    private router: Router,
+    private spinner: NgxSpinnerService
+  ) {
     let isLogin: any = localStorage.getItem('isLogin');
     if (isLogin != null) {
       this.getProfile();
@@ -44,6 +49,7 @@ export class AttendanceComponent {
   }
 
   handleAttendance() {
+    this.spinner.show();
     let date = new Date();
     let data: any = new FormData();
 
@@ -54,6 +60,8 @@ export class AttendanceComponent {
     data.append('class_id', this.bookingId);
 
     this.ds.markAttendance(data).subscribe((res) => {
+      this.spinner.hide();
+
       console.log(res);
       this.router.navigateByUrl('/attendanceSuccess');
     });

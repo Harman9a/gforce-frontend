@@ -140,7 +140,7 @@ export class DataService {
   }
 
   submitnewsletter(data: any) {
-    return this.http.post(this.baseurl + 'api/submitnewsletter', data);
+    return this.http.post(this.baseurl + 'api/submitNewsletterEmail', data);
   }
 
   getAchievement() {
@@ -153,6 +153,10 @@ export class DataService {
   getOnlineSchoolVideos() {
     return this.http.get(this.baseurl + 'api/getOnlineSchoolData');
   }
+  getOnlineSchool() {
+    return this.http.get(this.baseurl + 'api/getOnlineSchool');
+  }
+
   getFounderData() {
     return this.http.get(this.baseurl + 'api/getFounderData');
   }

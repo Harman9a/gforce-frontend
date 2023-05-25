@@ -1,5 +1,6 @@
 import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { DomSanitizer } from '@angular/platform-browser';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { DataService } from 'src/app/data.service';
 
@@ -11,7 +12,8 @@ import { DataService } from 'src/app/data.service';
 export class VideoPlayPopupComponent {
   constructor(
     public ds: DataService,
-    @Inject(MAT_DIALOG_DATA) public data: any
+    @Inject(MAT_DIALOG_DATA) public data: any,
+    private sanitizer: DomSanitizer
   ) {
     // console.log(data);
 
@@ -68,6 +70,21 @@ export class VideoPlayPopupComponent {
     },
   ];
 
+  videoLink: any = '';
+  videoFile: any = '';
+
+  safeUrl(url: any) {
+    return this.sanitizer.bypassSecurityTrustResourceUrl(url);
+  }
+
+  getId(url: any) {
+    const regExp =
+      /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
+    const match = url.match(regExp);
+
+    return match && match[2].length === 11 ? match[2] : null;
+  }
+
   getClasses() {
     this.ds.getOnlineSchoolVideos().subscribe((result: any) => {
       this.onlineData = result;
@@ -77,7 +94,15 @@ export class VideoPlayPopupComponent {
     this.ds.getSingleVideoData(data).subscribe((result: any) => {
       if (result.length != 0) {
         this.videoData = result[0];
-        console.log(result[0]);
+        if (result[0].type == 'Upload_video') {
+          this.videoFile = result[0].trailer_video;
+        } else {
+          let videoId = this.getId(result[0].trailer_video);
+
+          this.videoLink = this.safeUrl(
+            `https://www.youtube.com/embed/${videoId}`
+          );
+        }
       }
     });
   }

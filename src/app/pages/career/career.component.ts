@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import * as Aos from 'aos';
 import { DataService } from 'src/app/data.service';
 import Swal from 'sweetalert2';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-career',
@@ -9,7 +10,7 @@ import Swal from 'sweetalert2';
   styleUrls: ['./career.component.css'],
 })
 export class CareerComponent {
-  constructor(private ds: DataService) {
+  constructor(private ds: DataService, private spinner: NgxSpinnerService) {
     this.getCategorys();
     this.getJobs();
     Aos.init();
@@ -151,6 +152,7 @@ export class CareerComponent {
     }
 
     if (result) {
+      this.spinner.show();
       let data = new FormData();
       data.append('email', this.email);
       data.append('intrestedin', this.interestedin);
@@ -160,6 +162,7 @@ export class CareerComponent {
       data.append('phone', this.phone);
       data.append('resume', this.fileToUpload);
       this.ds.submitCareerForm(data).subscribe((res: any) => {
+        this.spinner.hide();
         this.email = '';
         this.interestedin = '';
         this.resume = '';

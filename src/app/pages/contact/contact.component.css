@@ -2,3 +2,11 @@
   color: red;
   position: absolute;
 }
+
+.linkIcon {
+  color: white;
+  margin: 0 5px;
+  font-size: 15px;
+  border: 1px solid white;
+  padding: 5px;
+}

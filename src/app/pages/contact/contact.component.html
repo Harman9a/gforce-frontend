@@ -18,19 +18,34 @@
       <div class="loctaion-div-contact">
         <div class="locaton-div-contact-data">
           <h2>Info</h2>
-          <div class="dov-location-logo-text">
+          <div class="dov-location-logo-text" *ngFor="let i of branchList">
             <div class="logo-im">
               <img src="./assets/image/Vector (6).png" alt="" />
             </div>
             <div class="logo-p-h">
-              <h3>G-Force Dance Center Alabang</h3>
+              <h3>{{ i.name }}</h3>
               <p>
-                3rd Floor Festival Mall Expansion, Filinvest City, Alabang,
-                Muntinlupa City
+                {{ i.fulllocation }}
               </p>
             </div>
           </div>
-          <div class="dov-location-logo-text">
+          <div class="rectangle-tirkon">
+            <div class="trikondiv">
+              <img src="./assets/image/arrow 2 (1).png" alt="" />
+            </div>
+            <div class="trikondiv-head-img">
+              <h3>Social Media</h3>
+              <a
+                [href]="i.text"
+                target="_blank"
+                *ngFor="let i of links"
+                class="linkIcon"
+              >
+                <i [class]="i.icon"></i>
+              </a>
+            </div>
+          </div>
+          <!-- <div class="dov-location-logo-text">
             <div class="logo-im">
               <img src="./assets/image/Vector (6).png" alt="" />
             </div>
@@ -61,8 +76,8 @@
                 </div>
               </div>
             </div>
-          </div>
-          <div class="dov-location-logo-text">
+          </div> -->
+          <!-- <div class="dov-location-logo-text">
             <div class="logo-im">
               <img src="./assets/image/Vector (6).png" alt="" />
             </div>
@@ -73,8 +88,8 @@
                 Tejero Cebu City
               </p>
             </div>
-          </div>
-          <div class="dov-location-logo-text">
+          </div> -->
+          <!-- <div class="dov-location-logo-text">
             <div class="logo-im">
               <img src="./assets/image/Vector (6).png" alt="" />
             </div>
@@ -94,7 +109,7 @@
                 Mohammad St.(5th St), Abu Dhabi, UAE
               </p>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
 
@@ -142,3 +157,5 @@
     </div>
   </div>
 </div>
+
+<ngx-spinner type="ball-scale-multiple"></ngx-spinner>
