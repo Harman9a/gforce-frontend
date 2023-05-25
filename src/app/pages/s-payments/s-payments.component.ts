@@ -11,7 +11,7 @@ export class SPaymentsComponent {
   constructor(private ds: DataService, private router: Router) {
     let isLogin: any = localStorage.getItem('isLogin');
     if (isLogin != null && isLogin != '') {
-      // this.getProfile();
+      this.getPayments();
     } else {
       this.router.navigateByUrl('login');
     }
@@ -19,5 +19,12 @@ export class SPaymentsComponent {
   handleLogout() {
     localStorage.setItem('isLogin', '');
     this.router.navigateByUrl('login');
+  }
+
+  getPayments() {
+    let data: any = new FormData();
+    this.ds.getPayments(data).subscribe((res: any) => {
+      console.log(res);
+    });
   }
 }

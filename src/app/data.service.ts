@@ -172,4 +172,7 @@ export class DataService {
   getSingleVideoData(data: any) {
     return this.http.post(this.baseurl + 'api/getSingleVideoData', data);
   }
+  getPayments(data: any) {
+    return this.http.post(this.baseurl + 'api/getpayments', data);
+  }
 }
