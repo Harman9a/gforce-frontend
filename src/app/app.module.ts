@@ -55,6 +55,12 @@ import { ShopComponent } from './pages/shop/shop.component';
 import { Performance101Component } from './pages/performance101/performance101.component';
 import { GforceProjectComponent } from './pages/gforce-project/gforce-project.component';
 import { VideoPlayPopupComponent } from './component/home/video-play-popup/video-play-popup.component';
+import { ViewDetailsComponent } from './pages/view-details/view-details.component';
+import {
+  SocialLoginModule,
+  SocialAuthServiceConfig,
+} from '@abacritt/angularx-social-login';
+import { GoogleLoginProvider } from '@abacritt/angularx-social-login';
 
 @NgModule({
   declarations: [
@@ -106,6 +112,7 @@ import { VideoPlayPopupComponent } from './component/home/video-play-popup/video
     Performance101Component,
     GforceProjectComponent,
     VideoPlayPopupComponent,
+    ViewDetailsComponent,
   ],
   imports: [
     BrowserModule,
@@ -116,8 +123,24 @@ import { VideoPlayPopupComponent } from './component/home/video-play-popup/video
     BrowserAnimationsModule,
     NgxSpinnerModule,
     MatDialogModule,
+    SocialLoginModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: 'SocialAuthServiceConfig',
+      useValue: {
+        autoLogin: false,
+        providers: [
+          {
+            id: GoogleLoginProvider.PROVIDER_ID,
+            provider: new GoogleLoginProvider(
+              '338013443861-48lfdvsvooapl4afrjojtrdkqjnhq3d7.apps.googleusercontent.com'
+            ),
+          },
+        ],
+      } as SocialAuthServiceConfig,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

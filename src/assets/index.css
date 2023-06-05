@@ -266,6 +266,39 @@ path.st1.rabdh {
 .pagination {
   text-align: center;
   font-size: 1.2rem;
+  display: inline-block;
+  padding-left: 0;
+  margin: 20px 0;
+  border-radius: 4px;
+}
+
+.pagination li {
+  display: inline;
+}
+
+ul.pagination .active span {
+  background: #333333 !important;
+  color: #f9f9f9 !important;
+}
+
+.pagination-container ul li span {
+  background: transparent !important;
+  color: #333333;
+  margin-left: 8px;
+  border: 1px solid #333333 !important;
+}
+
+.pagination > li > a,
+.pagination > li > span {
+  position: relative;
+  float: left;
+  padding: 6px 12px;
+  margin-left: -1px;
+  line-height: 1.42857143;
+  color: #337ab7;
+  text-decoration: none;
+  background-color: #fff;
+  border: 1px solid #ddd;
 }
 
 .carousel-cell h3 {
@@ -6414,6 +6447,11 @@ section#box-3 p {
   font-family: "Montserrat";
   font-weight: 400;
   padding: 10px 0px;
+  transition: all 0.5s;
+}
+
+.tab-editprofile a button:hover {
+  background-color: #f06f38;
 }
 
 /* Change background color of buttons on hover */
@@ -6779,6 +6817,11 @@ thead tr th {
   font-size: 12px;
 }
 
+@media only screen and (max-width: 990px) and (min-width: 480px) {
+  .form-group i {
+    left: 2rem;
+  }
+}
 /* *********************************************************************edit profile section  end ************************************************ */
 
 /* pagiation button */
@@ -6787,6 +6830,7 @@ thead tr th {
   color: #333333;
   margin-left: 8px;
   border: 1px solid #333333 !important;
+  font-size: 15px;
 }
 /* .pagination-container ul li span.active{
   background: #333333!important;
@@ -6883,6 +6927,7 @@ thead tr th {
   }
   .enrolled-div h2 {
     margin-top: 0px;
+    /* padding-left: 48px !important; */
   }
 
   .tab-editprofile-img {
@@ -6932,16 +6977,16 @@ thead tr th {
     justify-content: space-between;
   }
   .editprofile-div-imf1 {
-    width: 63%;
+    width: 100%;
   }
 
   .editprofile-div-imf1 {
-    margin-top: 1rem;
-    height: 465px;
+    margin: 1rem 0;
+    height: 511px;
   }
   .editprofile-div-imf {
     margin-top: 1rem;
-    height: 465px;
+    height: 510px;
   }
   .editprofile-div-imf1 form button {
     margin-top: 3rem;
@@ -7084,7 +7129,7 @@ thead {
 
   .edit-profile-img-form input[type="file"] {
     display: block;
-    width: 40%;
+    width: 55%;
     margin: 0px auto;
   }
   .editprofile-div-imf1 form input {
@@ -7094,12 +7139,12 @@ thead {
     margin-top: 0px;
   }
   .editprofile-div-imf {
-    height: 370px;
+    height: 385px;
     width: 100%;
   }
   .editprofile-div-imf1 {
-    height: 480px;
-    margin-top: 1rem;
+    height: 560px;
+    margin: 1rem 0;
     width: 100% !important;
   }
   .editprofile-div-imf1 form button {
@@ -7139,7 +7184,8 @@ thead {
 }
 @media screen and (min-width: 560px) and (max-width: 770px) {
   .form-control {
-    width: 10% !important;
+    width: 8% !important;
+    margin-bottom: 2px;
   }
 }
 @media screen and (min-width: 480px) and (max-width: 560px) {
@@ -7166,7 +7212,7 @@ thead {
     margin-top: 1.5rem !important;
   }
   .editprofile-div-imf1 {
-    height: 610px !important;
+    height: 500px !important;
   }
   .editprofile-div-imf1 form button {
     float: none;
@@ -7177,7 +7223,10 @@ thead {
   }
   input[type="file"] {
     display: block;
-    width: 65% !important;
+    width: 47% !important;
+  }
+  .editprofile-div h2 {
+    padding-left: 0;
   }
 }
 

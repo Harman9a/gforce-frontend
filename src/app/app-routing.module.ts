@@ -37,6 +37,7 @@ import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password
 import { ShopComponent } from './pages/shop/shop.component';
 import { Performance101Component } from './pages/performance101/performance101.component';
 import { GforceProjectComponent } from './pages/gforce-project/gforce-project.component';
+import { ViewDetailsComponent } from './pages/view-details/view-details.component';
 
 const routes: Routes = [
   {
@@ -186,6 +187,10 @@ const routes: Routes = [
   {
     path: 'gforceproject',
     component: GforceProjectComponent,
+  },
+  {
+    path: 'viewDetails',
+    component: ViewDetailsComponent,
   },
 ];
 

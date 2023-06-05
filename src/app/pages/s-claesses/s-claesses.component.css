@@ -22,3 +22,19 @@ td {
   --bs-table-accent-bg: var(--bs-table-striped-bg);
   color: var(--bs-table-striped-color);
 }
+
+table {
+  width: 100%;
+}
+
+@media only screen and (max-width: 480px) and (min-width: 310px) {
+  .form-control-2 {
+    width: 38% !important;
+  }
+
+  .tb_search i {
+    position: absolute;
+    right: 1rem;
+    bottom: 1rem;
+  }
+}

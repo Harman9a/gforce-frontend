@@ -1,15 +1,15 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { DataService } from 'src/app/data.service';
 import Swal from 'sweetalert2';
-import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
-  selector: 'app-profile',
-  templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.css'],
+  selector: 'app-view-details',
+  templateUrl: './view-details.component.html',
+  styleUrls: ['./view-details.component.css'],
 })
-export class ProfileComponent {
+export class ViewDetailsComponent {
   constructor(
     public ds: DataService,
     private router: Router,

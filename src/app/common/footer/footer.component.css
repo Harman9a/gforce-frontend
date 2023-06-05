@@ -16,3 +16,16 @@
   text-decoration: none;
   cursor: pointer;
 }
+
+.footerLink {
+  list-style: none;
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 30px;
+  transition: all 0.6s;
+}
+
+.footerLink:hover {
+  color: #f06f38 !important;
+}

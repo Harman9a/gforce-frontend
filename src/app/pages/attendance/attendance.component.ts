@@ -53,17 +53,18 @@ export class AttendanceComponent {
     let date = new Date();
     let data: any = new FormData();
 
-    data.append('student_id', this.student_id);
-    data.append('type', 'workshop');
-    data.append('date', date.toLocaleDateString());
-    data.append('time', date.toLocaleTimeString());
-    data.append('class_id', this.bookingId);
-
-    this.ds.markAttendance(data).subscribe((res) => {
-      this.spinner.hide();
-
-      console.log(res);
-      this.router.navigateByUrl('/attendanceSuccess');
+    this.AllBookingsArr.map((x: any) => {
+      if (x.booking_id == this.bookingId) {
+        data.append('student_id', this.student_id);
+        data.append('type', x.type);
+        data.append('date', date.toLocaleDateString());
+        data.append('time', date.toLocaleTimeString());
+        data.append('class_id', this.bookingId);
+        this.ds.markAttendance(data).subscribe((res) => {
+          this.spinner.hide();
+          this.router.navigateByUrl('/attendanceSuccess');
+        });
+      }
     });
   }
   handleLogout() {

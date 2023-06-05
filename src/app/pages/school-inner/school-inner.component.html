@@ -125,15 +125,25 @@ image and content section end
         <div class="nab-container">
           <div class="nab-container-card" *ngFor="let j of tabList">
             <div class="nab-card-img">
-              <img [src]="j.img" alt="" />
+              <img style="height: 200px" [src]="j.img" alt="" />
             </div>
 
             <h2>{{ j.text1 }}</h2>
             <p>{{ j.text2 }}</p>
             <p>{{ j.text3 }}</p>
             <p>{{ j.text4 }}</p>
+            <p>{{ j.text6 }}</p>
             <h3>{{ j.text5 }}</h3>
-            <a [routerLink]="'/book/openClass/' + j.id">
+            <a
+              *ngIf="j.text6 == 'Open'"
+              [routerLink]="'/book/openClass/' + j.id"
+            >
+              <button>Book Now &rarr;</button>
+            </a>
+            <a
+              *ngIf="j.text6 == 'Regular'"
+              [routerLink]="'/book/projectClass/' + j.id"
+            >
               <button>Book Now &rarr;</button>
             </a>
           </div>

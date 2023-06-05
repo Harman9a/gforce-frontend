@@ -1,0 +1,34 @@
+.editprofile-div-imf1 form select.form-select {
+  display: inline-block;
+  width: 48% !important;
+  padding: 10px 27px 8px;
+  margin-top: 2.5rem;
+  border: none;
+  /* margin-right: 8px; */
+  background: #f9f9f9;
+  border: 0 !important;
+  border-radius: 0;
+  font-family: "Montserrat";
+  font-size: 12px;
+  font-weight: 400;
+  color: #333333;
+}
+
+.editprofile-div-imf1 form select:focus {
+  box-shadow: none;
+}
+
+@media only screen and (max-width: 480px) and (min-width: 310px) {
+  .editprofile-div-imf1 form select.form-select {
+    display: inline-block;
+    width: 100% !important;
+  }
+}
+
+input[type="email"] {
+  margin-left: 0rem !important;
+}
+
+.editprofile-div-imf1 {
+  width: 90%;
+}

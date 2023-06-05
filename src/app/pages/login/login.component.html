@@ -12,13 +12,16 @@
       <p>Welcome back!Please Enter Your Details</p>
 
       <div class="div-andar-icon">
-        <img src="./assets/image/googel.png" alt="" />
+        <asl-google-signin-button #googleBtnRef>
+          <!-- <button (click)="loginWithGoogle()">Login With Google</button> -->
+        </asl-google-signin-button>
+        <!-- <img src="./assets/image/googel.png" alt="" />
         <input
           class="loginIpt"
           type="text"
           placeholder="Login With google"
           disabled
-        />
+        /> -->
       </div>
       <p>or</p>
       <div *ngIf="invalidUser" style="text-align: center; color: red">

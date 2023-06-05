@@ -15,7 +15,7 @@ export class ForgotPasswordComponent {
   showotp: any = false;
   showNewPassword: any = false;
 
-  email: string = 'harmanpreet.techie@gmail.com';
+  email: string = '';
   emailErr: any = false;
   otp: any = '';
   otpErr: any = false;

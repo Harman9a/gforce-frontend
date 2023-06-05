@@ -42,6 +42,7 @@
                         [(ngModel)]="cardHolderName"
                         placeholder="Name"
                       />
+                      <p *ngIf="cardHolderNameErr" class="errorTxt">required</p>
                     </div>
                     <div class="col-6">
                       <input
@@ -49,7 +50,12 @@
                         class="loginIpt"
                         placeholder="Card Number"
                         [(ngModel)]="cardNo"
+                        maxlength="16"
                       />
+                      <p *ngIf="cardNoErr" class="errorTxt">required</p>
+                      <p *ngIf="cardNoErr2" class="errorTxt">
+                        Number should be 16 digits only
+                      </p>
                     </div>
                     <div class="col-3">
                       <input
@@ -57,7 +63,9 @@
                         class="loginIpt"
                         [(ngModel)]="exMonth"
                         placeholder="mm"
+                        maxlength="2"
                       />
+                      <p *ngIf="exMonthErr" class="errorTxt">required</p>
                     </div>
                     <div class="col-3">
                       <input
@@ -65,7 +73,9 @@
                         [(ngModel)]="exYear"
                         class="loginIpt"
                         placeholder=" yyyy"
+                        maxlength="4"
                       />
+                      <p *ngIf="exYearErr" class="errorTxt">required</p>
                     </div>
                     <div class="col-6">
                       <input
@@ -73,7 +83,9 @@
                         [(ngModel)]="cvv"
                         class="loginIpt"
                         placeholder="CVV"
+                        maxlength="3"
                       />
+                      <p *ngIf="cvvErr" class="errorTxt">required</p>
                     </div>
                   </div>
                 </div>

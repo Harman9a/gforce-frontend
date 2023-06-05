@@ -91,6 +91,10 @@ export class DataService {
     return this.http.post(this.baseurl + 'api/getOpenClassSingle', data);
   }
 
+  getProjectClassSingle(data: any) {
+    return this.http.post(this.baseurl + 'api/getProjectClassSingle', data);
+  }
+
   getJobCategory() {
     return this.http.get(this.baseurl + 'api/getJobCategory');
   }
@@ -174,5 +178,8 @@ export class DataService {
   }
   getPayments(data: any) {
     return this.http.post(this.baseurl + 'api/getpayments', data);
+  }
+  signInWithGoogle(data: any) {
+    return this.http.post(this.baseurl + 'api/signInWithGoogle', data);
   }
 }

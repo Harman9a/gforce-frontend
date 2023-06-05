@@ -250,13 +250,13 @@ export class StudentRegisterComponent {
       result = true;
     }
 
-    if (this.mName == '') {
-      this.mNameErr = true;
-      result = false;
-    } else {
-      this.mNameErr = false;
-      result = true;
-    }
+    // if (this.mName == '') {
+    //   this.mNameErr = true;
+    //   result = false;
+    // } else {
+    //   this.mNameErr = false;
+    //   result = true;
+    // }
 
     if (this.lName == '') {
       this.lNameErr = true;
@@ -311,13 +311,13 @@ export class StudentRegisterComponent {
       result = true;
     }
 
-    if (this.mName2 == '') {
-      this.mName2Err = true;
-      result = false;
-    } else {
-      this.mName2Err = false;
-      result = true;
-    }
+    // if (this.mName2 == '') {
+    //   this.mName2Err = true;
+    //   result = false;
+    // } else {
+    //   this.mName2Err = false;
+    //   result = true;
+    // }
 
     if (this.lName2 == '') {
       this.lName2Err = true;

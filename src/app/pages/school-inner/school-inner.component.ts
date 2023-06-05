@@ -34,7 +34,6 @@ export class SchoolInnerComponent {
         });
       });
 
-      console.log(this.branchList);
       if (this.branchList.length != 0) {
         this.changeBranch(this.activeId, this.branchList[0].batch);
       }
@@ -48,15 +47,29 @@ export class SchoolInnerComponent {
 
     this.ds.getClassesByBranch(data).subscribe((result: any) => {
       this.tabList = [];
-      result.map((x: any) => {
+      result.OpenClass.map((x: any) => {
+        console.log(x);
         this.tabList.push({
           id: x.id,
           img: this.ds.baseurl + 'OpneClassImages/' + x.packagethumbmail,
-          text1: x.title,
+          text1: x.classname,
           text2: x.branchName + ' Branch',
           text3: 'Face to Face',
           text4: `5:00 PM`,
           text5: 'PHP ' + x.advancepayment,
+          text6: 'Open',
+        });
+      });
+      result.projectClass.map((x: any) => {
+        this.tabList.push({
+          id: x.id,
+          img: this.ds.baseurl + 'ProjectClassImages/' + x.classimg,
+          text1: x.name,
+          text2: x.branchName + ' Branch',
+          text3: 'Face to Face',
+          text4: `5:00 PM`,
+          text5: 'PHP ' + x.advancepayment,
+          text6: 'Regular',
         });
       });
     });

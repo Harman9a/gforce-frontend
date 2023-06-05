@@ -1,0 +1,109 @@
+<section class="creative-page">
+  <div class="tab-editprofile">
+    <!-- <div class="tab-editprofile-img">
+        <img src="./assets/image/g-force-logo 2.png" alt="" /><img
+          src="./assets/image/gforce_emblem 1.png"
+          alt=""
+        />
+        <i class="fa fa-bars" onclick="myFunction()" aria-hidden="true"></i>
+      </div> -->
+
+    <div class="button-tabs-sandwich" id="myDIV">
+      <button class="tablinks" routerLink="/studentClasses">
+        Enrolled Classes
+      </button>
+      <button class="tablinks" routerLink="/studentWorkshop">
+        Enrolled Workshop
+      </button>
+      <button class="tablinks" routerLink="/studentPayments">
+        Transaction
+      </button>
+      <button class="tablinks" routerLink="/profile" id="defaultOpen">
+        Edit Profile
+      </button>
+      <button class="tablinks" routerLink="/attendance" id="defaultOpen">
+        Mark Attendance
+      </button>
+      <button class="tablinks" routerLink="/viewAttendance" id="defaultOpen">
+        View Attendance
+      </button>
+      <a (click)="handleLogout()"><button>Log Out &rarr;</button></a>
+    </div>
+  </div>
+  <!-- first tab -->
+
+  <!-- second tab -->
+
+  <div id="Tokyo" class="tabcontent editprofile-div">
+    <!-- <h2>View Details</h2> -->
+    <div class="bg-img-cut-flex">
+      <div class="editprofile-div-imf1">
+        <form action="#">
+          <h2>View Details</h2>
+          <div>
+            <label>Class Type</label>
+            <input
+              type="text"
+              placeholder="First Name"
+              [(ngModel)]="fName"
+              name="fName"
+            />
+          </div>
+          <input
+            type="text"
+            placeholder="Middle Name"
+            [(ngModel)]="mName"
+            name="mName"
+          />
+          <input
+            type="text"
+            placeholder="Last Name"
+            [(ngModel)]="lName"
+            name="lName"
+          />
+          <input
+            type="date"
+            style="display: unset"
+            placeholder=" Birth Date"
+            [(ngModel)]="dob"
+            name="dob"
+          />
+          <input
+            type="number"
+            placeholder="Mobile Number"
+            [(ngModel)]="pNumber"
+            name="pNumber"
+          />
+          <input
+            type="text"
+            placeholder="Complete Adress"
+            [(ngModel)]="address"
+            name="address"
+          />
+
+          <input
+            type="email"
+            placeholder="Emaill Adress"
+            [(ngModel)]="email"
+            name="email"
+          />
+
+          <select
+            class="form-select"
+            aria-label="Default select example"
+            [(ngModel)]="gender"
+            (change)="demoFun()"
+            name="gender"
+          >
+            <option value="demo" style="display: none">Select Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+          </select>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<ngx-spinner type="ball-scale-multiple"></ngx-spinner>

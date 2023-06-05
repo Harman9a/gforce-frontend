@@ -1,13 +1,5 @@
 <section class="creative-page">
   <div class="tab-editprofile">
-    <!-- <div class="tab-editprofile-img">
-      <img src="./assets/image/g-force-logo 2.png" alt="" /><img
-        src="./assets/image/gforce_emblem 1.png"
-        alt=""
-      />
-      <i class="fa fa-bars" onclick="myFunction()" aria-hidden="true"></i>
-    </div> -->
-
     <div class="button-tabs-sandwich" id="myDIV">
       <button class="tablinks" routerLink="/studentClasses">
         Enrolled Classes
@@ -42,9 +34,17 @@
         <div class="header_wrap">
           <div class="num_rows">
             <div class="form-group">
-              <!--		Show Numbers Of Rows 		-->
+              <!-- Show Numbers Of Rows -->
               <h2>Show entries</h2>
-              <select class="form-control" name="state" id="maxRows">
+              <select
+                class="form-control"
+                name="state"
+                id="maxRows"
+                [(ngModel)]="maxRow"
+                (change)="setPagination()"
+              >
+                <option value="2">2</option>
+                <option value="3">3</option>
                 <option value="4">4</option>
                 <option value="5">5</option>
                 <option value="6">6</option>
@@ -55,8 +55,8 @@
           <div class="tb_search">
             <input
               type="text"
-              id="search_input_all"
-              onkeyup="FilterkeyWord_all_table()"
+              [(ngModel)]="searchTxt"
+              (keyup)="filterData()"
               placeholder="Search.."
               class="form-control-2"
             />
@@ -73,7 +73,7 @@
               <th>Time</th>
               <th>Type</th>
               <th>Status</th>
-              <th>Actions</th>
+              <!-- <th>Actions</th> -->
             </tr>
           </thead>
           <tr *ngFor="let i of AttendanceArr">
@@ -83,7 +83,7 @@
             <td>{{ i.time }}</td>
             <td>{{ i.type }}</td>
             <td>Present</td>
-            <td><i class="fa fa-eye" aria-hidden="true"></i></td>
+            <!-- <td><i class="fa fa-eye" aria-hidden="true"></i></td> -->
           </tr>
         </table>
 
@@ -91,7 +91,18 @@
         <div class="pagination-container">
           <nav>
             <ul class="pagination">
-              <!--	Here the JS Function Will Add the Rows -->
+              <li
+                data-page="1"
+                *ngFor="let i of pagenationArr"
+                style="cursor: pointer"
+                [class]="i.status"
+                (click)="changePage(i.no)"
+              >
+                <span>
+                  {{ i.no + 1 }}
+                  <span class="sr-only">(current)</span>
+                </span>
+              </li>
             </ul>
           </nav>
         </div>

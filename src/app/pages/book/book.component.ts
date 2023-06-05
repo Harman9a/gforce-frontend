@@ -40,45 +40,113 @@ export class BookComponent {
   cvv: any = '';
   price: any = '';
 
+  cardHolderNameErr: any = false;
+  cardNoErr: any = false;
+  exMonthErr: any = false;
+  exYearErr: any = false;
+  cvvErr: any = false;
+
+  cardNoErr2: any = false;
+
   ngOnInit() {
     this.getSingleWorkShop();
   }
 
   handlePayment() {
-    this.spinner.show();
-    let data = new FormData();
+    let result = true;
 
-    data.append('cno', this.cardNo);
-    data.append('emonth', this.exMonth);
-    data.append('eyear', this.exYear);
-    data.append('cvv', this.cvv);
-    data.append(
-      'boat',
-      this.activeWorkshop.price == undefined
-        ? this.activeWorkshop.advancepayment
-        : this.activeWorkshop.price
-    );
+    if (this.cardHolderName == '') {
+      this.cardHolderNameErr = true;
+      result = false;
+    } else {
+      this.cardHolderNameErr = false;
+      result = true;
+    }
 
-    this.ds.handlePayment(data).subscribe((res: any) => {
-      let payment_id = res.payment_method;
-      let payment_intent = res.id;
-      let data2 = new FormData();
-      data2.append('student_id', this.activeUser.id);
-      data2.append('booking_id', this.activeId);
-      data2.append('payment_id', payment_id);
-      data2.append('payment_intent_id', payment_intent);
-      data2.append('type', this.bookingType);
-      data2.append(
-        'price',
+    if (this.cardNo == '') {
+      this.cardNoErr = true;
+      result = false;
+    } else {
+      this.cardNoErr = false;
+      result = true;
+      if (JSON.stringify(this.cardNo).length == 18) {
+        console.log('if', JSON.stringify(this.cardNo).length);
+        this.cardNoErr2 = false;
+        result = true;
+      } else {
+        console.log('else', JSON.stringify(this.cardNo).length);
+
+        this.cardNoErr2 = true;
+        result = false;
+      }
+    }
+
+    if (this.exMonth == '') {
+      this.exMonthErr = true;
+      result = false;
+    } else {
+      this.exMonthErr = false;
+      result = true;
+    }
+
+    if (this.exYear == '') {
+      this.exYearErr = true;
+      result = false;
+    } else {
+      this.exYearErr = false;
+      result = true;
+    }
+
+    if (this.cvv == '') {
+      this.cvvErr = true;
+      result = false;
+    } else {
+      this.cvvErr = false;
+      result = true;
+    }
+
+    if (result) {
+      this.spinner.show();
+      let data = new FormData();
+
+      data.append('cno', this.cardNo);
+      data.append('emonth', this.exMonth);
+      data.append('eyear', this.exYear);
+      data.append('cvv', this.cvv);
+      data.append(
+        'boat',
         this.activeWorkshop.price == undefined
           ? this.activeWorkshop.advancepayment
           : this.activeWorkshop.price
       );
-      this.ds.savePaymentId(data2).subscribe((res2: any) => {
-        this.spinner.hide();
-        window.location.href = res.next_action.redirect_to_url.url;
+
+      this.ds.handlePayment(data).subscribe((res: any) => {
+        let payment_id = res.payment_method;
+        let payment_intent = res.id;
+        let data2 = new FormData();
+        data2.append('student_id', this.activeUser.id);
+        data2.append('booking_id', this.activeId);
+        data2.append('payment_id', payment_id);
+        data2.append('payment_intent_id', payment_intent);
+
+        if (this.bookingType == 'projectClass') {
+          data2.append('type', 'p_class');
+        } else {
+          data2.append('type', this.bookingType);
+        }
+
+        data2.append(
+          'price',
+          this.activeWorkshop.price == undefined
+            ? this.activeWorkshop.advancepayment
+            : this.activeWorkshop.price
+        );
+        this.ds.savePaymentId(data2).subscribe((res2: any) => {
+          this.spinner.hide();
+          window.location.href = res.next_action.redirect_to_url.url;
+        });
       });
-    });
+    }
   }
 
   getSingleWorkShop() {
@@ -105,6 +173,19 @@ export class BookComponent {
             this.activeWorkshop.scheduledate,
           ];
           this.activeWorkshop.starttime = this.activeUser.scheduletime;
+        }
+      });
+    } else if (this.bookingType == 'projectClass') {
+      let data = new FormData();
+      data.append('id', this.activeId);
+
+      this.ds.getProjectClassSingle(data).subscribe((res: any) => {
+        if (res.length != 0) {
+          this.activeWorkshop = res[0];
+          // this.activeWorkshop.workshopdates = [
+          //   this.activeWorkshop.scheduledate,
+          // ];
+          // this.activeWorkshop.starttime = this.activeUser.scheduletime;
         }
       });
     }

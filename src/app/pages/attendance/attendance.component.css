@@ -11,6 +11,7 @@
 
 .buttonSubmit {
   background-color: #333333;
+  border: none;
   margin-top: 26rem;
   width: 238px;
   display: block;
@@ -22,6 +23,11 @@
   font-family: "Montserrat";
   font-weight: 400;
   padding: 10px 0px;
+  transition: all 0.5s;
+}
+
+.buttonSubmit:hover {
+  background-color: #f06f38;
 }
 
 .mySelectIpt {

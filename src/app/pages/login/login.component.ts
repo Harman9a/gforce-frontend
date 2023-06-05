@@ -2,6 +2,11 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { DataService } from 'src/app/data.service';
 import { NgxSpinnerService } from 'ngx-spinner';
+import {
+  SocialAuthService,
+  GoogleLoginProvider,
+  SocialUser,
+} from '@abacritt/angularx-social-login';
 
 @Component({
   selector: 'app-login',
@@ -12,10 +17,15 @@ export class LoginComponent {
   constructor(
     private ds: DataService,
     private router: Router,
-    private spinner: NgxSpinnerService
-  ) {}
-  email: string = 'fml@gmail.com';
-  password: string = '123';
+    private spinner: NgxSpinnerService,
+    private socialAuthService: SocialAuthService
+  ) {
+    this.socialAuthService.authState.subscribe((user) => {
+      this.handleGoogleLogin(user);
+    });
+  }
+  email: string = '';
+  password: string = '';
 
   invalidUser = false;
 
@@ -64,6 +74,19 @@ export class LoginComponent {
       } else {
         this.invalidUser = true;
       }
+    });
+  }
+
+  loginWithGoogle() {
+    this.socialAuthService.signIn(GoogleLoginProvider.PROVIDER_ID);
+  }
+
+  handleGoogleLogin(user: any) {
+    let data: any = new FormData();
+    data.append('data', JSON.stringify(user));
+
+    this.ds.signInWithGoogle(data).subscribe((res) => {
+      console.log(res);
     });
   }
 }

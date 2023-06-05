@@ -129,3 +129,22 @@ input[type="text"] {
   width: 100% !important;
   border: 1px solid #dee2e6 !important;
 }
+
+.errorTxt {
+  color: red;
+  position: absolute;
+}
+
+.loginIpt {
+  background: #f9f9f9;
+  border: unset;
+  width: 75%;
+  color: #333333;
+  margin-top: 40px !important;
+  margin-bottom: 10px !important;
+  padding: 12px 20px;
+  /* display: block; */
+  margin: 0px auto;
+  width: 100% !important;
+  border: 1px solid #dee2e6 !important;
+}
